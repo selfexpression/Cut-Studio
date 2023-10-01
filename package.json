@@ -1,0 +1,22 @@
+{
+  "name": "mob",
+  "version": "1.0.0",
+  "description": "Landing page",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "frontend start -s ./frontend/build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd frontend && npm ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selfexpression/MOB.git"
+  },
+  "author": "Selfex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selfexpression/MOB/issues"
+  },
+  "homepage": "https://github.com/selfexpression/MOB#readme"
+}
