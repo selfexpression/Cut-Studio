@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header-container {
+  background-image: url('./assets/background-header.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.logo {
+  max-width: 100%;
+  height: auto;
+  filter: invert();
+}
+
+.description {
+  font-size: 1.3em;
+  font-family: Georgia, serif;
+  color: rgb(233, 229, 229);
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.btn-online-booking {
+  width: 300px;
+  height: auto;
+}
+
+.custom-offcanvas {
+  max-height: 60vh;
+}
+
+.custom-offcanvas-body {
+  height: 100%;
+  overflow-y: auto;
+  background-color: black;
+}
+
+.offcanvas-color {
+  color: white !important;
+}
+
+.nav-link {
+  font-size: 1.4em;
+  font-family: Georgia, serif;
+  margin-right: 20px;
+  color: black;
+}
+
+.nav-link:hover {
+  color: rgb(136, 136, 136);
 }
