@@ -26,18 +26,10 @@
   height: auto;
 }
 
-.custom-offcanvas {
-  max-height: 60vh;
-}
-
 .custom-offcanvas-body {
   height: 100%;
   overflow-y: auto;
-  background-color: black;
-}
-
-.offcanvas-color {
-  color: white !important;
+  background-color: rgb(248, 248, 248);
 }
 
 .nav-link {
@@ -48,11 +40,7 @@
 }
 
 .nav-link:hover {
-  color: rgb(136, 136, 136);
-}
-
-.custom-offcanvas-header {
-  height: 11.5%;
+  color: rgb(155, 155, 155);
 }
 
 .register {
@@ -65,13 +53,7 @@
   font-family: Georgia, serif;
 }
 
-/* .custom-carousel-container {
-  max-height: 60%;
-  overflow: hidden;
-} */
-/* 
-.custom-carousel-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-} */
+.custom-offcanvas-header {
+  height: 9%;
+  background-color: rgb(248, 248, 248);
+}
