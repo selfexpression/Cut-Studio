@@ -18,7 +18,7 @@ const About = () => {
 
   return (
     <section id="about">
-      <Container fluid className="about-container">
+      <Container fluid>
         <Row className={classes}>
           <Col className="d-flex flex-column align-items-center m-5">
             <p className="about-paragraph p-0 m-0">
@@ -29,15 +29,6 @@ const About = () => {
             <p className="about-paragraph">
               Превратите свой уход в приключение стиля с «MOB CUT STUDIO».
             </p>
-            {/* <p className="about-paragraph">
-            «MOB CUT STUDIO» – это не просто салон, это путеводитель
-            по миру мужской элегантности и стиля.
-            Доверьте свой облик профессионалам,
-            и ваши волосы станут не просто стрижкой, а искусством,
-            которое говорит о вашей неповторимой индивидуальности.
-            Добро пожаловать в мир стиля,
-            – где каждая стрижка — это история вашего собственного успеха.
-          </p> */}
           </Col>
         </Row>
         <Row>

@@ -40,9 +40,9 @@ const NavBar = () => {
                   <Nav className="ms-auto m-0 p-0">
                     <Nav.Link as={Link} to="about" duration={500}>О нас</Nav.Link>
                     <Nav.Link as={Link} to="services" duration={500}>Услуги</Nav.Link>
-                    <Nav.Link href="#reviews">Отзывы</Nav.Link>
-                    <Nav.Link href="#barbers">Барберы</Nav.Link>
-                    <Nav.Link href="#contacts">Контакты</Nav.Link>
+                    <Nav.Link href="team">Команда</Nav.Link>
+                    {/* <Nav.Link href="reviewers">Отзывы</Nav.Link> */}
+                    <Nav.Link href="contacts">Контакты</Nav.Link>
                   </Nav>
                   <Nav className="ms-auto d-flex align-items-end m-0 p-0">
                     <Nav.Link className="m-0">
