@@ -20,11 +20,11 @@ const servicesData = [
 
 const Services = () => (
   <section id="services" className="bg-light text-center py-5">
-    <Container>
+    <Container fluid className="w-100">
       <Row>
         <Col xs={12}>
-          <h2 className="mb-4">Наши услуги</h2>
-          <p className="lead mb-5">
+          <h2 className="mb-4 about-h">Наши услуги</h2>
+          <p className="mb-5 about-paragraph">
             Наши кресла — это трон стиля, а атмосфера — это вихрь творчества.
             В «MOB CUT STUDIO» мы не просто следуем за трендами, мы их задаем.
             Наши профессиональные стилисты обладают не только мастерством,
@@ -39,8 +39,8 @@ const Services = () => (
             <Card className="h-100">
               <Card.Img variant="top" src={service.image} className="h-75" />
               <Card.Body className="d-flex flex-column">
-                <Card.Title className="text-start">{service.title}</Card.Title>
-                <Button variant="outline-dark" className="mt-auto">Выбрать услугу</Button>
+                <Card.Title className="text-start about-h">{service.title}</Card.Title>
+                <Button variant="outline-dark" className="mt-auto register">Выбрать услугу</Button>
               </Card.Body>
             </Card>
           </Col>

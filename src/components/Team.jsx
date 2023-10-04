@@ -14,8 +14,8 @@ const Team = () => (
     <Container className="mt-5">
       <Row>
         <Col xs={12}>
-          <h2 className="text-center mb-4">Наша команда</h2>
-          <p className="lead mb-5">
+          <h2 className="text-center mb-4 about-h">Наша команда</h2>
+          <p className="mb-5 about-paragraph">
             «MOB CUT STUDIO» – это не просто салон, это путеводитель
             по миру мужской элегантности и стиля.
             Доверьте свой облик профессионалам,
@@ -31,8 +31,8 @@ const Team = () => (
           <Card>
             <Card.Img variant="top" src={employee1} />
             <Card.Body>
-              <Card.Title className="text-center">Имя Фамилия 1</Card.Title>
-              <Card.Text>
+              <Card.Title className="text-center about-h">Имя Фамилия 1</Card.Title>
+              <Card.Text className="team-description">
                 Здесь должно быть описание сотрудника 1.
               </Card.Text>
             </Card.Body>
@@ -42,8 +42,8 @@ const Team = () => (
           <Card>
             <Card.Img variant="top" src={employee2} />
             <Card.Body>
-              <Card.Title className="text-center">Имя Фамилия 2</Card.Title>
-              <Card.Text>
+              <Card.Title className="text-center about-h">Имя Фамилия 2</Card.Title>
+              <Card.Text className="team-description">
                 Здесь должно быть описание сотрудника 2.
               </Card.Text>
             </Card.Body>
@@ -53,8 +53,8 @@ const Team = () => (
           <Card>
             <Card.Img variant="top" src={employee3} />
             <Card.Body>
-              <Card.Title className="text-center">Имя Фамилия 3</Card.Title>
-              <Card.Text>
+              <Card.Title className="text-center about-h">Имя Фамилия 3</Card.Title>
+              <Card.Text className="team-description">
                 Здесь должно быть описание сотрудника 3.
               </Card.Text>
             </Card.Body>
@@ -64,8 +64,8 @@ const Team = () => (
           <Card>
             <Card.Img variant="top" src={employee4} />
             <Card.Body>
-              <Card.Title className="text-center">Имя Фамилия 4</Card.Title>
-              <Card.Text>
+              <Card.Title className="text-center about-h">Имя Фамилия 4</Card.Title>
+              <Card.Text className="team-description">
                 Здесь должно быть описание сотрудника 4.
               </Card.Text>
             </Card.Body>
@@ -75,8 +75,8 @@ const Team = () => (
           <Card>
             <Card.Img variant="top" src={employee5} />
             <Card.Body>
-              <Card.Title className="text-center">Имя Фамилия 5</Card.Title>
-              <Card.Text>
+              <Card.Title className="text-center about-h">Имя Фамилия 5</Card.Title>
+              <Card.Text className="team-description">
                 Здесь должно быть описание сотрудника 5.
               </Card.Text>
             </Card.Body>
@@ -86,8 +86,8 @@ const Team = () => (
           <Card>
             <Card.Img variant="top" src={employee6} />
             <Card.Body>
-              <Card.Title className="text-center">Имя Фамилия 6</Card.Title>
-              <Card.Text>
+              <Card.Title className="text-center about-h">Имя Фамилия 6</Card.Title>
+              <Card.Text className="team-description">
                 Здесь должно быть описание сотрудника 6.
               </Card.Text>
             </Card.Body>

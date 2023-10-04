@@ -1,3 +1,32 @@
+@font-face {
+  font-family: 'TenorSans';
+  src: url('./assets/fonts/TenorSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DidactGothic';
+  src: url('./assets/fonts/DidactGothic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('./assets/fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PTSerif-Bold';
+  src: url('./assets/fonts/PTSerif-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSerif-Regular';
+  src: url('./assets/fonts/PTSerif-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .header-container {
   background-image: url('./assets/background-header.jpg');
   background-size: cover;
@@ -12,8 +41,9 @@
 }
 
 .description {
-  font-size: 1.3em;
-  font-family: Georgia, serif;
+  font-size: 1.4em;
+  font-family: TenorSans, serif;
+  font-weight: normal;
   color: rgb(233, 229, 229);
 }
 
@@ -34,7 +64,7 @@
 
 .nav-link {
   font-size: 1.4em;
-  font-family: Georgia, serif;
+  font-family: DidactGothic, Comfortaa, serif;
   margin-right: 20px;
   color: black;
 }
@@ -45,12 +75,37 @@
 
 .register {
   font-size: 1.2em;
-  font-family: Georgia, serif;
+  font-family: TenorSans, serif;
 }
 
 .about-paragraph {
-  font-size: 1.3em;
-  font-family: Georgia, serif;
+  font-size: 1.2em;
+  font-family: Comfortaa, serif;
+}
+
+.about-h {
+  font-family: PTSerif-Bold, serif;
+}
+
+.team-description {
+  font-family: PTSerif-regular serif;
+}
+
+.contacts {
+  font-size: 1.4em;
+  font-family: DidactGothic, Comfortaa, serif;
+  color: white;
+}
+
+.contacts-h {
+  font-family: PTSerif-Bold, serif;
+  color: white;
+}
+
+.nav-contacts {
+  font-size: 1.4em;
+  font-family: DidactGothic, Comfortaa, serif;
+  color: black;
 }
 
 .custom-offcanvas-header {

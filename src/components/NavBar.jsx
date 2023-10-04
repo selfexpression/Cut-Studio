@@ -40,41 +40,33 @@ const NavBar = () => {
                   <Nav className="ms-auto m-0 p-0">
                     <Nav.Link as={Link} to="about" duration={500}>О нас</Nav.Link>
                     <Nav.Link as={Link} to="services" duration={500}>Услуги</Nav.Link>
-                    <Nav.Link href="team">Команда</Nav.Link>
-                    {/* <Nav.Link href="reviewers">Отзывы</Nav.Link> */}
-                    <Nav.Link href="contacts">Контакты</Nav.Link>
+                    <Nav.Link as={Link} to="team" duration={500}>Команда</Nav.Link>
+                    <Nav.Link as={Link} to="contacts" duration={500}>Свяжитесь с нами</Nav.Link>
                   </Nav>
-                  <Nav className="ms-auto d-flex align-items-end m-0 p-0">
-                    <Nav.Link className="m-0">
-                      <Instagram />
-                    </Nav.Link>
-                    <Nav.Link className="m-0">
-                      <Telegram />
-                    </Nav.Link>
-                    <Nav.Link className="m-0">
-                      <Whatsapp />
-                    </Nav.Link>
-                    <Nav.Link className="m-0">ул. Октябрьская 81</Nav.Link>
-                    <Nav.Link className="m-0">
+                  <Nav className="ms-auto m-0 p-0 d-flex align-items-center">
+                    <Instagram className="m-1" />
+                    <Telegram className="m-1" />
+                    <Whatsapp className="m-1" />
+                    <div className="m-1 nav-contacts">
                       <GeoAltFill />
                       {' '}
                       Новосибирск
-                    </Nav.Link>
-                    <Nav.Link className="m-0">
+                    </div>
+                    <div className="m-1 nav-contacts">ул. Октябрьская 81</div>
+                    <div className="m-1 nav-contacts">
                       <Telephone />
                       {' '}
-                      +7-(969)-228-1139
-                    </Nav.Link>
+                      <a href="tel:+79692281139">+7-(969)-228-1139</a>
+                    </div>
                   </Nav>
                 </>
               )
               : (
                 <>
-                  <Nav.Link as={Link} to="about" duration={500}>О нас</Nav.Link>
-                  <Nav.Link as={Link} to="services" duration={500}>Услуги</Nav.Link>
-                  <Nav.Link href="#reviews">Отзывы</Nav.Link>
-                  <Nav.Link href="#barbers">Барберы</Nav.Link>
-                  <Nav.Link href="#contacts">Контакты</Nav.Link>
+                  <Nav.Link as={Link} to="about" duration={500} className="m-1">О нас</Nav.Link>
+                  <Nav.Link as={Link} to="services" duration={500} className="m-1">Услуги</Nav.Link>
+                  <Nav.Link as={Link} to="team" duration={500} className="m-1">Команда</Nav.Link>
+                  <Nav.Link as={Link} to="contacts" className="m-1">Свяжитесь с нами</Nav.Link>
                   <div className="mt-auto">
                     <div className="m-1">
                       <Instagram className="m-1" />
@@ -91,7 +83,7 @@ const NavBar = () => {
                       <div className="m-1">
                         <Telephone />
                         {' '}
-                        +7-(969)-228-1139
+                        <a href="tel:+79692281139">+7-(969)-228-1139</a>
                       </div>
                     </div>
                   </div>
