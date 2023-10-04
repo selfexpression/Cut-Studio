@@ -2,12 +2,12 @@ import React from 'react';
 import {
   Container, Row, Col, Card,
 } from 'react-bootstrap';
-import employee1 from '../gallery/employee1.jpg';
-import employee2 from '../gallery/employee2.jpg';
-import employee3 from '../gallery/employee3.jpg';
-import employee4 from '../gallery/employee4.jpg';
-import employee5 from '../gallery/employee5.jpg';
-import employee6 from '../gallery/employee6.jpg';
+import employee1 from '../assets/gallery/employee1.jpg';
+import employee2 from '../assets/gallery/employee2.jpg';
+import employee3 from '../assets/gallery/employee3.jpg';
+import employee4 from '../assets/gallery/employee4.jpg';
+import employee5 from '../assets/gallery/employee5.jpg';
+import employee6 from '../assets/gallery/employee6.jpg';
 
 const Team = () => (
   <section id="team" className="bg-light text-center py-5">

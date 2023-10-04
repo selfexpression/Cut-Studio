@@ -1,14 +1,11 @@
-lint:
-	make -C frontend lint
-
 install:
-	make -C frontend install
+	npm ci
 
 start:
-	make -C frontend start
-
-deploy:
-	git push heroku main
+	npm start
 
 build:
 	npm run build
+
+lint:
+	npx eslint .

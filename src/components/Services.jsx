@@ -2,12 +2,12 @@ import React from 'react';
 import {
   Container, Row, Col, Card, Button,
 } from 'react-bootstrap';
-import haircutImage from '../gallery/cut1.jpg';
-import beardTrimImage from '../gallery/cut2.jpg';
-import headShaveImage from '../gallery/cut3.jpg';
-import barberSpaImage from '../gallery/cut4.jpg';
-import royalShaveImage from '../gallery/cut5.jpg';
-import kidsHaircutImage from '../gallery/cut6.jpg';
+import haircutImage from '../assets/gallery/cut1.jpg';
+import beardTrimImage from '../assets/gallery/cut2.jpg';
+import headShaveImage from '../assets/gallery/cut3.jpg';
+import barberSpaImage from '../assets/gallery/cut4.jpg';
+import royalShaveImage from '../assets/gallery/cut5.jpg';
+import kidsHaircutImage from '../assets/gallery/cut6.jpg';
 
 const servicesData = [
   { title: 'Стрижка мужская', image: haircutImage, id: 1 },

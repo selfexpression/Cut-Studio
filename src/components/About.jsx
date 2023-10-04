@@ -5,9 +5,9 @@ import {
 import { useMediaQuery } from '@reactuses/core';
 import cn from 'classnames';
 import '../styles.css';
-import carousel1 from '../gallery/carousel1.jpg';
-import carousel2 from '../gallery/carousel2.jpg';
-import carousel3 from '../gallery/carousel3.jpg';
+import carousel1 from '../assets/gallery/carousel1.jpg';
+import carousel2 from '../assets/gallery/carousel2.jpg';
+import carousel3 from '../assets/gallery/carousel3.jpg';
 
 const About = () => {
   const isWide = useMediaQuery('(min-width: 768px)');
