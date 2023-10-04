@@ -17,16 +17,16 @@ const About = () => {
   });
 
   return (
-    <section id="about">
+    <section id="about" className="bg-light">
       <Container fluid>
         <Row className={classes}>
-          <Col className="d-flex flex-column align-items-center m-5">
+          <Col className="d-flex flex-column m-5">
             <p className="about-paragraph p-0 m-0">
               Опытные мастера, индивидуальный подход и
               безупречный сервис создают неповторимую атмосферу,
               где каждый клиент — настоящий VIP.
             </p>
-            <p className="about-paragraph">
+            <p className="about-paragraph p-0 m-0">
               Превратите свой уход в приключение стиля с «MOB CUT STUDIO».
             </p>
           </Col>

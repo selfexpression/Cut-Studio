@@ -24,13 +24,18 @@ const Contacts = () => (
     <section id="contacts" className="bg-dark p-0 m-0">
       <Container fluid>
         <Row className="d-flex">
-          <Col md={6} className="text-center text-md-start align-self-end">
+          <Col md={6} className="text-center text-md-start align-self-end mb-3">
             <h2 className="contacts-h m-3">Наши контакты</h2>
+            <Button variant="outline-info" size="sm" className="rounded-5 m-2">
+              <span className="register">Записаться</span>
+            </Button>
             <p className="m-3 contacts">
               <Whatsapp className="me-2" />
               <Telegram className="me-2" />
               <Telephone className="me-2" />
-              <a href="tel:+79692281139">+7-(969)-228-1139</a>
+              <Button variant="outline-info" size="sm" className="rounded-5 m-2">
+                <a href="tel:+79692281139">+7-(969)-228-1139</a>
+              </Button>
             </p>
             <p className="m-3 contacts">
               <GeoAltFill className="me-2" />
@@ -38,16 +43,8 @@ const Contacts = () => (
             </p>
           </Col>
           <Col md={6} className="ms-auto p-0 m-0">
-            {/* Вставьте свой API-ключ от 2ГИС */}
             <h2 className="contacts-h m-5 text-center">Найти нас на карте</h2>
-            <div style={{ width: '100%', height: '400px' }}>
-              <iframe
-                title="map"
-                width="100%"
-                height="100%"
-                src={'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3AYOUR_MAP_ID&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true'}
-              />
-            </div>
+            <div id="map" className="map" />
           </Col>
         </Row>
       </Container>

@@ -5,7 +5,7 @@ import {
 import { useMediaQuery } from '@reactuses/core';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import {
-  Instagram, Telegram, Whatsapp, Telephone, GeoAltFill,
+  Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
 import icon from '../assets/mobicon.webp';
 
@@ -44,7 +44,6 @@ const NavBar = () => {
                     <Nav.Link as={Link} to="contacts" duration={500}>Свяжитесь с нами</Nav.Link>
                   </Nav>
                   <Nav className="ms-auto m-0 p-0 d-flex align-items-center">
-                    <Instagram className="m-1" />
                     <Telegram className="m-1" />
                     <Whatsapp className="m-1" />
                     <div className="m-1 nav-contacts">
@@ -69,9 +68,8 @@ const NavBar = () => {
                   <Nav.Link as={Link} to="contacts" className="m-1">Свяжитесь с нами</Nav.Link>
                   <div className="mt-auto">
                     <div className="m-1">
-                      <Instagram className="m-1" />
-                      <Telegram className="m-1" />
-                      <Whatsapp className="m-1" />
+                      <Telegram className="m-2" />
+                      <Whatsapp className="m-2" />
                     </div>
                     <div className="m-1">
                       <div className="m-1">
