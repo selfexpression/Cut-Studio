@@ -24,11 +24,8 @@ const Contacts = () => (
     <section id="contacts" className="bg-dark p-0 m-0">
       <Container fluid>
         <Row className="d-flex">
-          <Col md={6} className="text-center text-md-start align-self-end mb-3">
+          <Col md={6} className="text-md-start align-self-end mb-3">
             <h2 className="contacts-h m-3">Наши контакты</h2>
-            <Button variant="outline-info" size="sm" className="rounded-5 m-2">
-              <span className="register">Записаться</span>
-            </Button>
             <p className="m-3 contacts">
               <Whatsapp className="me-2" />
               <Telegram className="me-2" />
@@ -41,6 +38,9 @@ const Contacts = () => (
               <GeoAltFill className="me-2" />
               Новосибирск, ул. Октябрьская 81
             </p>
+            <Button variant="outline-info" size="sm" className="rounded-5 m-2">
+              <span className="register">Записаться</span>
+            </Button>
           </Col>
           <Col md={6} className="ms-auto p-0 m-0">
             <h2 className="contacts-h m-5 text-center">Найти нас на карте</h2>
