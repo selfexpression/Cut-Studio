@@ -2,100 +2,37 @@ import React from 'react';
 import {
   Container, Row, Col, Card,
 } from 'react-bootstrap';
-import employee1 from '../assets/gallery/employee1.jpg';
-import employee2 from '../assets/gallery/employee2.jpg';
-import employee3 from '../assets/gallery/employee3.jpg';
-import employee4 from '../assets/gallery/employee4.jpg';
-import employee5 from '../assets/gallery/employee5.jpg';
-import employee6 from '../assets/gallery/employee6.jpg';
+import { useTranslation } from 'react-i18next';
+import teammatePhotos from '../assets/gallery/teammates/index.js';
 
-const Team = () => (
-  <section id="team" className="bg-light text-center py-5">
-    <Container className="mt-5">
-      <Row>
-        <Col xs={12}>
-          <h2 className="text-center mb-4 about-h">Наша команда</h2>
-          <p className="mb-5 about-paragraph">
-            «MOB CUT STUDIO» – это не просто салон, это путеводитель
-            по миру мужской элегантности и стиля.
-            Доверьте свой облик профессионалам,
-            и ваши волосы станут не просто стрижкой, а искусством,
-            которое говорит о вашей неповторимой индивидуальности.
-            Добро пожаловать в мир стиля,
-            – где каждая стрижка — это история вашего собственного успеха.
-          </p>
-        </Col>
-      </Row>
-      <Row xs={2} md={2} lg={3} className="g-4">
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={employee1} />
-            <Card.Body>
-              <Card.Title className="text-center about-h">Имя Фамилия 1</Card.Title>
-              <Card.Text className="team-description">
-                Здесь должно быть описание сотрудника 1.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={employee2} />
-            <Card.Body>
-              <Card.Title className="text-center about-h">Имя Фамилия 2</Card.Title>
-              <Card.Text className="team-description">
-                Здесь должно быть описание сотрудника 2.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={employee3} />
-            <Card.Body>
-              <Card.Title className="text-center about-h">Имя Фамилия 3</Card.Title>
-              <Card.Text className="team-description">
-                Здесь должно быть описание сотрудника 3.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={employee4} />
-            <Card.Body>
-              <Card.Title className="text-center about-h">Имя Фамилия 4</Card.Title>
-              <Card.Text className="team-description">
-                Здесь должно быть описание сотрудника 4.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={employee5} />
-            <Card.Body>
-              <Card.Title className="text-center about-h">Имя Фамилия 5</Card.Title>
-              <Card.Text className="team-description">
-                Здесь должно быть описание сотрудника 5.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={employee6} />
-            <Card.Body>
-              <Card.Title className="text-center about-h">Имя Фамилия 6</Card.Title>
-              <Card.Text className="team-description">
-                Здесь должно быть описание сотрудника 6.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  </section>
-);
+const Team = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="team" className="bg-light text-center py-5">
+      <Container className="mt-5">
+        <Row>
+          <Col xs={12}>
+            <h2 className="text-center mb-4 about-h">{t('team.heading')}</h2>
+            <p className="mb-5 about-paragraph">{t('team.description')}</p>
+          </Col>
+        </Row>
+        <Row xs={2} md={2} lg={3} className="g-4">
+          {teammatePhotos.map(({ photo, id }) => (
+            <Col key={id}>
+              <Card>
+                <Card.Img variant="top" src={photo} />
+                <Card.Body>
+                  <Card.Title className="text-center about-h">{t(`team.teammates.${id}`)}</Card.Title>
+                  <Card.Text className="team-description">{t(`team.teammatesDescription.${id}`)}</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </section>
+  );
+};
 
 export default Team;

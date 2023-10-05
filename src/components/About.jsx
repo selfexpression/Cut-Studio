@@ -3,15 +3,15 @@ import {
   Container, Row, Col, Carousel, Image,
 } from 'react-bootstrap';
 import { useMediaQuery } from '@reactuses/core';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import '../styles.css';
-import carousel1 from '../assets/gallery/carousel1.jpg';
-import carousel2 from '../assets/gallery/carousel2.jpg';
-import carousel3 from '../assets/gallery/carousel3.jpg';
+import carouselImages from '../assets/gallery/carousels/index.js';
 
 const About = () => {
+  const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 768px)');
-  const classes = cn('text-center', {
+  const classes = cn('text-center', 'p-0 m-0', {
     'w-50 mx-auto': isWide,
     'w-100': !isWide,
   });
@@ -21,40 +21,22 @@ const About = () => {
       <Container fluid>
         <Row className={classes}>
           <Col className="d-flex flex-column m-5">
-            <p className="about-paragraph p-0 m-0">
-              Опытные мастера, индивидуальный подход и
-              безупречный сервис создают неповторимую атмосферу,
-              где каждый клиент — настоящий VIP.
-            </p>
-            <p className="about-paragraph p-0 m-0">
-              Превратите свой уход в приключение стиля с «MOB CUT STUDIO».
-            </p>
+            <p className="about-paragraph p-0 m-0">{t('about.paragraph1')}</p>
+            <p className="about-paragraph p-0 m-0">{t('about.paragraph2')}</p>
           </Col>
         </Row>
         <Row>
           <Col className="w-100 p-0 m-0">
             <Carousel>
-              <Carousel.Item>
-                <Image
-                  alt="First slide"
-                  src={carousel1}
-                  className="d-block w-100"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <Image
-                  alt="Second slide"
-                  src={carousel2}
-                  className="d-block w-100"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <Image
-                  alt="Third slide"
-                  src={carousel3}
-                  className="d-block w-100"
-                />
-              </Carousel.Item>
+              {carouselImages.map(({ image, id }) => (
+                <Carousel.Item key={id}>
+                  <Image
+                    alt="First slide"
+                    src={image}
+                    className="d-block w-100"
+                  />
+                </Carousel.Item>
+              ))}
             </Carousel>
           </Col>
         </Row>

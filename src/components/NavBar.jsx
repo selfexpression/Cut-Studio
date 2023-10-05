@@ -4,10 +4,74 @@ import {
 } from 'react-bootstrap';
 import { useMediaQuery } from '@reactuses/core';
 import { Link, animateScroll as scroll } from 'react-scroll';
+import { useTranslation } from 'react-i18next';
 import {
   Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
-import icon from '../assets/mobicon.webp';
+import logo from '../assets/mobicon.webp';
+
+const OffcanvasBody = () => {
+  const { t } = useTranslation();
+  const isWide = useMediaQuery('(min-width: 840px)');
+
+  return (
+    <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
+      {isWide
+        ? (
+          <>
+            <Nav className="ms-auto m-0 p-0">
+              <Nav.Link as={Link} to="about" duration={500}>{t('navbar.about')}</Nav.Link>
+              <Nav.Link as={Link} to="services" duration={500}>{t('navbar.services')}</Nav.Link>
+              <Nav.Link as={Link} to="team" duration={500}>{t('navbar.team')}</Nav.Link>
+              <Nav.Link as={Link} to="contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
+            </Nav>
+            <Nav className="ms-auto m-0 p-0 d-flex align-items-center">
+              <Telegram className="m-1" />
+              <Whatsapp className="m-1" />
+              <div className="m-1 nav-contacts">
+                <GeoAltFill />
+                {' '}
+                {t('navbar.city')}
+              </div>
+              <div className="m-1 nav-contacts">{t('navbar.location')}</div>
+              <div className="m-1 nav-contacts">
+                <Telephone />
+                {' '}
+                <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
+              </div>
+            </Nav>
+          </>
+        )
+        : (
+          <>
+            <Nav.Link as={Link} to="about" duration={500} className="m-1">{t('navbar.about')}</Nav.Link>
+            <Nav.Link as={Link} to="services" duration={500} className="m-1">{t('navbar.services')}</Nav.Link>
+            <Nav.Link as={Link} to="team" duration={500} className="m-1">{t('navbar.team')}</Nav.Link>
+            <Nav.Link as={Link} to="contacts" className="m-1">{t('navbar.contacts')}</Nav.Link>
+            <div className="mt-auto">
+              <div className="m-1">
+                <Telegram className="m-2" />
+                <Whatsapp className="m-2" />
+              </div>
+              <div className="m-1">
+                <div className="m-1">
+                  <GeoAltFill />
+                  {' '}
+                  {t('navbar.city')}
+                </div>
+                <div className="m-1">{t('navbar.location')}</div>
+                <div className="m-1">
+                  <Telephone />
+                  {' '}
+                  <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+    </Offcanvas.Body>
+  );
+};
 
 const NavBar = () => {
   const isWide = useMediaQuery('(min-width: 840px)');
@@ -20,7 +84,7 @@ const NavBar = () => {
     <Navbar expand={isWide} bg="light" sticky="top">
       <Container fluid>
         <Navbar.Brand onClick={scrollToTop}>
-          <Image src={icon} alt="Barbershop Logo" style={{ maxHeight: '30px', width: 'auto' }} />
+          <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${isWide}`} />
         <Navbar.Offcanvas
@@ -30,64 +94,10 @@ const NavBar = () => {
         >
           <Offcanvas.Header closeButton className="custom-offcanvas-header">
             <Offcanvas.Title onClick={scrollToTop}>
-              <Image src={icon} alt="Barbershop Logo" style={{ maxHeight: '30px', width: 'auto' }} />
+              <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
-            {isWide
-              ? (
-                <>
-                  <Nav className="ms-auto m-0 p-0">
-                    <Nav.Link as={Link} to="about" duration={500}>О нас</Nav.Link>
-                    <Nav.Link as={Link} to="services" duration={500}>Услуги</Nav.Link>
-                    <Nav.Link as={Link} to="team" duration={500}>Команда</Nav.Link>
-                    <Nav.Link as={Link} to="contacts" duration={500}>Свяжитесь с нами</Nav.Link>
-                  </Nav>
-                  <Nav className="ms-auto m-0 p-0 d-flex align-items-center">
-                    <Telegram className="m-1" />
-                    <Whatsapp className="m-1" />
-                    <div className="m-1 nav-contacts">
-                      <GeoAltFill />
-                      {' '}
-                      Новосибирск
-                    </div>
-                    <div className="m-1 nav-contacts">ул. Октябрьская 81</div>
-                    <div className="m-1 nav-contacts">
-                      <Telephone />
-                      {' '}
-                      <a href="tel:+79692281139">+7-(969)-228-1139</a>
-                    </div>
-                  </Nav>
-                </>
-              )
-              : (
-                <>
-                  <Nav.Link as={Link} to="about" duration={500} className="m-1">О нас</Nav.Link>
-                  <Nav.Link as={Link} to="services" duration={500} className="m-1">Услуги</Nav.Link>
-                  <Nav.Link as={Link} to="team" duration={500} className="m-1">Команда</Nav.Link>
-                  <Nav.Link as={Link} to="contacts" className="m-1">Свяжитесь с нами</Nav.Link>
-                  <div className="mt-auto">
-                    <div className="m-1">
-                      <Telegram className="m-2" />
-                      <Whatsapp className="m-2" />
-                    </div>
-                    <div className="m-1">
-                      <div className="m-1">
-                        <GeoAltFill />
-                        {' '}
-                        Новосибирск
-                      </div>
-                      <div className="m-1">ул. Октябрьская 81</div>
-                      <div className="m-1">
-                        <Telephone />
-                        {' '}
-                        <a href="tel:+79692281139">+7-(969)-228-1139</a>
-                      </div>
-                    </div>
-                  </div>
-                </>
-              )}
-          </Offcanvas.Body>
+          <OffcanvasBody />
         </Navbar.Offcanvas>
       </Container>
     </Navbar>

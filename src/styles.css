@@ -40,6 +40,11 @@
   filter: invert();
 }
 
+.nav-logo {
+  max-height: 30px;
+  width: auto;
+}
+
 .description {
   font-size: 1.4em;
   font-family: TenorSans, serif;
