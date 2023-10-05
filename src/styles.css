@@ -33,7 +33,7 @@
 }
 
 .header-container {
-  background-image: url('./assets/background-header.jpg');
+  background-image: url('./assets/background-header.webp');
   background-size: cover;
   background-position: center;
   min-height: 100vh;

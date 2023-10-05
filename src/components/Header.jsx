@@ -16,7 +16,7 @@ const Header = () => {
     <section id="/" className="bg-light">
       <Container
         fluid
-        className={`${align} header-container w-100 p-0 d-flex justify-content-end m-0 p-0`}
+        className={`${align} header-container w-100 p-0 d-flex justify-content-start m-0 p-0`}
       >
         <Row className="text-center m-5">
           <Col className="m-0">
