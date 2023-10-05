@@ -2,7 +2,7 @@ export default {
   translation: {
     about: {
       paragraph1: 'Experienced masters, individual approach, and impeccable service create a unique atmosphere where every client is a true VIP.',
-      paragraph2: "Turn your care into a style adventure with 'MOB CUT STUDIO'.",
+      paragraph2: 'Turn your care into a style adventure with «MOB CUT STUDIO»',
     },
     contacts: {
       videoHeading: 'Watch our work video',
