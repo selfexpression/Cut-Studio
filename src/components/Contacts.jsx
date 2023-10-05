@@ -40,7 +40,7 @@ const InfoSection = () => {
               <Whatsapp className="me-2" />
               <Telegram className="me-2" />
               <Telephone className="me-2" />
-              <Button variant="outline-info" size="sm" className="rounded-5 m-2">
+              <Button variant="outline-light" size="sm" className="rounded-5 m-2">
                 <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
               </Button>
             </p>
@@ -48,7 +48,7 @@ const InfoSection = () => {
               <GeoAltFill className="me-2" />
               {t('navbar.location')}
             </p>
-            <Button variant="outline-info" size="sm" className="rounded-5 m-2">
+            <Button variant="outline-light" size="sm" className="rounded-5 m-2">
               <span className="register">{t('navbar.onlineBooking')}</span>
             </Button>
           </Col>

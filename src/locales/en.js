@@ -13,7 +13,7 @@ export default {
     header: {
       description1: 'A place where style meets convenience.',
       description2: 'Get inspired by the atmosphere of style and self-care.',
-      onlineBooking: 'Book online',
+      onlineBooking: 'Book',
     },
     navbar: {
       about: 'About Us',

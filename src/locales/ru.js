@@ -16,7 +16,7 @@ export default {
     header: {
       description1: 'Место, где стиль встречает удобство.',
       description2: 'Вдохновляйтесь атмосферой стиля и заботы о себе.',
-      onlineBooking: 'Записаться онлайн',
+      onlineBooking: 'Записаться',
     },
     navbar: {
       about: 'О нас',

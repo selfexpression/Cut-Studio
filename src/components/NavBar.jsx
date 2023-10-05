@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import {
   Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
-import logo from '../assets/mobicon.webp';
+import logo from '../assets/sticker.webp';
 
 const OffcanvasBody = () => {
   const { t } = useTranslation();
@@ -18,29 +18,12 @@ const OffcanvasBody = () => {
     <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
       {isWide
         ? (
-          <>
-            <Nav className="ms-auto m-0 p-0">
-              <Nav.Link as={Link} to="about" duration={500}>{t('navbar.about')}</Nav.Link>
-              <Nav.Link as={Link} to="services" duration={500}>{t('navbar.services')}</Nav.Link>
-              <Nav.Link as={Link} to="team" duration={500}>{t('navbar.team')}</Nav.Link>
-              <Nav.Link as={Link} to="contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
-            </Nav>
-            <Nav className="ms-auto m-0 p-0 d-flex align-items-center">
-              <Telegram className="m-1" />
-              <Whatsapp className="m-1" />
-              <div className="m-1 nav-contacts">
-                <GeoAltFill />
-                {' '}
-                {t('navbar.city')}
-              </div>
-              <div className="m-1 nav-contacts">{t('navbar.location')}</div>
-              <div className="m-1 nav-contacts">
-                <Telephone />
-                {' '}
-                <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
-              </div>
-            </Nav>
-          </>
+          <Nav className="m-0 p-0 d-flex justify-content-center">
+            <Nav.Link as={Link} to="about" duration={500}>{t('navbar.about')}</Nav.Link>
+            <Nav.Link as={Link} to="services" duration={500}>{t('navbar.services')}</Nav.Link>
+            <Nav.Link as={Link} to="team" duration={500}>{t('navbar.team')}</Nav.Link>
+            <Nav.Link as={Link} to="contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
+          </Nav>
         )
         : (
           <>
