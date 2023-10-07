@@ -18,7 +18,7 @@ const Header = () => {
       <Parallax
         bgImage={background}
         bgImageAlt="background"
-        strength={500}
+        strength={300}
         className={`${align} header-container w-100 p-0 d-flex justify-content-start`}
       >
         <Row className="text-center m-5">
