@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
 // import LanguageDetector from 'i18next-browser-languagedetector';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import App from './components/App.jsx';
 import resources from './locales/index.js';
 import reportWebVitals from './reportWebVitals.js';
@@ -26,7 +27,9 @@ const runApp = async () => {
 
   root.render(
     <React.StrictMode>
-      <App />
+      <ParallaxProvider>
+        <App />
+      </ParallaxProvider>
     </React.StrictMode>,
   );
 };

@@ -2,27 +2,27 @@ import React from 'react';
 import {
   Row, Col, Button,
 } from 'react-bootstrap';
-import { Parallax } from 'react-parallax';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
-import background from '../assets/background-header.webp';
+import { ParallaxBanner } from 'react-scroll-parallax';
+import background from '../assets/background-header.png';
 import '../styles.css';
 
 const Header = () => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 840px)');
-  const align = isWide ? 'align-items-center' : 'align-items-end';
+  const contentPosition = isWide
+    ? 'align-items-center justify-content-start'
+    : 'align-items-end justify-content-center';
 
   return (
     <section id="/" className="bg-light">
-      <Parallax
-        bgImage={background}
-        bgImageAlt="background"
-        strength={300}
-        className={`${align} header-container w-100 p-0 d-flex justify-content-start`}
+      <ParallaxBanner
+        layers={[{ image: background, speed: -50 }]}
+        className={`aspect-[2/1] header-container p-0 d-flex ${contentPosition}`}
       >
-        <Row className="text-center m-5">
-          <Col className="m-0">
+        <Row className="text-center m-5 text-header">
+          <Col className="m-0 text-center">
             <p className="description m-0 p-0">{t('header.description1')}</p>
             <p className="description">{t('header.description2')}</p>
             <Button
@@ -34,8 +34,7 @@ const Header = () => {
             </Button>
           </Col>
         </Row>
-      </Parallax>
-
+      </ParallaxBanner>
     </section>
   );
 };
