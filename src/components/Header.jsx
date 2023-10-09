@@ -41,7 +41,6 @@ const Header = () => {
           {
             image: backgroundImage,
             speed: -30,
-            // scale: [1, 1.2],
             expanded: false,
           },
         ]}

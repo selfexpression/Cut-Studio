@@ -41,6 +41,11 @@
   position: absolute;
 }
 
+.parallax-mirror {
+  height: 60vh;
+  width: 100%;
+}
+
 .logo {
   max-width: 100%;
   height: auto;
