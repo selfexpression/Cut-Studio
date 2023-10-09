@@ -34,7 +34,7 @@
 
 .parallax-header {
   height: 100vh;
-  will-change: transform;
+  will-change: scroll-position;
 }
 
 .text-header {

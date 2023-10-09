@@ -23,6 +23,7 @@ const Header = () => {
           {
             image: background,
             speed: -50,
+            // scale: [1, 1.2],
             expanded: false,
           },
         ]}
