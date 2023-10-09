@@ -5,7 +5,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import { ParallaxBanner } from 'react-scroll-parallax';
-import background from '../assets/background-header.png';
+import background from '../assets/back-i.webp';
 import '../styles.css';
 
 const Header = () => {
@@ -14,12 +14,19 @@ const Header = () => {
   const contentPosition = isWide
     ? 'align-items-center justify-content-start'
     : 'align-items-end justify-content-center';
+  const btnWidth = isWide ? 'w-50' : 'w-60';
 
   return (
     <section id="/" className="bg-light">
       <ParallaxBanner
-        layers={[{ image: background, speed: -50 }]}
-        className={`aspect-[2/1] header-container p-0 d-flex ${contentPosition}`}
+        layers={[
+          {
+            image: background,
+            speed: -50,
+            expanded: false,
+          },
+        ]}
+        className={`parallax-header p-0 d-flex ${contentPosition}`}
       >
         <Row className="text-center m-5 text-header">
           <Col className="m-0 text-center">
@@ -28,7 +35,7 @@ const Header = () => {
             <Button
               variant="outline-light"
               size="sm"
-              className="btn-online-booking mb-5 rounded-0 w-50"
+              className={`${btnWidth} btn-online-booking mb-5 rounded-0`}
             >
               <span className="register">{t('header.onlineBooking')}</span>
             </Button>

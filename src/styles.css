@@ -32,12 +32,9 @@
   src: url('./assets/fonts/WorkSans-Regular.ttf') format('truetype');
 }
 
-.header-container {
-  /* background-image: url('./assets/background-header.webp'); */
-  /* background-size: cover;
-  background-position: center; */
+.parallax-header {
   height: 100vh;
-  /* z-index: -1; */
+  will-change: transform;
 }
 
 .text-header {
