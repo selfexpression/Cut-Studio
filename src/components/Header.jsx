@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import backgroundWide from '../assets/back-i.webp';
-import backgroundMobile from '../assets/steelblade.jpg';
+import backgroundMobile from '../assets/back-i-m.webp';
 import '../styles.css';
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
         layers={[
           {
             image: background,
-            speed: -50,
+            speed: -30,
             // scale: [1, 1.2],
             expanded: false,
           },
