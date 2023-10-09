@@ -5,7 +5,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import { ParallaxBanner } from 'react-scroll-parallax';
-import background from '../assets/back-i.webp';
+import backgroundWide from '../assets/back-i.webp';
+import backgroundMobile from '../assets/steelblade.jpg';
 import '../styles.css';
 
 const Header = () => {
@@ -15,6 +16,7 @@ const Header = () => {
     ? 'align-items-center justify-content-start'
     : 'align-items-end justify-content-center';
   const btnWidth = isWide ? 'w-50' : 'w-60';
+  const background = isWide ? backgroundWide : backgroundMobile;
 
   return (
     <section id="/" className="bg-light">
@@ -29,6 +31,9 @@ const Header = () => {
         ]}
         className={`parallax-header p-0 d-flex ${contentPosition}`}
       >
+        <div className="parallax-img-container">
+          <img className="parallax-img" src={background} alt="parallax-background" />
+        </div>
         <Row className="text-center m-5 text-header">
           <Col className="m-0 text-center">
             <p className="description m-0 p-0">{t('header.description1')}</p>
