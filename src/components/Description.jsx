@@ -17,6 +17,8 @@ const Description = () => {
     'w-100': !isWide,
   });
 
+  const speed = isWide ? -15 : -10;
+
   return (
     <section className="bg-light">
       <Container fluid className="p-0 m-0">
@@ -30,7 +32,7 @@ const Description = () => {
           layers={[
             {
               image,
-              speed: -15,
+              speed,
               expanded: false,
             },
           ]}
