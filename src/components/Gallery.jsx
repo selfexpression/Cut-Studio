@@ -5,8 +5,8 @@ import {
 import '../styles.css';
 import carouselImages from '../assets/gallery/carousels/index.js';
 
-const About = () => (
-  <section id="about" className="bg-light">
+const Gallery = () => (
+  <section id="gallery" className="bg-light">
     <Container fluid>
       <Row>
         <Col className="w-100 p-0 m-0">
@@ -27,4 +27,4 @@ const About = () => (
   </section>
 );
 
-export default About;
+export default Gallery;

@@ -5,13 +5,13 @@ import Gallery from './Gallery.jsx';
 import Services from './Services.jsx';
 import Team from './Team.jsx';
 import Contacts from './Contacts.jsx';
-import ParallaxMirror from './ParallaxMirror.jsx';
+import Description from './Description.jsx';
 
 const App = () => (
   <div className="d-flex flex-column">
     <NavBar />
     <Header />
-    <ParallaxMirror />
+    <Description />
     <Services />
     <Team />
     <Gallery />

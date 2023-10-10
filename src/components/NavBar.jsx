@@ -12,14 +12,14 @@ import logo from '../assets/sticker.webp';
 
 const OffcanvasBody = () => {
   const { t } = useTranslation();
-  const isWide = useMediaQuery('(min-width: 840px)');
+  const isWide = useMediaQuery('(min-width: 860px)');
 
   return (
     <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
       {isWide
         ? (
           <Nav className="m-0 p-0 d-flex justify-content-center">
-            <Nav.Link as={Link} to="about" duration={500}>{t('navbar.about')}</Nav.Link>
+            <Nav.Link as={Link} to="gallery" duration={500}>{t('navbar.gallery')}</Nav.Link>
             <Nav.Link as={Link} to="services" duration={500}>{t('navbar.services')}</Nav.Link>
             <Nav.Link as={Link} to="team" duration={500}>{t('navbar.team')}</Nav.Link>
             <Nav.Link as={Link} to="contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
@@ -27,7 +27,7 @@ const OffcanvasBody = () => {
         )
         : (
           <>
-            <Nav.Link as={Link} to="about" duration={500} className="m-1">{t('navbar.about')}</Nav.Link>
+            <Nav.Link as={Link} to="gallery" duration={500} className="m-1">{t('navbar.gallery')}</Nav.Link>
             <Nav.Link as={Link} to="services" duration={500} className="m-1">{t('navbar.services')}</Nav.Link>
             <Nav.Link as={Link} to="team" duration={500} className="m-1">{t('navbar.team')}</Nav.Link>
             <Nav.Link as={Link} to="contacts" className="m-1">{t('navbar.contacts')}</Nav.Link>

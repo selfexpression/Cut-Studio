@@ -5,10 +5,27 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import { ParallaxBanner } from 'react-scroll-parallax';
-import backgroundWide from '../assets/back-i.avif';
-import backgroundMobile from '../assets/back-i-m.webp';
-import backgroundTablet from '../assets/back-i.jpg';
+import backgroundWide from '../assets/backgrounds/back-i.avif';
+import backgroundMobile from '../assets/backgrounds/back-i-m.webp';
+import backgroundTablet from '../assets/backgrounds/back-i.jpg';
 import '../styles.css';
+
+const getBackgroundImage = (sizes, images) => {
+  const isTrueSize = sizes.indexOf(true);
+  const mappingSizeIndex = {
+    0: 'isMobile',
+    1: 'isTablet',
+    2: 'isWide',
+  };
+  const size = mappingSizeIndex[isTrueSize];
+  const mappingSize = {
+    isMobile: images.backgroundMobile,
+    isTablet: images.backgroundTablet,
+    isWide: images.backgroundWide,
+  };
+
+  return mappingSize[size];
+};
 
 const Header = () => {
   const { t } = useTranslation();
@@ -18,21 +35,13 @@ const Header = () => {
   const contentPosition = isWide
     ? 'align-items-center justify-content-end'
     : 'align-items-end justify-content-center';
-  const btnWidth = isWide ? 'w-50' : 'w-60';
   const sizes = [isMobile, isTablet, isWide];
-  const isTrueSize = sizes.indexOf(true);
-  const mappingSizeIndex = {
-    0: 'isMobile',
-    1: 'isTablet',
-    2: 'isWide',
+  const images = {
+    backgroundMobile,
+    backgroundTablet,
+    backgroundWide,
   };
-  const size = mappingSizeIndex[isTrueSize];
-  const mappingSize = {
-    isMobile: backgroundMobile,
-    isTablet: backgroundTablet,
-    isWide: backgroundWide,
-  };
-  const backgroundImage = mappingSize[size];
+  const backgroundImage = getBackgroundImage(sizes, images);
 
   return (
     <section id="/" className="bg-light">
@@ -53,7 +62,7 @@ const Header = () => {
             <Button
               variant="outline-light"
               size="sm"
-              className={`${btnWidth} btn-online-booking mb-5 rounded-0`}
+              className="btn-online-booking mb-5 rounded-0"
             >
               <span className="register">{t('header.onlineBooking')}</span>
             </Button>

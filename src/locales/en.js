@@ -2,7 +2,7 @@ export default {
   translation: {
     about: {
       paragraph1: 'Experienced masters, individual approach, and impeccable service create a unique atmosphere where every client is a true VIP.',
-      paragraph2: 'Turn your care into a style adventure with «MOB CUT STUDIO»',
+      paragraph2: 'Turn your care into a style adventure with «MOB Cut Studio»',
     },
     contacts: {
       videoHeading: 'Watch our work video',
@@ -16,7 +16,7 @@ export default {
       onlineBooking: 'Book',
     },
     navbar: {
-      about: 'About Us',
+      gallery: 'gallery',
       services: 'Services',
       team: 'Team',
       contacts: 'Contact Us',
@@ -27,20 +27,26 @@ export default {
     },
     services: {
       heading: 'Our Services',
-      description: 'Our chairs are the throne of style, and the atmosphere is the whirlwind of creativity. At «MOB CUT STUDIO» we not only follow trends but set them. Our professional stylists possess not only mastery but also creative vision, crafting images that go beyond the boundaries of the ordinary.',
+      description: 'Our chairs are the throne of style, and the atmosphere is the whirlwind of creativity. At «MOB Cut Studio» we not only follow trends but set them. Our professional stylists possess not only mastery but also creative vision, crafting images that go beyond the boundaries of the ordinary.',
       chooseService: 'Choose Service',
       names: {
         1: 'Men\'s Haircut',
-        2: 'Mustache and Beard Trim',
-        3: 'Head and Beard Shave',
-        4: 'Barber-SPA',
-        5: 'Royal Shave',
-        6: 'Children\'s Haircut',
+        2: 'Beard Modeling',
+        3: 'Beard Modeling with Camouflage',
+        4: 'Machine Haircut',
+        5: 'Men\'s Haircut + Camouflage',
+        6: 'Machine Beard Trim',
+        7: 'Children\'s Haircut',
+        8: 'Head Shave',
+        9: 'Wax Hair Removal',
+        10: 'Father and Son',
+        11: 'First Haircut',
+        12: 'Men\'s Manicure',
       },
     },
     team: {
       heading: 'Our Team',
-      description: '«MOB CUT STUDIO» is not just a salon, it is a guide to the world of men\'s elegance and style. Entrust your appearance to professionals, and your hair will become not just a haircut but an art that speaks of your unique individuality. Welcome to the world of style, where each haircut is a story of your own success.',
+      description: '«MOB Cut Studio» is not just a salon, it is a guide to the world of men\'s elegance and style. Entrust your appearance to professionals, and your hair will become not just a haircut but an art that speaks of your unique individuality. Welcome to the world of style, where each haircut is a story of your own success.',
       teammates: {
         1: 'Employee 1',
         2: 'Employee 2',
