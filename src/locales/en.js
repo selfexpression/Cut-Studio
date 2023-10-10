@@ -10,6 +10,9 @@ export default {
       ourContacts: 'Our Contacts',
       findUsOnMap: 'Find us on the map',
     },
+    gallery: {
+      description: 'Explore the world of MOB Cut Studio: our works, our space, our atmosphere — all in one vibrant gallery.',
+    },
     header: {
       description1: 'A place where style meets convenience.',
       description2: 'Get inspired by the atmosphere of style and self-care.',
