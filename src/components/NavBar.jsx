@@ -14,27 +14,24 @@ import logo from '../assets/sticker.webp';
 const OffcanvasBody = () => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
-  const location = useLocation();
-  const isMainPage = location.pathname === '/';
-  const link = isMainPage ? ScrollLink : RouterLink;
 
   return (
     <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
       {isWide
         ? (
           <Nav className="m-0 p-0 d-flex justify-content-center">
-            <Nav.Link as={link} to="/gallery" duration={500}>{t('navbar.gallery')}</Nav.Link>
-            <Nav.Link as={link} to="/services" duration={500}>{t('navbar.services')}</Nav.Link>
+            <Nav.Link as={ScrollLink} to="/gallery" duration={500}>{t('navbar.gallery')}</Nav.Link>
+            <Nav.Link as={ScrollLink} to="/services" duration={500}>{t('navbar.services')}</Nav.Link>
             <Nav.Link as={RouterLink} to="/team">{t('navbar.team')}</Nav.Link>
-            <Nav.Link as={link} to="/contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
+            <Nav.Link as={ScrollLink} to="/contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
           </Nav>
         )
         : (
           <>
-            <Nav.Link as={link} to="/gallery" duration={500} className="m-1">{t('navbar.gallery')}</Nav.Link>
-            <Nav.Link as={link} to="/services" duration={500} className="m-1">{t('navbar.services')}</Nav.Link>
+            <Nav.Link as={ScrollLink} to="/gallery" duration={500} className="m-1">{t('navbar.gallery')}</Nav.Link>
+            <Nav.Link as={ScrollLink} to="/services" duration={500} className="m-1">{t('navbar.services')}</Nav.Link>
             <Nav.Link as={RouterLink} to="/team" className="m-1">{t('navbar.team')}</Nav.Link>
-            <Nav.Link as={link} to="/contacts" className="m-1">{t('navbar.contacts')}</Nav.Link>
+            <Nav.Link as={ScrollLink} to="/contacts" className="m-1">{t('navbar.contacts')}</Nav.Link>
             <div className="mt-auto">
               <div className="m-1">
                 <Telegram className="m-2" />
