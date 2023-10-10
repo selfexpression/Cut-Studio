@@ -5,6 +5,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import { ParallaxBanner } from 'react-scroll-parallax';
+import { useDispatch } from 'react-redux';
+import { actions } from '../slices/index.js';
 import backgroundWide from '../assets/backgrounds/back-i.avif';
 import backgroundMobile from '../assets/backgrounds/back-i-m.webp';
 import backgroundTablet from '../assets/backgrounds/back-i.jpg';
@@ -29,6 +31,7 @@ const getBackgroundImage = (sizes, images) => {
 
 const Header = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const isMobile = useMediaQuery('(max-width: 420px)');
   const isTablet = useMediaQuery('(max-width: 859px)');
   const isWide = useMediaQuery('(min-width: 860px)');
@@ -42,6 +45,10 @@ const Header = () => {
     backgroundWide,
   };
   const backgroundImage = getBackgroundImage(sizes, images);
+
+  const handleWidgetShow = () => {
+    dispatch(actions.widgetShow());
+  };
 
   return (
     <section id="/" className="bg-light">
@@ -63,6 +70,7 @@ const Header = () => {
               variant="outline-light"
               size="sm"
               className="btn-online-booking mb-5 rounded-0"
+              onClick={handleWidgetShow}
             >
               <span className="register">{t('header.onlineBooking')}</span>
             </Button>

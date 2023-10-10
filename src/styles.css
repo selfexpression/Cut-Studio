@@ -140,7 +140,6 @@
 .services-flow {
   overflow-x: auto;
   display: flex;
-  /* white-space: nowrap; */
 }
 
 .services-card {

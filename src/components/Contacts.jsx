@@ -6,6 +6,8 @@ import {
   Youtube, Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { actions } from '../slices/index.js';
 
 const VideoSection = () => {
   const { t } = useTranslation();
@@ -29,6 +31,11 @@ const VideoSection = () => {
 
 const InfoSection = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleWidgetShow = () => {
+    dispatch(actions.widgetShow());
+  };
 
   return (
     <section id="/contacts" className="bg-dark p-0 m-0">
@@ -48,7 +55,12 @@ const InfoSection = () => {
               <GeoAltFill className="me-2" />
               {t('navbar.location')}
             </p>
-            <Button variant="outline-light" size="sm" className="rounded-5 m-2">
+            <Button
+              variant="outline-light"
+              size="sm"
+              className="rounded-5 m-2"
+              onClick={handleWidgetShow}
+            >
               <span className="register">{t('navbar.onlineBooking')}</span>
             </Button>
           </Col>

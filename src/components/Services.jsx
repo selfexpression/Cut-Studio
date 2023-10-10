@@ -5,15 +5,22 @@ import {
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import { useMediaQuery } from '@reactuses/core';
+import { useDispatch } from 'react-redux';
+import { actions } from '../slices/index.js';
 import cutImages from '../assets/gallery/services/index.js';
 
 const Services = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const isWide = useMediaQuery('(min-width: 860px)');
   const classes = cn('text-center', 'p-0 m-0', {
     'w-50 mx-auto': isWide,
     'w-100': !isWide,
   });
+
+  const handleWidgetShow = () => {
+    dispatch(actions.widgetShow());
+  };
 
   return (
     <section id="/services" className="bg-light text-center py-5">
@@ -29,7 +36,13 @@ const Services = () => {
             <Card.Img variant="top" src={image} className="h-75" />
             <Card.Body className="d-flex flex-column">
               <Card.Title className="text-start">{t(`services.names.${id}`)}</Card.Title>
-              <Button variant="outline-dark" className="mt-auto register">{t('services.chooseService')}</Button>
+              <Button
+                variant="outline-dark"
+                className="mt-auto register"
+                onClick={handleWidgetShow}
+              >
+                {t('services.chooseService')}
+              </Button>
             </Card.Body>
           </Card>
         ))}

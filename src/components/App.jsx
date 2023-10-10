@@ -9,6 +9,7 @@ import Services from './Services.jsx';
 import Team from './Team.jsx';
 import Contacts from './Contacts.jsx';
 import Description from './Description.jsx';
+import BookingWidget from './BookingWidget.jsx';
 
 const Main = () => (
   <>
@@ -17,6 +18,7 @@ const Main = () => (
     <Services />
     <Gallery />
     <Contacts />
+    <BookingWidget />
   </>
 );
 
