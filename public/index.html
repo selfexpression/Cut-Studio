@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <meta charset="utf-8" />
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e7996c41-fbf6-430d-a78d-4f21af4455ca" type="text/javascript"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e7996c41-fbf6-430d-a78d-4f21af4455ca" type="text/javascript"></script>
     <script type="text/javascript">
-      ymaps.ready(init);
-
       function init() {
+        ymaps.ready(init);
+
           const myMap = new ymaps.Map("map", {
               center: [55.025854, 82.931218],
               zoom: 14

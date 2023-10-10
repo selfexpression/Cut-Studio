@@ -9,7 +9,7 @@ const Team = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="team" className="bg-light text-center py-5">
+    <section id="/team" className="bg-light text-center py-5">
       <Container className="mt-5">
         <Row>
           <Col xs={12}>

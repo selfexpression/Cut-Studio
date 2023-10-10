@@ -16,7 +16,7 @@ const Services = () => {
   });
 
   return (
-    <section id="services" className="bg-light text-center py-5">
+    <section id="/services" className="bg-light text-center py-5">
       <Row className={classes}>
         <Col xs={12} className="d-flex flex-column">
           <h2 className="mb-4 about-h">{t('services.heading')}</h2>

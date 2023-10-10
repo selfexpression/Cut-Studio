@@ -6,7 +6,7 @@ import '../styles.css';
 import carouselImages from '../assets/gallery/carousels/index.js';
 
 const Gallery = () => (
-  <section id="gallery" className="bg-light">
+  <section id="/gallery" className="bg-light">
     <Container fluid>
       <Row>
         <Col className="w-100 p-0 m-0">

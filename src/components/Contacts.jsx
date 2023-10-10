@@ -31,7 +31,7 @@ const InfoSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="contacts" className="bg-dark p-0 m-0">
+    <section id="/contacts" className="bg-dark p-0 m-0">
       <Container fluid>
         <Row className="d-flex">
           <Col md={6} className="text-center text-md-start align-self-end mb-3">
