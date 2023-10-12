@@ -19,7 +19,7 @@ const Description = () => {
   });
 
   const image = isWide ? imageWide : imageMobile;
-  const speed = isWide ? -15 : 0;
+  const speed = isWide ? -10 : 0;
 
   return (
     <section className="bg-light">

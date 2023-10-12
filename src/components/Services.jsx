@@ -36,17 +36,19 @@ const Services = () => {
             <Card.Img variant="top" src={image} className="h-75" />
             <Card.Body className="d-flex flex-column">
               <Card.Title className="text-start">{t(`services.names.${id}`)}</Card.Title>
-              <Button
-                variant="outline-dark"
-                className="mt-auto register"
-                onClick={handleWidgetShow}
-              >
-                {t('services.chooseService')}
-              </Button>
             </Card.Body>
           </Card>
         ))}
       </Container>
+      <div className="w-100 services-btn">
+        <Button
+          variant="outline-dark"
+          className="mt-auto register services-register"
+          onClick={handleWidgetShow}
+        >
+          {t('services.chooseService')}
+        </Button>
+      </div>
     </section>
   );
 };
