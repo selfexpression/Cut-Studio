@@ -36,7 +36,7 @@ const Header = () => {
   const isTablet = useMediaQuery('(max-width: 859px)');
   const isWide = useMediaQuery('(min-width: 860px)');
   const contentPosition = isWide
-    ? 'align-items-center justify-content-start'
+    ? 'align-items-center justify-content-end'
     : 'align-items-end justify-content-center';
   const sizes = [isMobile, isTablet, isWide];
   const images = {
@@ -56,7 +56,7 @@ const Header = () => {
         layers={[
           {
             image: backgroundImage,
-            speed: -40,
+            speed: -30,
             expanded: false,
           },
         ]}
