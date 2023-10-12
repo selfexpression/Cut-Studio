@@ -7,7 +7,8 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import '../styles.css';
-import image from '../assets/back-i.webp';
+import imageWide from '../assets/descripPage-back.webp';
+import imageMobile from '../assets/descripPage-back-m.jpg';
 
 const Description = () => {
   const { t } = useTranslation();
@@ -17,7 +18,9 @@ const Description = () => {
     'w-100': !isWide,
   });
 
-  const speed = isWide ? -15 : -10;
+  const image = isWide ? imageWide : imageMobile;
+  const speed = isWide ? -30 : 0;
+  const scale = !isWide ? [1, 1.2] : null;
 
   return (
     <section className="bg-light">
@@ -33,6 +36,7 @@ const Description = () => {
             {
               image,
               speed,
+              scale,
               expanded: false,
             },
           ]}

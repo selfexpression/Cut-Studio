@@ -24,6 +24,42 @@ const runApp = async () => {
       },
     });
 
+  // const runMap = () => {
+  //   const scriptAPI = document.createElement('script');
+  //   scriptAPI.src = 'https://api-maps.yandex.ru/v3/?apikey=e7996c41-fbf6-430d-a78d-4f21af4455ca&lang=ru_RU';
+  //   document.head.appendChild(scriptAPI);
+
+  //   const scriptInit = document.createElement('script');
+  //   scriptInit.type = 'text/javascript';
+  //   scriptInit.innerHTML = `
+  //       async function initMap() {
+  //           await ymaps3.ready;
+
+  //           const {YMap, YMapDefaultSchemeLayer} = ymaps3;
+
+  //           const map = new YMap(
+  //               document.getElementById('map'),
+  //               {
+  //                   location: {
+  //                     center: [55.025854, 82.931218],
+  //                     zoom: 14
+  //                   }
+  //               }
+  //           );
+
+  //           map.addChild(new YMapDefaultSchemeLayer());
+  //       }
+
+  //       initMap();
+  //   `;
+
+  //   if (document.contains(scriptAPI)) {
+  //     document.head.appendChild(scriptInit);
+  //   }
+  // };
+
+  // runMap();
+
   const mountNode = document.getElementById('root');
   const root = ReactDOM.createRoot(mountNode);
 

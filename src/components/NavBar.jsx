@@ -34,10 +34,6 @@ const OffcanvasBody = () => {
             <Nav.Link as={ScrollLink} to="/contacts" className="m-1">{t('navbar.contacts')}</Nav.Link>
             <div className="mt-auto">
               <div className="m-1">
-                <Telegram className="m-2" />
-                <Whatsapp className="m-2" />
-              </div>
-              <div className="m-1">
                 <div className="m-1">
                   <GeoAltFill />
                   {' '}
@@ -49,6 +45,12 @@ const OffcanvasBody = () => {
                   {' '}
                   <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
                 </div>
+              </div>
+              <div className="m-1">
+                <Telegram className="m-2" />
+                {t('navbar.telegram')}
+                <Whatsapp className="m-2" />
+                {t('navbar.whatsapp')}
               </div>
             </div>
           </>

@@ -23,10 +23,12 @@ export default {
       services: 'Services',
       team: 'Team',
       contacts: 'Contact Us',
-      location: 'Novosibirsk, Oktyabrskaya Street 81',
+      location: 'Oktyabrskaya Street 81',
       city: 'Novosibirsk',
       phoneNumber: '+7-(969)-228-1139',
       onlineBooking: 'Book',
+      telegram: 'Telegram',
+      whatsapp: 'Whatsapp',
     },
     services: {
       heading: 'Our Services',

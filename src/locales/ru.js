@@ -27,9 +27,11 @@ export default {
       team: 'Команда',
       contacts: 'Свяжитесь с нами',
       city: 'Новосибирск',
-      location: 'Новосибирск, ул. Октябрьская 81',
+      location: 'ул. Октябрьская 81',
       phoneNumber: '+7-(969)-228-1139',
       onlineBooking: 'Записаться',
+      telegram: 'Telegram',
+      whatsapp: 'Whatsapp',
     },
     services: {
       heading: 'Наши услуги',
