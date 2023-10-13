@@ -42,7 +42,7 @@
 }
 
 .parallax-mirror {
-  height: 60vh;
+  min-height: 50vh;
   width: 100%;
 }
 
