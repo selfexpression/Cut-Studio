@@ -19,7 +19,8 @@ export default {
       onlineBooking: 'Book',
     },
     navbar: {
-      gallery: 'gallery',
+      main: 'Main page',
+      gallery: 'Gallery',
       services: 'Services',
       team: 'Team',
       contacts: 'Contact Us',

@@ -34,32 +34,27 @@
 
 .parallax-header {
   height: 100vh;
+  background-size: contain;
+
   will-change: scroll-position;
 }
 
-.text-header {
+.absolute {
   position: absolute;
-}
-
-.parallax-mirror {
-  min-height: 50vh;
-  width: 100%;
 }
 
 .logo {
   max-width: 100%;
-  height: auto;
   filter: invert();
 }
 
 .nav-logo {
   max-height: 30px;
-  width: auto;
 }
 
 .description {
   font-size: 1.4em;
-  font-family: TenorSans, serif;
+  font-family: TenorSans, "Times New Roman", serif;
   font-weight: normal;
   color: rgb(233, 229, 229);
 }
@@ -70,7 +65,6 @@
 
 .btn-online-booking {
   width: 8rem;
-  height: auto;
 }
 
 .custom-offcanvas-body {
@@ -93,36 +87,38 @@
 
 .register {
   font-size: 1.2em;
-  font-family: TenorSans, serif;
+  font-family: TenorSans, "Times New Roman", serif;
 }
 
-.about-paragraph {
+.text-content {
   font-size: 1.2em;
-  font-family: Comfortaa, serif;
+  font-family: Comfortaa, "Times New Roman", serif;
 }
 
-.about-h {
-  font-family: PTSerif-Bold, serif;
+.text-header {
+  font-family: PTSerif-Bold, "Times New Roman", serif;
 }
 
 .team-description {
-  font-family: PTSerif-regular serif;
+  font-family: PTSerif-regular "Times New Roman", serif;
 }
 
 .contacts {
   font-size: 1.4em;
-  font-family: DidactGothic, Comfortaa, serif;
+  font-family: DidactGothic, Comfortaa, "Times New Roman", serif;
+
   color: white;
 }
 
 .contacts-h {
-  font-family: PTSerif-Bold, serif;
+  font-family: PTSerif-Bold, "Times New Roman", serif;
   color: white;
 }
 
 .nav-contacts {
   font-size: 1.4em;
-  font-family: DidactGothic, Comfortaa, serif;
+  font-family: DidactGothic, Comfortaa, "Times New Roman", serif;
+
   color: black;
 }
 
@@ -139,7 +135,6 @@
 
 .services-flow {
   overflow-x: auto;
-  display: flex;
 }
 
 .services-card {
@@ -150,8 +145,51 @@
 .services-btn {
   height: 100%;
   width: 100%;
+
   margin-top: 2.5rem;
 }
+
 .services-register {
   width: 18rem;
+}
+
+.offcanvas-widget {
+  width: 100%;
+}
+
+#video > div {
+  height: 100vh;
+
+  flex-wrap: wrap;
+}
+
+.video-container {
+  height: 100vh;
+}
+
+.videoframe {
+  height: 100%;
+}
+
+section > div > img {
+  height: 50%;
+
+  object-fit: contain;
+}
+
+.f-1 {
+  flex: 1;
+}
+
+.f-2 {
+  flex: 2;
+}
+
+@media (min-width: 861px) {
+  .videoframe {
+    height: 70%;
+  }
+  section > div > img {
+    height: 70%;
+  }
 }

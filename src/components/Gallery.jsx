@@ -17,11 +17,11 @@ const Gallery = () => {
   });
 
   return (
-    <section id="/gallery" className="bg-light">
+    <section id="gallery" className="bg-light">
       <Container fluid>
         <Row className={classes}>
           <Col className="d-flex flex-column m-5">
-            <p className="about-paragraph p-0 m-0">{t('gallery.description')}</p>
+            <p className="text-content p-0 m-0">{t('gallery.description')}</p>
           </Col>
         </Row>
         <Row>

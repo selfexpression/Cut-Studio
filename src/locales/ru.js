@@ -22,6 +22,7 @@ export default {
       onlineBooking: 'Записаться',
     },
     navbar: {
+      main: 'Главная страница',
       gallery: 'Галерея',
       services: 'Услуги',
       team: 'Команда',

@@ -23,14 +23,14 @@ const Services = () => {
   };
 
   return (
-    <section id="/services" className="bg-light text-center py-5">
+    <section id="services" className="bg-light text-center py-5">
       <Row className={classes}>
         <Col xs={12} className="d-flex flex-column">
-          <h2 className="mb-4 about-h">{t('services.heading')}</h2>
-          <p className="mb-5 about-paragraph">{t('services.description')}</p>
+          <h2 className="mb-4 text-header">{t('services.heading')}</h2>
+          <p className="mb-5 text-content">{t('services.description')}</p>
         </Col>
       </Row>
-      <Container fluid className="services-flow">
+      <Container fluid className="d-flex services-flow">
         {cutImages.map(({ image, id }) => (
           <Card key={id} className="mx-2 services-card">
             <Card.Img variant="top" src={image} className="h-75" />

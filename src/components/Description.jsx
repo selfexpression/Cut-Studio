@@ -26,8 +26,8 @@ const Description = () => {
       <Container fluid className="p-0 m-0">
         <Row className={classes}>
           <Col className="d-flex flex-column m-5">
-            <p className="about-paragraph p-0 m-0">{t('description.paragraph1')}</p>
-            <p className="about-paragraph p-0 m-0">{t('description.paragraph2')}</p>
+            <p className="text-content p-0 m-0">{t('description.paragraph1')}</p>
+            <p className="text-content p-0 m-0">{t('description.paragraph2')}</p>
           </Col>
         </Row>
         <ParallaxBanner

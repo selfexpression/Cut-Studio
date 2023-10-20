@@ -3,13 +3,57 @@ import {
   Navbar, Container, Nav, Image, Offcanvas,
 } from 'react-bootstrap';
 import { useMediaQuery } from '@reactuses/core';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { useLocation, Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
+import { actions } from '../slices/index.js';
 import logo from '../assets/sticker.webp';
+
+const NavLink = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const isWide = useMediaQuery('(min-width: 860px)');
+  const isMainPage = location.pathname === '/';
+
+  const handleClose = () => {
+    dispatch(actions.navbarClose());
+  };
+
+  const pagesMap = {
+    gallery: ScrollLink,
+    services: ScrollLink,
+    team: RouterLink,
+    contacts: ScrollLink,
+  };
+
+  return (
+    isMainPage
+      ? (
+        <div className={isWide ? 'd-flex p-2' : ''}>
+          {Object.entries(pagesMap).map(([pageName, route]) => (
+            <Nav.Link
+              key={pageName}
+              as={route}
+              to={pageName}
+              duration={500}
+              className="p-0"
+              onClick={handleClose}
+            >
+              {t(`navbar.${pageName}`)}
+            </Nav.Link>
+          ))}
+        </div>
+      )
+      : (
+        <Nav.Link as={RouterLink} to="/" onClick={handleClose}>{t('navbar.main')}</Nav.Link>
+      )
+  );
+};
 
 const OffcanvasBody = () => {
   const { t } = useTranslation();
@@ -19,20 +63,14 @@ const OffcanvasBody = () => {
     <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
       {isWide
         ? (
-          <Nav className="m-0 p-0 d-flex justify-content-center">
-            <Nav.Link as={ScrollLink} to="/gallery" duration={500}>{t('navbar.gallery')}</Nav.Link>
-            <Nav.Link as={ScrollLink} to="/services" duration={500}>{t('navbar.services')}</Nav.Link>
-            <Nav.Link as={RouterLink} to="/team">{t('navbar.team')}</Nav.Link>
-            <Nav.Link as={ScrollLink} to="/contacts" duration={500}>{t('navbar.contacts')}</Nav.Link>
+          <Nav className="d-flex justify-content-end">
+            <NavLink />
           </Nav>
         )
         : (
-          <>
-            <Nav.Link as={ScrollLink} to="/gallery" duration={500} className="m-1">{t('navbar.gallery')}</Nav.Link>
-            <Nav.Link as={ScrollLink} to="/services" duration={500} className="m-1">{t('navbar.services')}</Nav.Link>
-            <Nav.Link as={RouterLink} to="/team" className="m-1">{t('navbar.team')}</Nav.Link>
-            <Nav.Link as={ScrollLink} to="/contacts" className="m-1">{t('navbar.contacts')}</Nav.Link>
-            <div className="mt-auto">
+          <Nav className="d-flex h-100 justify-content-between">
+            <NavLink />
+            <div>
               <div className="m-1">
                 <div className="m-1">
                   <GeoAltFill />
@@ -53,7 +91,7 @@ const OffcanvasBody = () => {
                 {t('navbar.whatsapp')}
               </div>
             </div>
-          </>
+          </Nav>
         )}
     </Offcanvas.Body>
   );
@@ -62,11 +100,21 @@ const OffcanvasBody = () => {
 const NavBar = () => {
   const isWide = useMediaQuery('(min-width: 840px)');
   const location = useLocation();
+  const dispatch = useDispatch();
   const isMainPage = location.pathname === '/';
+  const { isShow } = useSelector((state) => state.navbar);
   const navigate = useNavigate();
 
   const scrollToTop = () => {
     scroll.scrollToTop();
+  };
+
+  const handleOpen = () => {
+    dispatch(actions.navbarShow());
+  };
+
+  const handleClose = () => {
+    dispatch(actions.navbarClose());
   };
 
   return (
@@ -75,27 +123,27 @@ const NavBar = () => {
         <Navbar.Brand onClick={isMainPage ? scrollToTop : () => navigate('/')}>
           <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
         </Navbar.Brand>
-        {isMainPage
-          ? (
-            <>
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${isWide}`} />
-              <Navbar.Offcanvas
-                aria-labelledby={`offcanvasNavbarLabel-expand-${isWide}`}
-                placement="top"
-                className="w-100 h-75"
-              >
-                <Offcanvas.Header closeButton className="custom-offcanvas-header">
-                  <Offcanvas.Title onClick={scrollToTop}>
-                    <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
-                  </Offcanvas.Title>
-                </Offcanvas.Header>
-                <OffcanvasBody />
-              </Navbar.Offcanvas>
-            </>
-          )
-          : (
-            null
-          )}
+        <Navbar.Toggle
+          aria-controls="offcanvasNavbar"
+          onClick={handleOpen}
+        />
+        <Navbar.Offcanvas
+          show={isShow}
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="top"
+          className="w-100 h-75"
+        >
+          <Offcanvas.Header
+            closeButton
+            className="custom-offcanvas-header"
+            onClick={handleClose}
+          >
+            <Offcanvas.Title onClick={scrollToTop}>
+              <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <OffcanvasBody />
+        </Navbar.Offcanvas>
       </Container>
     </Navbar>
   );

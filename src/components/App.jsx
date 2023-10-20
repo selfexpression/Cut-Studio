@@ -6,18 +6,20 @@ import Header from './Header.jsx';
 import NavBar from './NavBar.jsx';
 import Gallery from './Gallery.jsx';
 import Services from './Services.jsx';
+import Video from './Video.jsx';
 import Team from './Team.jsx';
-import Contacts from './Contacts.jsx';
-import Description from './Description.jsx';
+import Info from './Info.jsx';
+// import Description from './Description.jsx';
 import BookingWidget from './BookingWidget.jsx';
 
 const Main = () => (
   <>
     <Header />
-    <Description />
+    <Video />
+    {/* <Description /> */}
     <Services />
     <Gallery />
-    <Contacts />
+    <Info />
     <BookingWidget />
   </>
 );

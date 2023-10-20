@@ -62,7 +62,7 @@ const Header = () => {
         ]}
         className={`parallax-header p-0 d-flex ${contentPosition}`}
       >
-        <Row className="text-center m-5 text-header">
+        <Row className="text-center m-5 absolute">
           <Col className="m-0 text-center">
             <p className="description m-0 p-0">{t('header.description1')}</p>
             <p className="description">{t('header.description2')}</p>
