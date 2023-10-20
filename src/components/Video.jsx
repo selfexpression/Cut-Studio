@@ -31,7 +31,7 @@ const Video = () => {
         )
         : (
           <Container fluid className="w-100 d-flex flex-column justify-content-center">
-            <div className="text-center m-0 p-3 f-1 d-flex align-items-center">
+            <div className="text-center m-0 p-4 f-1 d-flex align-items-center">
               <p className="text-content">{t('description.paragraph1')}</p>
             </div>
             <div className="video-container m-0 f-2">
