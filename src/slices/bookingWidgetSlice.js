@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const slice = createSlice({
-  name: 'widget',
+  name: 'booking',
   initialState,
   reducers: {
     widgetShow: (state) => {

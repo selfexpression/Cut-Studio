@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import widgetSlice, { actions as widgetActions } from './widgetSlice.js';
-import navbarSlice, { actions as navbarActions } from './navbarSlice.js';
+import bookingWidgetSlice, { actions as bookingWidgetActions } from './bookingWidgetSlice.js';
+import navbarWidgetSlice, { actions as navbarWidgetActions } from './navbarWidgetSlice.js';
 
 export const actions = {
-  ...widgetActions,
-  ...navbarActions,
+  ...bookingWidgetActions,
+  ...navbarWidgetActions,
 };
 
 export default configureStore({
   reducer: {
-    widget: widgetSlice,
-    navbar: navbarSlice,
+    booking: bookingWidgetSlice,
+    navbar: navbarWidgetSlice,
   },
 });
