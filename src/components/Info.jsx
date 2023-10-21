@@ -14,7 +14,7 @@ const InfoSection = () => {
   const dispatch = useDispatch();
 
   const handleWidgetShow = () => {
-    dispatch(actions.widgetShow());
+    dispatch(actions.bookingShow());
   };
 
   return (

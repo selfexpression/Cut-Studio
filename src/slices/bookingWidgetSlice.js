@@ -8,10 +8,10 @@ const slice = createSlice({
   name: 'booking',
   initialState,
   reducers: {
-    widgetShow: (state) => {
+    bookingShow: (state) => {
       state.isShow = true;
     },
-    widgetClose: (state) => {
+    bookingClose: (state) => {
       state.isShow = false;
     },
   },

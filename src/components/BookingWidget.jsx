@@ -5,9 +5,10 @@ import { actions } from '../slices/index.js';
 
 const CustomYclientsWidget = () => {
   const dispatch = useDispatch();
-  const { isShow } = useSelector((state) => state.widget);
+  const { isShow } = useSelector((state) => state.booking);
+
   const handleWidgetClose = () => {
-    dispatch(actions.widgetClose());
+    dispatch(actions.bookingClose());
   };
 
   return (

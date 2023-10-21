@@ -19,7 +19,7 @@ const Services = () => {
   });
 
   const handleWidgetShow = () => {
-    dispatch(actions.widgetShow());
+    dispatch(actions.bookingShow());
   };
 
   return (

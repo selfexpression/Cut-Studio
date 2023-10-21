@@ -29,6 +29,12 @@ const getBackgroundImage = (sizes, images) => {
   return mappingSize[size];
 };
 
+const images = {
+  backgroundMobile,
+  backgroundTablet,
+  backgroundWide,
+};
+
 const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -39,15 +45,10 @@ const Header = () => {
     ? 'align-items-center justify-content-end'
     : 'align-items-end justify-content-center';
   const sizes = [isMobile, isTablet, isWide];
-  const images = {
-    backgroundMobile,
-    backgroundTablet,
-    backgroundWide,
-  };
   const backgroundImage = getBackgroundImage(sizes, images);
 
   const handleWidgetShow = () => {
-    dispatch(actions.widgetShow());
+    dispatch(actions.bookingShow());
   };
 
   return (

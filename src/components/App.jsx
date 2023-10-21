@@ -9,14 +9,12 @@ import Services from './Services.jsx';
 import Video from './Video.jsx';
 import Team from './Team.jsx';
 import Info from './Info.jsx';
-// import Description from './Description.jsx';
 import BookingWidget from './BookingWidget.jsx';
 
 const Main = () => (
   <>
     <Header />
     <Video />
-    {/* <Description /> */}
     <Services />
     <Gallery />
     <Info />
