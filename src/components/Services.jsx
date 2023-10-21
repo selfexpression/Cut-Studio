@@ -25,9 +25,9 @@ const Services = () => {
   return (
     <section id="services" className="bg-light text-center py-5">
       <Row className={classes}>
-        <Col xs={12} className="d-flex flex-column">
+        <Col xs={12}>
           <h2 className="mb-4 text-header">{t('services.heading')}</h2>
-          <p className="mb-5 text-content">{t('services.description')}</p>
+          <p className="p-3 text-content">{t('services.description')}</p>
         </Col>
       </Row>
       <Container fluid className="d-flex services-flow">

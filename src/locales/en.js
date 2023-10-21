@@ -33,7 +33,7 @@ export default {
     },
     services: {
       heading: 'Our Services',
-      description: 'Our chairs are the throne of style, and the atmosphere is the whirlwind of creativity. At «MOB Cut Studio» we not only follow trends but set them. Our professional stylists possess not only mastery but also creative vision, crafting images that go beyond the boundaries of the ordinary.',
+      description: 'Our chairs are the throne of style, and the atmosphere is the whirlwind of creativity. We not only follow trends but set them.',
       chooseService: 'Choose Service',
       names: {
         1: 'Men\'s Haircut',

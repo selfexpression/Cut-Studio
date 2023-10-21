@@ -11,10 +11,10 @@ const Video = () => {
   const isWide = useMediaQuery('(min-width: 860px)');
 
   return (
-    <section id="video" className="bg-light p-0">
+    <section id="video" className="bg-light p-5">
       {isWide
         ? (
-          <Container fluid className="d-flex justify-content-around w-100 p-5">
+          <Container fluid className="d-flex justify-content-around w-100 p-0">
             <div className="video-container f-1">
               <iframe
                 title="mobcutstudio"
@@ -25,12 +25,12 @@ const Video = () => {
             </div>
             <img src={girlImage} alt="girl-model" className="align-self-center f-1" />
             <div className="w-50 align-self-center text-center f-1">
-              <p className="text-content p-0 m-0">{t('description.paragraph1')}</p>
+              <p className="text-content">{t('description.paragraph1')}</p>
             </div>
           </Container>
         )
         : (
-          <Container fluid className="w-100 d-flex flex-column justify-content-center">
+          <Container fluid className="w-100 d-flex flex-column justify-content-center p-0">
             <div className="text-center m-0 p-4 f-1 d-flex align-items-center">
               <p className="text-content">{t('description.paragraph1')}</p>
             </div>

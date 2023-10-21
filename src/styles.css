@@ -159,8 +159,6 @@
 
 #video > div {
   height: 100vh;
-
-  flex-wrap: wrap;
 }
 
 .video-container {
