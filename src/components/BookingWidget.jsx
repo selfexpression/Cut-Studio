@@ -1,9 +1,11 @@
 import React from 'react';
-import { Offcanvas } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { X as CloseButtonIcon } from 'react-bootstrap-icons';
 import { actions } from '../slices/index.js';
 
-const CustomYclientsWidget = () => {
+const yclientsFormLink = 'https://n984073.yclients.com/';
+
+const BookingWidget = () => {
   const dispatch = useDispatch();
   const { isShow } = useSelector((state) => state.booking);
 
@@ -12,26 +14,24 @@ const CustomYclientsWidget = () => {
   };
 
   return (
-    <div>
-      <Offcanvas
-        show={isShow}
-        onHide={handleWidgetClose}
-        placement="end"
-        className="offcanvas-widget"
-      >
-        <Offcanvas.Header closeButton className="ms-auto" />
-        <Offcanvas.Body className="p-0 m-0">
-          <iframe
-            title="Yclients Form"
-            src="https://n984073.yclients.com/"
-            width="100%"
-            height="100%"
-            className="p-0 m-0"
-          />
-        </Offcanvas.Body>
-      </Offcanvas>
+    <div className={`booking-widget ${isShow ? 'show-booking' : 'hide-booking'}`}>
+      <div className="booking-header d-flex justify-content-end align-items-end">
+        <CloseButtonIcon
+          type="button"
+          aria-label="close-button"
+          onClick={handleWidgetClose}
+          className="close-button"
+        />
+      </div>
+      <div className="p-0 m-0">
+        <iframe
+          title="Yclients Form"
+          src={yclientsFormLink}
+          className="p-0 m-0 w-100 vh-100"
+        />
+      </div>
     </div>
   );
 };
 
-export default CustomYclientsWidget;
+export default BookingWidget;

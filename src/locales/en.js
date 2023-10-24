@@ -10,17 +10,17 @@ export default {
       ourContacts: 'Our Contacts',
       findUsOnMap: 'Find us on the map',
     },
-    gallery: {
+    carousel: {
       description: 'Explore the world of MOB Cut Studio: our works, our space, our atmosphere — all in one vibrant gallery.',
     },
     header: {
-      description1: 'A place where style meets convenience.',
-      description2: 'Get inspired by the atmosphere of style and self-care.',
+      text1: 'A place where style meets convenience.',
+      text2: 'Get inspired by the atmosphere of style and self-care.',
       onlineBooking: 'Book',
     },
     navbar: {
       main: 'Main page',
-      gallery: 'Gallery',
+      carousel: 'Gallery',
       services: 'Services',
       team: 'Team',
       contacts: 'Contact Us',

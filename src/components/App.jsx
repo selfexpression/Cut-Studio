@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import Header from './Header.jsx';
 import NavBar from './NavBar.jsx';
-import Gallery from './Gallery.jsx';
+import Carousel from './Carousel.jsx';
 import Services from './Services.jsx';
 import Video from './Video.jsx';
 import Team from './Team.jsx';
@@ -16,7 +16,7 @@ const Main = () => (
     <Header />
     <Video />
     <Services />
-    <Gallery />
+    <Carousel />
     <Info />
     <BookingWidget />
   </>

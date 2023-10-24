@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  Row, Col, Button,
-} from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import { ParallaxBanner } from 'react-scroll-parallax';
@@ -10,7 +7,6 @@ import { actions } from '../slices/index.js';
 import backgroundWide from '../assets/backgrounds/back-i.avif';
 import backgroundMobile from '../assets/backgrounds/back-i-m.webp';
 import backgroundTablet from '../assets/backgrounds/back-i.jpg';
-import '../styles.css';
 
 const getBackgroundImage = (sizes, images) => {
   const isTrueSize = sizes.indexOf(true);
@@ -61,22 +57,22 @@ const Header = () => {
             expanded: false,
           },
         ]}
-        className={`parallax-header p-0 d-flex ${contentPosition}`}
+        className={`parallax-banner d-flex ${contentPosition}`}
       >
-        <Row className="text-center m-5 absolute">
-          <Col className="m-0 text-center">
-            <p className="description m-0 p-0">{t('header.description1')}</p>
-            <p className="description">{t('header.description2')}</p>
-            <Button
-              variant="outline-light"
-              size="sm"
-              className="btn-online-booking mb-5 rounded-0"
+        <div className="text-center m-5 absolute">
+          <div className="m-0 text-center">
+            <p className="text m-0 p-0">{t('header.text1')}</p>
+            <p className="text">{t('header.text2')}</p>
+            <button
+              type="button"
+              aria-label="booking-button"
+              className="btn-online-booking head-booking-btn mb-5 rounded-0"
               onClick={handleWidgetShow}
             >
-              <span className="register">{t('header.onlineBooking')}</span>
-            </Button>
-          </Col>
-        </Row>
+              <span>{t('header.onlineBooking')}</span>
+            </button>
+          </div>
+        </div>
       </ParallaxBanner>
     </section>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Navbar, Container, Nav, Image, Offcanvas,
+  Navbar, Container, Image, Offcanvas,
 } from 'react-bootstrap';
 import { useMediaQuery } from '@reactuses/core';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,32 +25,36 @@ const NavLink = () => {
   };
 
   const pagesMap = {
-    gallery: ScrollLink,
+    carousel: ScrollLink,
     services: ScrollLink,
     team: RouterLink,
-    contacts: ScrollLink,
+    info: ScrollLink,
   };
 
   return (
     isMainPage
       ? (
         <div className={isWide ? 'd-flex p-2' : ''}>
-          {Object.entries(pagesMap).map(([pageName, route]) => (
-            <Nav.Link
+          {Object.entries(pagesMap).map(([pageName, Link]) => (
+            <Link
               key={pageName}
-              as={route}
               to={pageName}
-              duration={500}
-              className="p-0"
+              className="nav-link"
               onClick={handleClose}
             >
               {t(`navbar.${pageName}`)}
-            </Nav.Link>
+            </Link>
           ))}
         </div>
       )
       : (
-        <Nav.Link as={RouterLink} to="/" onClick={handleClose}>{t('navbar.main')}</Nav.Link>
+        <RouterLink
+          to="/"
+          onClick={handleClose}
+          className="nav-link"
+        >
+          {t('navbar.main')}
+        </RouterLink>
       )
   );
 };
@@ -60,40 +64,38 @@ const OffcanvasBody = () => {
   const isWide = useMediaQuery('(min-width: 860px)');
 
   return (
-    <Offcanvas.Body className={`d-flex flex-column ${!isWide ? 'custom-offcanvas-body' : ''}`}>
-      {isWide
-        ? (
-          <Nav className="d-flex justify-content-end">
-            <NavLink />
-          </Nav>
-        )
-        : (
-          <Nav className="d-flex h-100 justify-content-between">
-            <NavLink />
-            <div>
-              <div className="m-1">
-                <div className="m-1">
-                  <GeoAltFill />
-                  {' '}
-                  {t('navbar.city')}
-                </div>
-                <div className="m-1">{t('navbar.location')}</div>
-                <div className="m-1">
-                  <Telephone />
-                  {' '}
-                  <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
-                </div>
-              </div>
-              <div className="m-1">
-                <Telegram className="m-2" />
-                {t('navbar.telegram')}
-                <Whatsapp className="m-2" />
-                {t('navbar.whatsapp')}
-              </div>
+    isWide
+      ? (
+        <div className="d-flex justify-content-end">
+          <NavLink />
+        </div>
+      )
+      : (
+        <div className="d-flex flex-column p-3 custom-offcanvas-body h-100">
+          <NavLink />
+          <div className="d-flex flex-column mt-auto">
+            <div className="m-1">
+              <GeoAltFill />
+              {' '}
+              {t('navbar.city')}
             </div>
-          </Nav>
-        )}
-    </Offcanvas.Body>
+            <div className="m-1">{t('navbar.location')}</div>
+            <div className="m-1">
+              <Telephone />
+              {' '}
+              <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
+            </div>
+            <div className="m-1">
+              <Telegram />
+              {t('navbar.telegram')}
+            </div>
+            <div className="m-1">
+              <Whatsapp />
+              {t('navbar.whatsapp')}
+            </div>
+          </div>
+        </div>
+      )
   );
 };
 

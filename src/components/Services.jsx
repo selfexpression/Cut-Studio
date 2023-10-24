@@ -40,10 +40,10 @@ const Services = () => {
           </Card>
         ))}
       </Container>
-      <div className="w-100 services-btn">
+      <div className="w-100 h-100 mt-5">
         <Button
           variant="outline-dark"
-          className="mt-auto register services-register"
+          className="mt-auto register services-btn"
           onClick={handleWidgetShow}
         >
           {t('services.chooseService')}

@@ -1,0 +1,9 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #141111;
+  --grey: rgb(155, 155, 155);
+  --light: rgb(248, 248, 248);
+  --font-size: 1.5em;
+  --head-font-size: 2em;
+}
