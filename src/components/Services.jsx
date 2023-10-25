@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-  Container, Card, Button, Row, Col,
-} from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import { useMediaQuery } from '@reactuses/core';
@@ -24,30 +21,27 @@ const Services = () => {
 
   return (
     <section id="services" className="bg-light text-center py-5">
-      <Row className={classes}>
-        <Col xs={12}>
-          <h2 className="mb-4 text-header">{t('services.heading')}</h2>
-          <p className="p-3 text-content">{t('services.description')}</p>
-        </Col>
-      </Row>
-      <Container fluid className="d-flex services-flow">
+      <div className={classes}>
+        <h2 className="mb-4 text-header">{t('services.heading')}</h2>
+        <p className="p-3 text-content">{t('services.description')}</p>
+      </div>
+      <div className="d-flex services-flow">
         {cutImages.map(({ image, id }) => (
-          <Card key={id} className="mx-2 services-card">
-            <Card.Img variant="top" src={image} className="h-75" />
-            <Card.Body className="d-flex flex-column">
-              <Card.Title className="text-start">{t(`services.names.${id}`)}</Card.Title>
-            </Card.Body>
-          </Card>
+          <div key={id} className="d-flex flex-column justify-content-between m-2 services-card rounded-2">
+            <img src={image} alt="card" className="h-70" />
+            <div className="text-start p-3">{t(`services.names.${id}`)}</div>
+          </div>
         ))}
-      </Container>
+      </div>
       <div className="w-100 h-100 mt-5">
-        <Button
-          variant="outline-dark"
-          className="mt-auto register services-btn"
+        <button
+          type="button"
+          aria-label="booking-btn"
+          className="mt-auto services-btn rounded-2"
           onClick={handleWidgetShow}
         >
           {t('services.chooseService')}
-        </Button>
+        </button>
       </div>
     </section>
   );

@@ -1,15 +1,14 @@
 import React from 'react';
-import {
-  Navbar, Container, Image, Offcanvas,
-} from 'react-bootstrap';
 import { useMediaQuery } from '@reactuses/core';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  List as ListButton, X as CloseButton,
+  Telegram, Whatsapp, Telephone, GeoAltFill,
+} from 'react-bootstrap-icons';
+import cn from 'classnames';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { useLocation, Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import {
-  Telegram, Whatsapp, Telephone, GeoAltFill,
-} from 'react-bootstrap-icons';
 import { actions } from '../slices/index.js';
 import logo from '../assets/sticker.webp';
 
@@ -17,7 +16,6 @@ const NavLink = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const location = useLocation();
-  const isWide = useMediaQuery('(min-width: 860px)');
   const isMainPage = location.pathname === '/';
 
   const handleClose = () => {
@@ -34,18 +32,16 @@ const NavLink = () => {
   return (
     isMainPage
       ? (
-        <div className={isWide ? 'd-flex p-2' : ''}>
-          {Object.entries(pagesMap).map(([pageName, Link]) => (
-            <Link
-              key={pageName}
-              to={pageName}
-              className="nav-link"
-              onClick={handleClose}
-            >
-              {t(`navbar.${pageName}`)}
-            </Link>
-          ))}
-        </div>
+        Object.entries(pagesMap).map(([pageName, Link]) => (
+          <Link
+            key={pageName}
+            to={pageName}
+            className="nav-link"
+            onClick={handleClose}
+          >
+            {t(`navbar.${pageName}`)}
+          </Link>
+        ))
       )
       : (
         <RouterLink
@@ -62,18 +58,23 @@ const NavLink = () => {
 const OffcanvasBody = () => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
+  const { isShow } = useSelector((state) => state.navbar);
+  const classes = cn('p-3 navbar-body h-100 d-flex flex-column', {
+    'navbar-body-show': isShow,
+    'navbar-body-hide': !isShow,
+  });
 
   return (
     isWide
       ? (
-        <div className="d-flex justify-content-end">
+        <div className="d-flex">
           <NavLink />
         </div>
       )
       : (
-        <div className="d-flex flex-column p-3 custom-offcanvas-body h-100">
+        <div className={classes}>
           <NavLink />
-          <div className="d-flex flex-column mt-auto">
+          <div className="mt-auto">
             <div className="m-1">
               <GeoAltFill />
               {' '}
@@ -99,17 +100,9 @@ const OffcanvasBody = () => {
   );
 };
 
-const NavBar = () => {
-  const isWide = useMediaQuery('(min-width: 840px)');
-  const location = useLocation();
+const ToggleButton = () => {
   const dispatch = useDispatch();
-  const isMainPage = location.pathname === '/';
   const { isShow } = useSelector((state) => state.navbar);
-  const navigate = useNavigate();
-
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
 
   const handleOpen = () => {
     dispatch(actions.navbarShow());
@@ -120,34 +113,52 @@ const NavBar = () => {
   };
 
   return (
-    <Navbar expand={isWide} bg="light" sticky="top">
-      <Container fluid>
-        <Navbar.Brand onClick={isMainPage ? scrollToTop : () => navigate('/')}>
-          <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="offcanvasNavbar"
+    !isShow
+      ? (
+        <ListButton
+          type="button"
+          aria-label="open-button"
           onClick={handleOpen}
+          className="interactive-button"
         />
-        <Navbar.Offcanvas
-          show={isShow}
-          aria-labelledby="offcanvasNavbarLabel"
-          placement="top"
-          className="w-100 h-75"
-        >
-          <Offcanvas.Header
-            closeButton
-            className="custom-offcanvas-header"
-            onClick={handleClose}
-          >
-            <Offcanvas.Title onClick={scrollToTop}>
-              <Image src={logo} alt="Barbershop Logo" className="nav-logo" />
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <OffcanvasBody />
-        </Navbar.Offcanvas>
-      </Container>
-    </Navbar>
+      )
+      : (
+        <CloseButton
+          type="button"
+          aria-label="close-button"
+          className="interactive-button"
+          onClick={handleClose}
+        />
+      )
+  );
+};
+
+const NavBar = () => {
+  const location = useLocation();
+  const isMainPage = location.pathname === '/';
+  const isWide = useMediaQuery('(min-width: 860px)');
+  const navigate = useNavigate();
+  const { isShow } = useSelector((state) => state.navbar);
+  const rowsCount = isShow ? '40px 70vh' : '40px 0';
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
+  return (
+    <nav
+      className="navbar"
+      style={{ gridTemplateRows: rowsCount }}
+    >
+      <span
+        className="navbar-brand ms-3"
+        onClick={isMainPage ? scrollToTop : () => navigate('/')}
+      >
+        <img src={logo} alt="Barbershop Logo" className="nav-logo" />
+      </span>
+      {!isWide ? <ToggleButton /> : null}
+      <OffcanvasBody />
+    </nav>
   );
 };
 

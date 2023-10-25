@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ArrowLeft, ArrowRight } from 'react-bootstrap-icons';
+import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons';
 import { actions } from '../slices/index.js';
 
 const Gallery = () => {
@@ -41,13 +41,13 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-        <ArrowRight
+        <ChevronCompactRight
           className="next"
           type="button"
           aria-label="next"
           onClick={nextSlide}
         />
-        <ArrowLeft
+        <ChevronCompactLeft
           className="prev"
           type="button"
           aria-label="prev"

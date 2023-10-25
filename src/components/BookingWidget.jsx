@@ -20,7 +20,7 @@ const BookingWidget = () => {
           type="button"
           aria-label="close-button"
           onClick={handleWidgetClose}
-          className="close-button"
+          className="interactive-button"
         />
       </div>
       <div className="p-0 m-0">
