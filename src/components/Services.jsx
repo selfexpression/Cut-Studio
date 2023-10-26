@@ -15,14 +15,14 @@ const Services = () => {
   return (
     <section id="services" className="bg-light text-center p-4">
       <div className="text-center m-0">
-        <h2 className="mb-4 text-header">{t('services.heading')}</h2>
+        <h2 className="mb-4 text-header aqua-color">{t('services.heading')}</h2>
         <p className="p-3 text-content">{t('services.description')}</p>
       </div>
       <div className="d-flex services-flow">
         {cutImages.map(({ image, id }) => (
-          <div key={id} className="d-flex flex-column justify-content-between m-2 services-card rounded-2">
+          <div key={id} className="d-flex flex-column justify-content-around m-2 services-card rounded-2">
             <img src={image} alt="card" className="h-70" />
-            <div className="text-start p-3">{t(`services.names.${id}`)}</div>
+            <div className="text-start text-content p-3">{t(`services.names.${id}`)}</div>
           </div>
         ))}
       </div>

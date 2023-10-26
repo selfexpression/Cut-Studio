@@ -25,12 +25,10 @@ const Gallery = () => {
 
   return (
     <section id="carousel" className="bg-light">
-      <div className="text-center p-3">
-        <div className="m-5">
-          <p className="text-content">{t('carousel.description')}</p>
-        </div>
+      <div className="carousel-text p-5">
+        <p className="text-content text-center">{t('carousel.description')}</p>
       </div>
-      <div className="relative">
+      <div className="relative carousel-items">
         <div className="carousel">
           {images.map(({ image, id }) => (
             <div
