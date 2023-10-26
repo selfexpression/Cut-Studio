@@ -37,9 +37,6 @@ const Header = () => {
   const isMobile = useMediaQuery('(max-width: 420px)');
   const isTablet = useMediaQuery('(max-width: 859px)');
   const isWide = useMediaQuery('(min-width: 860px)');
-  const contentPosition = isWide
-    ? 'align-items-center justify-content-end'
-    : 'align-items-end justify-content-center';
   const sizes = [isMobile, isTablet, isWide];
   const backgroundImage = getBackgroundImage(sizes, images);
 
@@ -57,16 +54,16 @@ const Header = () => {
             expanded: false,
           },
         ]}
-        className={`parallax-banner d-flex ${contentPosition}`}
+        className="parallax-banner"
       >
-        <div className="text-center m-5 absolute">
-          <div className="m-0 text-center">
-            <p className="text m-0 p-0">{t('header.text1')}</p>
-            <p className="text">{t('header.text2')}</p>
+        <div className="text-center p-3 m-5 absolute">
+          <div className="text-center">
+            <p className="text-content m-0">{t('header.text1')}</p>
+            <p className="text-content m-0">{t('header.text2')}</p>
             <button
               type="button"
               aria-label="booking-button"
-              className="btn-online-booking head-booking-btn mb-5 rounded-0"
+              className="btn-online-booking booking-btn head-booking-btn mb-5 mt-4 rounded-0"
               onClick={handleWidgetShow}
             >
               <span>{t('header.onlineBooking')}</span>

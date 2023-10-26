@@ -1,7 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import cn from 'classnames';
-import { useMediaQuery } from '@reactuses/core';
 import { useDispatch } from 'react-redux';
 import { actions } from '../slices/index.js';
 import cutImages from '../assets/gallery/services/index.js';
@@ -9,19 +7,14 @@ import cutImages from '../assets/gallery/services/index.js';
 const Services = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const isWide = useMediaQuery('(min-width: 860px)');
-  const classes = cn('text-center', 'p-0 m-0', {
-    'w-50 mx-auto': isWide,
-    'w-100': !isWide,
-  });
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
 
   return (
-    <section id="services" className="bg-light text-center py-5">
-      <div className={classes}>
+    <section id="services" className="bg-light text-center p-4">
+      <div className="text-center m-0">
         <h2 className="mb-4 text-header">{t('services.heading')}</h2>
         <p className="p-3 text-content">{t('services.description')}</p>
       </div>
@@ -37,7 +30,7 @@ const Services = () => {
         <button
           type="button"
           aria-label="booking-btn"
-          className="mt-auto services-btn rounded-2"
+          className="mt-auto services-btn booking-btn rounded-2"
           onClick={handleWidgetShow}
         >
           {t('services.chooseService')}

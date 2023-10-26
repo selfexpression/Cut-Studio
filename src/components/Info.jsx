@@ -26,7 +26,7 @@ const InfoSection = () => {
             <button
               type="button"
               aria-label="calling-button"
-              className="rounded-5 m-2 btn-online-booking call-btn"
+              className="rounded-5 m-2 btn-info-booking call-btn booking-btn"
             >
               <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
             </button>
@@ -38,13 +38,13 @@ const InfoSection = () => {
           <button
             type="button"
             aria-label="booking-btn"
-            className="btn-online-booking rounded-5 m-2"
+            className="btn-info-booking booking-btn rounded-1 m-2"
             onClick={handleWidgetShow}
           >
             <span className="booking-btn">{t('navbar.onlineBooking')}</span>
           </button>
         </div>
-        <div className="map-container p-5">
+        <div className="map-container">
           <h2 className="info-head m-5 text-center">{t('contacts.findUsOnMap')}</h2>
           <div id="map" className="map" />
         </div>

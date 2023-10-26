@@ -52,7 +52,7 @@ export default {
     },
     team: {
       heading: 'Our Team',
-      description: '«MOB Cut Studio» is not just a salon, it is a guide to the world of men\'s elegance and style. Entrust your appearance to professionals, and your hair will become not just a haircut but an art that speaks of your unique individuality. Welcome to the world of style, where each haircut is a story of your own success.',
+      description: '«MOB Cut Studio» is not just a salon, it is a guide to the world of elegance and style. Entrust your appearance to professionals, and your hair will become not just a haircut but an art that speaks of your unique individuality.',
       teammates: {
         1: 'Employee 1',
         2: 'Employee 2',

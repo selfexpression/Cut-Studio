@@ -20,14 +20,14 @@ const BookingWidget = () => {
           type="button"
           aria-label="close-button"
           onClick={handleWidgetClose}
-          className="interactive-button"
+          className="interactive-button booking-widget-btn"
         />
       </div>
       <div className="p-0 m-0">
         <iframe
           title="Yclients Form"
           src={yclientsFormLink}
-          className="p-0 m-0 w-100 vh-100"
+          className="p-0 m-0 w-100 vh-100 booking-frame"
         />
       </div>
     </div>

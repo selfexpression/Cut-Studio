@@ -36,7 +36,9 @@ const NavLink = () => {
           <Link
             key={pageName}
             to={pageName}
-            className="nav-link"
+            duration={500}
+            smooth="true"
+            className="nav-link m-1"
             onClick={handleClose}
           >
             {t(`navbar.${pageName}`)}
@@ -59,7 +61,7 @@ const OffcanvasBody = () => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
   const { isShow } = useSelector((state) => state.navbar);
-  const classes = cn('p-3 navbar-body h-100 d-flex flex-column', {
+  const classes = cn('navbar-body', {
     'navbar-body-show': isShow,
     'navbar-body-hide': !isShow,
   });
@@ -73,24 +75,26 @@ const OffcanvasBody = () => {
       )
       : (
         <div className={classes}>
-          <NavLink />
-          <div className="mt-auto">
-            <div className="m-1">
+          <div className="navbar-links d-flex flex-column p-2">
+            <NavLink />
+          </div>
+          <div className="navbar-contacts p-2">
+            <div className="m-2">
               <GeoAltFill />
               {' '}
               {t('navbar.city')}
             </div>
-            <div className="m-1">{t('navbar.location')}</div>
-            <div className="m-1">
+            <div className="m-2">{t('navbar.location')}</div>
+            <div className="m-2">
               <Telephone />
               {' '}
               <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
             </div>
-            <div className="m-1">
+            <div className="m-2">
               <Telegram />
               {t('navbar.telegram')}
             </div>
-            <div className="m-1">
+            <div className="m-2">
               <Whatsapp />
               {t('navbar.whatsapp')}
             </div>
@@ -147,7 +151,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className="navbar"
+      className="navbar p-2"
       style={{ gridTemplateRows: rowsCount }}
     >
       <span
