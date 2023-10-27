@@ -8,6 +8,7 @@
   "author": "Selfex",
   "license": "ISC",
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@reactuses/core": "^4.0.8",
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",

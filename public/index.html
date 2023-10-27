@@ -4,28 +4,6 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <meta charset="utf-8" />
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=e7996c41-fbf6-430d-a78d-4f21af4455ca" type="text/javascript"></script>
-    <script type="text/javascript">
-      function init() {
-        ymaps.ready(function () {
-          const myMap = new ymaps.Map("map", {
-            center: [55.025854, 82.931218],
-            zoom: 14
-        });
-
-        const myGeoObject = new ymaps.GeoObject({
-          geometry: {
-            type: "Point",
-            coordinates: [55.025854, 82.931218]
-          }
-      });
-
-      myMap.geoObjects.add(myGeoObject);
-    });
-  }
-  init();
-
-  </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="MOB Cut Studio" />
     <title>MOB Cut Studio</title>

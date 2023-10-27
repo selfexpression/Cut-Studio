@@ -5,6 +5,7 @@ import i18next from 'i18next';
 // import LanguageDetector from 'i18next-browser-languagedetector';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Provider } from 'react-redux';
+import { YMaps } from '@pbe/react-yandex-maps';
 import store from './slices/index.js';
 import App from './components/App.jsx';
 import resources from './locales/index.js';
@@ -24,42 +25,6 @@ const runApp = async () => {
       },
     });
 
-  // const runMap = () => {
-  //   const scriptAPI = document.createElement('script');
-  //   scriptAPI.src = 'https://api-maps.yandex.ru/v3/?apikey=e7996c41-fbf6-430d-a78d-4f21af4455ca&lang=ru_RU';
-  //   document.head.appendChild(scriptAPI);
-
-  //   const scriptInit = document.createElement('script');
-  //   scriptInit.type = 'text/javascript';
-  //   scriptInit.innerHTML = `
-  //       async function initMap() {
-  //           await ymaps3.ready;
-
-  //           const {YMap, YMapDefaultSchemeLayer} = ymaps3;
-
-  //           const map = new YMap(
-  //               document.getElementById('map'),
-  //               {
-  //                   location: {
-  //                     center: [55.025854, 82.931218],
-  //                     zoom: 14
-  //                   }
-  //               }
-  //           );
-
-  //           map.addChild(new YMapDefaultSchemeLayer());
-  //       }
-
-  //       initMap();
-  //   `;
-
-  //   if (document.contains(scriptAPI)) {
-  //     document.head.appendChild(scriptInit);
-  //   }
-  // };
-
-  // runMap();
-
   const mountNode = document.getElementById('root');
   const root = ReactDOM.createRoot(mountNode);
 
@@ -67,7 +32,13 @@ const runApp = async () => {
     <React.StrictMode>
       <ParallaxProvider>
         <Provider store={store}>
-          <App />
+          <YMaps query={{
+            ns: 'use-load-option',
+            load: 'package.full',
+          }}
+          >
+            <App />
+          </YMaps>
         </Provider>
       </ParallaxProvider>
     </React.StrictMode>,

@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
 import { useTranslation } from 'react-i18next';
+import { useYMaps } from '@pbe/react-yandex-maps';
 import { useDispatch } from 'react-redux';
 import { actions } from '../slices/index.js';
+
+const Ymap = () => {
+  const ymaps = useYMaps(['Map', 'Placemark']);
+  const mapRef = useRef(null);
+
+  useEffect(() => {
+    if (!ymaps || !mapRef.current) {
+      return;
+    }
+
+    mapRef.current = new ymaps.Map(mapRef.current, {
+      center: [55.025854, 82.931218],
+      zoom: 14,
+    });
+
+    const placemark = new ymaps.Placemark([55.025854, 82.931218]);
+    mapRef.current.geoObjects.add(placemark);
+  }, [ymaps]);
+
+  return (
+    <div ref={mapRef} className="map" />
+  );
+};
 
 const InfoSection = () => {
   const { t } = useTranslation();
@@ -46,7 +70,7 @@ const InfoSection = () => {
         </div>
         <div className="map-container">
           <h2 className="info-head m-5 text-center">{t('contacts.findUsOnMap')}</h2>
-          <div id="map" className="map" />
+          <Ymap />
         </div>
       </div>
     </section>
