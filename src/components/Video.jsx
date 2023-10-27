@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
-import videoMP4 from '../assets/video/output.mp4';
+import videoMP4 from '../assets/video/output2.mp4';
 import videoWebm from '../assets/video/output.webm';
 
 const Video = () => {
