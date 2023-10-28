@@ -20,6 +20,7 @@ const Video = () => {
           muted
           loop
           preload="auto"
+          playsInline
           className="videoframe d-block"
           poster={videoPoster}
         >
