@@ -1,8 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
-import videoMP4 from '../assets/video/output2.mp4';
-import videoWebm from '../assets/video/output.webm';
+import videoMP4 from '../assets/video/background-video.mp4';
 import videoPoster from '../assets/video-poster.jpg';
 
 const Video = () => {
@@ -25,7 +24,6 @@ const Video = () => {
           poster={videoPoster}
         >
           <source src={videoMP4} type="video/mp4" />
-          <source src={videoWebm} type="video/webm" />
         </video>
         {isWide ? (<div className="video-image" />) : null}
       </div>
