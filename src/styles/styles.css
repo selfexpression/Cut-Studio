@@ -362,7 +362,7 @@ button {
   width: 100%;
   height: auto;
 
-  background-image: url("../assets/girl-model2.png");
+  background-image: url("../assets/girl-model2.jpg");
   background-position: center;
   background-size: cover;
 
@@ -370,7 +370,7 @@ button {
 }
 
 .video-image:hover {
-  background-image: url("../assets/girl-model.png");
+  background-image: url("../assets/girl-model.jpg");
 }
 
 .team-container {
