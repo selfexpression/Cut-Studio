@@ -92,10 +92,12 @@ const OffcanvasBody = () => {
             </div>
             <div className="m-2">
               <Telegram />
+              {' '}
               {t('navbar.telegram')}
             </div>
             <div className="m-2">
               <Whatsapp />
+              {' '}
               {t('navbar.whatsapp')}
             </div>
           </div>
