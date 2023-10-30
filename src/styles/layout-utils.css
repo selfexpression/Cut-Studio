@@ -278,8 +278,20 @@
   height: 75vh;
 }
 
+.vh-40 {
+  height: 40vh;
+}
+
+.vh-30 {
+  height: 30vh;
+}
+
 .vh-20 {
   height: 20vh;
+}
+
+.vh-min-100 {
+  min-height: 100vh;
 }
 
 .bg-light {

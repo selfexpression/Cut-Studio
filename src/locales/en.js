@@ -11,7 +11,7 @@ export default {
       findUsOnMap: 'Find us on the map',
     },
     carousel: {
-      description: 'Explore the world of MOB Cut Studio: our works, our space, our atmosphere — all in one vibrant gallery.',
+      description: 'Our works, our space, our atmosphere.',
     },
     header: {
       text1: 'A place where style meets convenience.',

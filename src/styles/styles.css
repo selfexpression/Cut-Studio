@@ -14,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: TenorSans, "Times New Roman", serif;
+  background-color: var(--light);
   line-height: normal;
 }
 
@@ -25,14 +26,42 @@ button {
   font-family: Comfortaa, "Times New Roman", serif;
 }
 
-.parallax-banner {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.main-header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
 
-  height: 100vh;
-  background-size: contain;
+.parallax-banner {
+  position: fixed;
+
+  height: 100%;
+  width: 100%;
+
+  visibility: visible;
+  overflow: hidden;
   will-change: scroll-position;
+}
+
+.parallax-banner + main {
+  grid-column: 8 / 12;
+  grid-row: 7;
+
+  z-index: 1;
+}
+
+.main-text {
+  color: var(--light) !important;
+}
+
+.parallax-mirror {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  object-fit: cover;
 }
 
 .text-content {
@@ -226,10 +255,10 @@ button {
 .booking-widget {
   position: fixed;
   right: 0;
-
   width: 30%;
 
   transition: transform 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .booking-widget-btn {
@@ -344,7 +373,7 @@ button {
 }
 
 .aqua-color {
-  color: #007373 !important;
+  color: var(--dark-green) !important;
 }
 
 .videoframe {
@@ -426,9 +455,12 @@ button {
   }
 }
 
-@media (max-width: 768px) {
-  .booking-widget {
-    width: 100%;
+@media (max-width: 900px) {
+  .parallax-banner + main {
+    grid-column: 3 / 11;
+    grid-row: 12;
+  
+    z-index: 1;
   }
 }
 
@@ -446,7 +478,6 @@ button {
   }
 
   .team-card-container {
-    display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -455,11 +486,6 @@ button {
     
     grid-column: 1 / 13;
     grid-row: 1 / 1;
-  }
-
-  .parallax-banner {
-    align-items: flex-end;
-    justify-content: center;
   }
 
   .carousel-text {

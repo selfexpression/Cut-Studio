@@ -1,77 +1,56 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMediaQuery } from '@reactuses/core';
-import { ParallaxBanner } from 'react-scroll-parallax';
 import { useDispatch } from 'react-redux';
 import { actions } from '../slices/index.js';
-import backgroundWide from '../assets/backgrounds/back-i.avif';
-import backgroundMobile from '../assets/backgrounds/back-i-m.webp';
-import backgroundTablet from '../assets/backgrounds/back-i.jpg';
-
-const getBackgroundImage = (sizes, images) => {
-  const isTrueSize = sizes.indexOf(true);
-  const mappingSizeIndex = {
-    0: 'isMobile',
-    1: 'isTablet',
-    2: 'isWide',
-  };
-  const size = mappingSizeIndex[isTrueSize];
-  const mappingSize = {
-    isMobile: images.backgroundMobile,
-    isTablet: images.backgroundTablet,
-    isWide: images.backgroundWide,
-  };
-
-  return mappingSize[size];
-};
-
-const images = {
-  backgroundMobile,
-  backgroundTablet,
-  backgroundWide,
-};
+import useScrollPosition from '../hooks/index.js';
+import background from '../assets/backgrounds/index.js';
+import stockBackground from '../assets/backgrounds/back-image-1920.jpg';
 
 const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const isMobile = useMediaQuery('(max-width: 420px)');
-  const isTablet = useMediaQuery('(max-width: 859px)');
-  const isWide = useMediaQuery('(min-width: 860px)');
-  const sizes = [isMobile, isTablet, isWide];
-  const backgroundImage = getBackgroundImage(sizes, images);
+  const { scrollY } = useScrollPosition();
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
 
+  const translateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
+  const translateLayer = `translate3d(0px, calc(${scrollY}px / 2), 0px)`;
+
   return (
-    <section id="/" className="bg-light">
-      <ParallaxBanner
-        layers={[
-          {
-            image: backgroundImage,
-            speed: -30,
-            expanded: false,
-          },
-        ]}
+    <header id="/" className="main-header bg-light vh-100">
+      <picture
         className="parallax-banner"
+        style={{ transform: translateBanner }}
       >
-        <div className="text-center p-3 m-5 absolute">
-          <div className="text-center">
-            <p className="text-content m-0">{t('header.text1')}</p>
-            <p className="text-content m-0">{t('header.text2')}</p>
-            <button
-              type="button"
-              aria-label="booking-button"
-              className="btn-online-booking booking-btn head-booking-btn mb-5 mt-4 rounded-0"
-              onClick={handleWidgetShow}
-            >
-              <span>{t('header.onlineBooking')}</span>
-            </button>
-          </div>
-        </div>
-      </ParallaxBanner>
-    </section>
+        {background.map(({ width, srcSet }) => (
+          <source
+            key={width}
+            media={`(max-width: ${width}px)`}
+            type="image/jpeg"
+            srcSet={srcSet}
+          />
+        ))}
+        <img
+          src={stockBackground}
+          alt="background"
+          className="parallax-mirror"
+          style={{ transform: translateLayer }}
+        />
+      </picture>
+      <main className="text-center">
+        <p className="text-content main-text m-0">{t('header.text1')}</p>
+        <button
+          type="button"
+          aria-label="booking-button"
+          className="btn-info-booking booking-btn head-booking-btn mb-5 mt-4 rounded-0"
+          onClick={handleWidgetShow}
+        >
+          <span>{t('header.onlineBooking')}</span>
+        </button>
+      </main>
+    </header>
   );
 };
 

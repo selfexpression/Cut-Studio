@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
 // import LanguageDetector from 'i18next-browser-languagedetector';
-import { ParallaxProvider } from 'react-scroll-parallax';
 import { Provider } from 'react-redux';
 import { YMaps } from '@pbe/react-yandex-maps';
 import store from './slices/index.js';
@@ -30,17 +29,15 @@ const runApp = async () => {
 
   root.render(
     <React.StrictMode>
-      <ParallaxProvider>
-        <Provider store={store}>
-          <YMaps query={{
-            ns: 'use-load-option',
-            load: 'package.full',
-          }}
-          >
-            <App />
-          </YMaps>
-        </Provider>
-      </ParallaxProvider>
+      <Provider store={store}>
+        <YMaps query={{
+          ns: 'use-load-option',
+          load: 'package.full',
+        }}
+        >
+          <App />
+        </YMaps>
+      </Provider>
     </React.StrictMode>,
   );
 };

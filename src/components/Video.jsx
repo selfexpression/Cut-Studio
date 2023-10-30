@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@reactuses/core';
 import videoMP4 from '../assets/video/background-video.mp4';
-import videoPoster from '../assets/video-poster.jpg';
+import videoPoster from '../assets/video/video-poster.jpg';
 
 const Video = () => {
   const { t } = useTranslation();
-  const isWide = useMediaQuery('(min-width: 660px)');
+  const isWide = useMediaQuery('(min-width: 460px)');
 
   return (
     <section id="video" className="bg-light">
