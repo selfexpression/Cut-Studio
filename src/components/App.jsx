@@ -6,7 +6,7 @@ import Header from './Header.jsx';
 import NavBar from './NavBar.jsx';
 import Carousel from './Carousel.jsx';
 import Services from './Services.jsx';
-// import Video from './Video.jsx';
+import Video from './Video.jsx';
 import Team from './Team.jsx';
 import Info from './Info.jsx';
 import BookingWidget from './BookingWidget.jsx';
@@ -14,7 +14,7 @@ import BookingWidget from './BookingWidget.jsx';
 const Main = () => (
   <>
     <Header />
-    {/* <Video /> */}
+    <Video />
     <Services />
     <Carousel />
     <Info />
