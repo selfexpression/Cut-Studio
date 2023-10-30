@@ -40,7 +40,7 @@ button {
 
   visibility: visible;
   overflow: hidden;
-  will-change: transform, translate;
+  will-change: transform, translate3d;
 
 }
 
@@ -63,7 +63,7 @@ button {
   left: 0;
 
   object-fit: cover;
-  will-change: transform, translate;
+  will-change: transform, translate3d;
 }
 
 .text-content {
