@@ -40,7 +40,8 @@ button {
 
   visibility: visible;
   overflow: hidden;
-  will-change: scroll-position;
+  will-change: transform, translate;
+
 }
 
 .parallax-banner + main {
@@ -62,6 +63,7 @@ button {
   left: 0;
 
   object-fit: cover;
+  will-change: transform, translate;
 }
 
 .text-content {
