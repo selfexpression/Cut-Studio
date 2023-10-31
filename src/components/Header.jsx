@@ -2,13 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { actions } from '../slices/index.js';
-import useScrollPosition from '../hooks/index.js';
+import hooks from '../hooks/index.js';
 import background from '../assets/backgrounds/index.js';
 import stockBackground from '../assets/backgrounds/back-image-1920.jpg';
 
 const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const { useScrollPosition } = hooks;
   const { scrollY } = useScrollPosition();
 
   const handleWidgetShow = () => {
@@ -34,16 +35,16 @@ const Header = () => {
         ))}
         <img
           src={stockBackground}
-          alt="background"
+          alt={t('alts.background')}
           className="parallax-mirror"
           style={{ transform: translateLayer }}
         />
       </picture>
-      <main className="text-center">
-        <p className="text-content main-text m-0">{t('header.text1')}</p>
+      <main className="d-flex flex-column align-items-center">
+        <p className="text-content main-text text-center m-0">{t('header.text1')}</p>
         <button
           type="button"
-          aria-label="booking-button"
+          aria-label={t('ariaLabels.bookingBtn')}
           className="btn-info-booking booking-btn head-booking-btn mb-5 mt-4 rounded-0"
           onClick={handleWidgetShow}
         >

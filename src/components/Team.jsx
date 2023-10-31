@@ -14,8 +14,15 @@ const Team = () => {
         </div>
         <div className="team-card-container">
           {teammatePhotos.map(({ photo, id }) => (
-            <div key={id} className="team-card rounded-2">
-              <img src={photo} alt="teammate" className="rounded-2 w-100" />
+            <div
+              key={id}
+              className="team-card rounded-2"
+            >
+              <img
+                src={photo}
+                alt={t('alts.teammate')}
+                className="rounded-2 w-100"
+              />
               <div className="team-card-body p-3">
                 <div className="text-center team-card-title">{t(`team.teammates.${id}`)}</div>
                 <div className="team-card-text">{t(`team.teammatesDescription.${id}`)}</div>

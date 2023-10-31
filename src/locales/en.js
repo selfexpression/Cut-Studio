@@ -4,10 +4,8 @@ export default {
       paragraph1: 'Experienced masters, individual approach, and impeccable service create a unique atmosphere where every client is a true VIP.',
       paragraph2: 'Turn your care into a style adventure with «MOB Cut Studio»',
     },
-    contacts: {
-      videoHeading: 'Watch our work video',
-      watchButton: 'Watch',
-      ourContacts: 'Our Contacts',
+    footer: {
+      ourContacts: 'Contacts',
       findUsOnMap: 'Find us on the map',
     },
     carousel: {
@@ -15,7 +13,6 @@ export default {
     },
     header: {
       text1: 'A place where style meets convenience.',
-      text2: 'Get inspired by the atmosphere of style and self-care.',
       onlineBooking: 'Book',
     },
     navbar: {
@@ -32,7 +29,7 @@ export default {
       whatsapp: 'Whatsapp',
     },
     services: {
-      heading: 'Our Services',
+      heading: 'Services',
       description: 'Our chairs are the throne of style, and the atmosphere is the whirlwind of creativity. We not only follow trends but set them.',
       chooseService: 'Choose Service',
       names: {
@@ -51,7 +48,7 @@ export default {
       },
     },
     team: {
-      heading: 'Our Team',
+      heading: 'Team',
       description: '«MOB Cut Studio» is not just a salon, it is a guide to the world of elegance and style. Entrust your appearance to professionals, and your hair will become not just a haircut but an art that speaks of your unique individuality.',
       teammates: {
         1: 'Employee 1',
@@ -69,6 +66,23 @@ export default {
         5: 'Description of Employee 5 should be here',
         6: 'Description of Employee 6 should be here',
       },
+    },
+    others: {
+      yclients: 'Yclients form',
+    },
+    ariaLabels: {
+      closeBtn: 'close button',
+      nextBtn: 'next',
+      prevBtn: 'previous',
+      callBtn: 'call button',
+      bookingBtn: 'booking button',
+      openBtn: 'open button',
+    },
+    alts: {
+      slider: 'slide',
+      background: 'background',
+      logo: 'logo',
+      teammate: 'team member',
     },
   },
 };

@@ -11,21 +11,24 @@ import { useLocation, Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { actions } from '../slices/index.js';
 import logo from '../assets/sticker.webp';
+import routes from '../utils/routes.js';
+import links from '../utils/links.js';
+import { getNavbar } from '../utils/selectors.js';
 
 const NavLink = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const location = useLocation();
-  const isMainPage = location.pathname === '/';
+  const isMainPage = location.pathname === routes.mainPage;
 
   const handleClose = () => {
     dispatch(actions.navbarClose());
   };
 
   const pagesMap = {
-    carousel: ScrollLink,
     services: ScrollLink,
     team: RouterLink,
+    carousel: ScrollLink,
     info: ScrollLink,
   };
 
@@ -47,7 +50,7 @@ const NavLink = () => {
       )
       : (
         <RouterLink
-          to="/"
+          to={routes.mainPage}
           onClick={handleClose}
           className="nav-link"
         >
@@ -57,14 +60,19 @@ const NavLink = () => {
   );
 };
 
-const OffcanvasBody = () => {
+const NavbarBody = () => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
-  const { isShow } = useSelector((state) => state.navbar);
+  const { isShow } = useSelector(getNavbar);
   const classes = cn('navbar-body', {
     'navbar-body-show': isShow,
     'navbar-body-hide': !isShow,
   });
+  const contacts = {
+    telegram: Telegram,
+    whatsapp: Whatsapp,
+    phoneNumber: Telephone,
+  };
 
   return (
     isWide
@@ -79,26 +87,23 @@ const OffcanvasBody = () => {
             <NavLink />
           </div>
           <div className="navbar-contacts p-2">
+            {Object.entries(contacts).map(([contact, Image]) => (
+              <a
+                key={contact}
+                href={links[contact]}
+                className="m-2 d-block contact-links"
+              >
+                <Image />
+                {' '}
+                <span>{t(`navbar.${contact}`)}</span>
+              </a>
+            ))}
             <div className="m-2">
               <GeoAltFill />
               {' '}
               {t('navbar.city')}
-            </div>
-            <div className="m-2">{t('navbar.location')}</div>
-            <div className="m-2">
-              <Telephone />
-              {' '}
-              <a href="tel:+79692281139">{t('navbar.phoneNumber')}</a>
-            </div>
-            <div className="m-2">
-              <Telegram />
-              {' '}
-              {t('navbar.telegram')}
-            </div>
-            <div className="m-2">
-              <Whatsapp />
-              {' '}
-              {t('navbar.whatsapp')}
+              <br />
+              <span>{t('navbar.location')}</span>
             </div>
           </div>
         </div>
@@ -108,6 +113,7 @@ const OffcanvasBody = () => {
 
 const ToggleButton = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { isShow } = useSelector((state) => state.navbar);
 
   const handleOpen = () => {
@@ -123,7 +129,7 @@ const ToggleButton = () => {
       ? (
         <ListButton
           type="button"
-          aria-label="open-button"
+          aria-label={t('ariaLabels.openBtn')}
           onClick={handleOpen}
           className="interactive-button"
         />
@@ -131,7 +137,7 @@ const ToggleButton = () => {
       : (
         <CloseButton
           type="button"
-          aria-label="close-button"
+          aria-label={t('ariaLabels.closeBtn')}
           className="interactive-button"
           onClick={handleClose}
         />
@@ -141,10 +147,11 @@ const ToggleButton = () => {
 
 const NavBar = () => {
   const location = useLocation();
-  const isMainPage = location.pathname === '/';
+  const { t } = useTranslation();
+  const isMainPage = location.pathname === routes.mainPage;
   const isWide = useMediaQuery('(min-width: 860px)');
   const navigate = useNavigate();
-  const { isShow } = useSelector((state) => state.navbar);
+  const { isShow } = useSelector(getNavbar);
   const rowsCount = isShow ? '40px 70vh' : '40px 0';
 
   const scrollToTop = () => {
@@ -158,12 +165,12 @@ const NavBar = () => {
     >
       <span
         className="navbar-brand ms-3"
-        onClick={isMainPage ? scrollToTop : () => navigate('/')}
+        onClick={isMainPage ? scrollToTop : () => navigate(routes.mainPage)}
       >
-        <img src={logo} alt="Barbershop Logo" className="nav-logo" />
+        <img src={logo} alt={t('alts.logo')} className="nav-logo" />
       </span>
       {!isWide ? <ToggleButton /> : null}
-      <OffcanvasBody />
+      <NavbarBody />
     </nav>
   );
 };

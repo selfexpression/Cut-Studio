@@ -29,7 +29,7 @@ const Services = () => {
       <div className="w-100 h-100 mt-5">
         <button
           type="button"
-          aria-label="booking-btn"
+          aria-label={t('ariaLabels.bookingBtn')}
           className="mt-auto services-btn booking-btn rounded-2"
           onClick={handleWidgetShow}
         >

@@ -8,7 +8,7 @@ import Carousel from './Carousel.jsx';
 import Services from './Services.jsx';
 import Video from './Video.jsx';
 import Team from './Team.jsx';
-import Info from './Info.jsx';
+import Footer from './Footer.jsx';
 import BookingWidget from './BookingWidget.jsx';
 
 const Main = () => (
@@ -17,7 +17,7 @@ const Main = () => (
     <Video />
     <Services />
     <Carousel />
-    <Info />
+    <Footer />
     <BookingWidget />
   </>
 );
