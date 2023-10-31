@@ -41,7 +41,9 @@ const Header = () => {
         />
       </picture>
       <main className="d-flex flex-column align-items-center">
-        <p className="text-content main-text text-center m-0">{t('header.text1')}</p>
+        <p className="text-content main-text text-center m-0">
+          {t('header.text1')}
+        </p>
         <button
           type="button"
           aria-label={t('ariaLabels.bookingBtn')}

@@ -1,7 +1,10 @@
 import React, { useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { ChevronCompactLeft, ChevronCompactRight } from 'react-bootstrap-icons';
+import {
+  ChevronCompactLeft as ArrowLeft,
+  ChevronCompactRight as ArrowRight,
+} from 'react-bootstrap-icons';
 import { actions } from '../slices/index.js';
 import { getSlider } from '../utils/selectors.js';
 
@@ -36,17 +39,21 @@ const Gallery = () => {
               className={`slide d-flex flex-column ${id === currentSlide ? 'active' : 'inactive'}`}
               key={id}
             >
-              <img src={image} alt={`${t('alts.slider')} ${id}`} className="d-block w-100 h-100" />
+              <img
+                src={image}
+                alt={`${t('alts.slider')} ${id}`}
+                className="d-block w-100 h-100"
+              />
             </div>
           ))}
         </div>
-        <ChevronCompactRight
+        <ArrowLeft
           className="next"
           type="button"
           aria-label={t('ariaLabels.next')}
           onClick={nextSlide}
         />
-        <ChevronCompactLeft
+        <ArrowRight
           className="prev"
           type="button"
           aria-label={t('ariaLabels.prev')}

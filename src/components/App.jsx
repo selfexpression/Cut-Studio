@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
+import routes from '../utils/routes.js';
 import Header from './Header.jsx';
 import NavBar from './NavBar.jsx';
 import Carousel from './Carousel.jsx';
@@ -27,8 +28,8 @@ const App = () => (
     <div className="d-flex flex-column">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/team" element={<Team />} />
+        <Route path={routes.mainPage} element={<Main />} />
+        <Route path={routes.teamPage} element={<Team />} />
       </Routes>
     </div>
   </Router>

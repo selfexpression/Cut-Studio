@@ -80,7 +80,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="map-container">
-          <h2 className="footer-head m-5 text-center">{t('footer.findUsOnMap')}</h2>
+          <h2 className="footer-head m-5 text-center">
+            {t('footer.findUsOnMap')}
+          </h2>
           <Ymap />
         </div>
       </div>
