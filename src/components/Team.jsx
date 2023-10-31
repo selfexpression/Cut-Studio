@@ -9,9 +9,9 @@ const Team = () => {
     <section id="team" className="bg-light text-center py-5">
       <div className="team-container mt-5">
         <div className="team-text p-5">
-          <h2 className="text-center text-header aqua-color mb-4">
+          <h1 className="text-center text-header aqua-color mb-4">
             {t('team.heading')}
-          </h2>
+          </h1>
           <p className="mb-5 text-content">
             {t('team.description')}
           </p>

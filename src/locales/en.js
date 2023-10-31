@@ -7,12 +7,14 @@ export default {
     footer: {
       ourContacts: 'Contacts',
       findUsOnMap: 'Find us on the map',
+      location: 'Новосибирск, ул. Октябрьская 81',
+
     },
     carousel: {
       description: 'Our works, our space, our atmosphere.',
     },
     header: {
-      text1: 'A place where style meets convenience.',
+      text: 'A place where style meets convenience.',
       onlineBooking: 'Book',
     },
     navbar: {
@@ -20,7 +22,7 @@ export default {
       carousel: 'Gallery',
       services: 'Services',
       team: 'Team',
-      contacts: 'Contact Us',
+      footer: 'Contact Us',
       location: 'Oktyabrskaya Street 81',
       city: 'Novosibirsk',
       phoneNumber: '+7-(969)-228-1139',

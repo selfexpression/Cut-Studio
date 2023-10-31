@@ -16,14 +16,16 @@ const BookingWidget = () => {
   };
 
   return (
-    <div className={`booking-widget ${isShow ? 'show-booking' : 'hide-booking'}`}>
+    <aside className={`booking-widget ${isShow ? 'show-booking' : 'hide-booking'}`}>
       <div className="booking-header d-flex justify-content-end align-items-end">
-        <CloseButtonIcon
+        <button
           type="button"
           aria-label={t('ariaLabels.closeBtn')}
           onClick={handleWidgetClose}
-          className="interactive-button booking-widget-btn"
-        />
+          className="interactive-button booking-widget-btn me-07 p-0"
+        >
+          <CloseButtonIcon />
+        </button>
       </div>
       <div className="p-0 m-0">
         <iframe
@@ -32,7 +34,7 @@ const BookingWidget = () => {
           className="p-0 m-0 w-100 vh-100 booking-frame"
         />
       </div>
-    </div>
+    </aside>
   );
 };
 

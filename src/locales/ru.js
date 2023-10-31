@@ -10,12 +10,13 @@ export default {
     footer: {
       ourContacts: 'Контакты',
       findUsOnMap: 'Найти нас на карте',
+      location: 'Новосибирск, ул. Октябрьская 81',
     },
     carousel: {
       description: 'Наши работы, наше пространство, наша атмосфера.',
     },
     header: {
-      text1: 'Место, где стиль встречает удобство.',
+      text: 'Место, где стиль встречает удобство.',
       onlineBooking: 'Записаться',
     },
     navbar: {
@@ -23,7 +24,7 @@ export default {
       carousel: 'Галерея',
       services: 'Услуги',
       team: 'Команда',
-      info: 'Связаться с нами',
+      footer: 'Связаться с нами',
       city: 'Новосибирск',
       location: 'ул. Октябрьская 81',
       phoneNumber: '+7-(969)-228-1139',

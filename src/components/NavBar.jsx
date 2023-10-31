@@ -29,7 +29,7 @@ const NavLink = () => {
     services: ScrollLink,
     team: RouterLink,
     carousel: ScrollLink,
-    info: ScrollLink,
+    footer: ScrollLink,
   };
 
   return (
@@ -41,7 +41,7 @@ const NavLink = () => {
             to={pageName}
             duration={500}
             smooth="true"
-            className="nav-link m-1"
+            className="nav-link m-2"
             onClick={handleClose}
           >
             {t(`navbar.${pageName}`)}
@@ -77,7 +77,7 @@ const NavbarBody = () => {
   return (
     isWide
       ? (
-        <div className="d-flex">
+        <div className="navbar-links-wide d-flex me-4">
           <NavLink />
         </div>
       )
@@ -103,7 +103,7 @@ const NavbarBody = () => {
               {' '}
               {t('navbar.city')}
               <br />
-              <span>{t('navbar.location')}</span>
+              <span className="ms-4">{t('navbar.location')}</span>
             </div>
           </div>
         </div>
@@ -131,14 +131,14 @@ const ToggleButton = () => {
           type="button"
           aria-label={t('ariaLabels.openBtn')}
           onClick={handleOpen}
-          className="interactive-button"
+          className="interactive-button navbar-button"
         />
       )
       : (
         <CloseButton
           type="button"
           aria-label={t('ariaLabels.closeBtn')}
-          className="interactive-button"
+          className="interactive-button navbar-button"
           onClick={handleClose}
         />
       )
@@ -164,7 +164,7 @@ const NavBar = () => {
       style={{ gridTemplateRows: rowsCount }}
     >
       <span
-        className="navbar-brand ms-3"
+        className="navbar-brand"
         onClick={isMainPage ? scrollToTop : () => navigate(routes.mainPage)}
       >
         <img src={logo} alt={t('alts.logo')} className="nav-logo" />

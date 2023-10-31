@@ -46,24 +46,30 @@ const Footer = () => {
   };
 
   return (
-    <section id="footer" className="bg-dark">
+    <footer id="footer" className="bg-dark">
       <div className="footer-container">
-        <div className="footer-contacts text-center p-5">
-          <h2 className="footer-head m-3">{t('footer.ourContacts')}</h2>
+        <div className="footer-contacts text-center">
+          <h1 className="footer-head m-2">{t('footer.ourContacts')}</h1>
           <div className="m-3 footer-text">
-            <a href={links.whatsapp}>
-              <Whatsapp className="me-2" />
-            </a>
-            <a href={links.telegram}>
-              <Telegram className="me-2" />
-            </a>
+            <div className="footer-social d-flex align-items-end">
+              <a href={links.whatsapp} className="ms-2">
+                <Whatsapp />
+                {' '}
+                {t('navbar.whatsapp')}
+              </a>
+              <a href={links.telegram} className="ms-2">
+                <Telegram />
+                {' '}
+                {t('navbar.telegram')}
+              </a>
+            </div>
             <div className="d-inline me-2">
               <Telephone />
-              <a href={links.telephone}>
+              <a href={links.phoneNumber}>
                 <button
                   type="button"
                   aria-label={t('ariaLabels.callBtn')}
-                  className="rounded-5 m-2 btn-info-booking call-btn booking-btn contact-links"
+                  className="rounded-5 m-2 btn-info-booking call-btn booking-btn"
                 >
                   <span>{t('navbar.phoneNumber')}</span>
                 </button>
@@ -77,16 +83,17 @@ const Footer = () => {
             >
               <span>{t('navbar.onlineBooking')}</span>
             </button>
+            <p className="footer-text">{t('footer.location')}</p>
           </div>
         </div>
         <div className="map-container">
-          <h2 className="footer-head m-5 text-center">
+          <h2 className="footer-head m-3 p-3 text-center">
             {t('footer.findUsOnMap')}
           </h2>
           <Ymap />
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

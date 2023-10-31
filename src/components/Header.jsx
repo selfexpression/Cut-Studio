@@ -41,8 +41,8 @@ const Header = () => {
         />
       </picture>
       <main className="d-flex flex-column align-items-center">
-        <p className="text-content main-text text-center m-0">
-          {t('header.text1')}
+        <p className="text-content color-light text-center m-0">
+          {t('header.text')}
         </p>
         <button
           type="button"
