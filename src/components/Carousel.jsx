@@ -47,13 +47,13 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-        <ArrowLeft
+        <ArrowRight
           className="next"
           type="button"
           aria-label={t('ariaLabels.next')}
           onClick={nextSlide}
         />
-        <ArrowRight
+        <ArrowLeft
           className="prev"
           type="button"
           aria-label={t('ariaLabels.prev')}

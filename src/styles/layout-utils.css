@@ -341,3 +341,7 @@
 .bg-dark {
   background-color: #141111 !important;
 }
+
+.no-wrap {
+  white-space: nowrap;
+}

@@ -51,19 +51,25 @@ const Footer = () => {
         <div className="footer-contacts text-center">
           <h1 className="footer-head m-2">{t('footer.ourContacts')}</h1>
           <div className="m-3 footer-text">
-            <div className="footer-social d-flex align-items-end">
-              <a href={links.whatsapp} className="ms-2">
-                <Whatsapp />
-                {' '}
+            <button
+              type="button"
+              aria-label={t('ariaLabels.bookingBtn')}
+              className="btn-info-booking booking-btn rounded-1 mb-3"
+              onClick={handleWidgetShow}
+            >
+              <span>{t('navbar.onlineBooking')}</span>
+            </button>
+            <div className="footer-social d-flex align-items-center">
+              <a href={links.whatsapp} className="d-flex align-items-center">
+                <Whatsapp className="me-1" />
                 {t('navbar.whatsapp')}
               </a>
-              <a href={links.telegram} className="ms-2">
-                <Telegram />
-                {' '}
+              <a href={links.telegram} className="ms-2 d-flex align-items-center">
+                <Telegram className="me-1" />
                 {t('navbar.telegram')}
               </a>
             </div>
-            <div className="d-inline me-2">
+            <div className="d-flex align-items-center mt-3">
               <Telephone />
               <a href={links.phoneNumber}>
                 <button
@@ -75,15 +81,7 @@ const Footer = () => {
                 </button>
               </a>
             </div>
-            <button
-              type="button"
-              aria-label={t('ariaLabels.bookingBtn')}
-              className="btn-info-booking booking-btn rounded-1 m-2"
-              onClick={handleWidgetShow}
-            >
-              <span>{t('navbar.onlineBooking')}</span>
-            </button>
-            <p className="footer-text">{t('footer.location')}</p>
+            <p className="footer-text no-wrap">{t('footer.location')}</p>
           </div>
         </div>
         <div className="map-container">

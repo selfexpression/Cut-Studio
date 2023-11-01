@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 import routes from '../utils/routes.js';
 import Header from './Header.jsx';
-import NavBar from './NavBar.jsx';
+import Navbar from './Navbar.jsx';
 import Carousel from './Carousel.jsx';
 import Services from './Services.jsx';
 import Video from './Video.jsx';
@@ -26,7 +26,7 @@ const Main = () => (
 const App = () => (
   <Router>
     <div className="d-flex flex-column">
-      <NavBar />
+      <Navbar />
       <Routes>
         <Route path={routes.mainPage} element={<Main />} />
         <Route path={routes.teamPage} element={<Team />} />

@@ -91,9 +91,9 @@ const NavbarBody = () => {
               <a
                 key={contact}
                 href={links[contact]}
-                className="m-2 d-block contact-links"
+                className="m-2 d-flex align-items-center contact-links"
               >
-                <Image />
+                <Image className="me-1" />
                 {' '}
                 <span>{t(`navbar.${contact}`)}</span>
               </a>
@@ -145,7 +145,7 @@ const ToggleButton = () => {
   );
 };
 
-const NavBar = () => {
+const Navbar = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const isMainPage = location.pathname === routes.mainPage;
@@ -175,4 +175,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
