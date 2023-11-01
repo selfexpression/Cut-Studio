@@ -83,6 +83,12 @@ button {
   background-color: var(--light);
 }
 
+@media (min-width: 1920px) {
+  .parallax-mirror {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1024px) {
   .booking-widget {
     width: 50%;
@@ -147,5 +153,9 @@ button {
 
   .carousel-text {
     grid-column: 1 / 13;
+  }
+
+  .parallax-mirror {
+    width: 100%;
   }
 }

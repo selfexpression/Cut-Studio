@@ -48,6 +48,6 @@
 }
 
 .call-btn {
-  width: 12em;
-  height: 2em;
+  width: 12em !important;
+  height: 2em !important;
 }
