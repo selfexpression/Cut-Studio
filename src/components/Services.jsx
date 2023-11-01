@@ -15,7 +15,7 @@ const Services = () => {
   return (
     <section id="services" className="bg-light text-center p-4">
       <div className="text-center m-0">
-        <h1 className="mb-4 text-header aqua-color">
+        <h1 className="mb-4 text-head aqua-color">
           {t('services.heading')}
         </h1>
         <p className="p-3 text-content">

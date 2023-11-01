@@ -343,5 +343,13 @@
 }
 
 .no-wrap {
-  white-space: nowrap;
+  white-space: nowrap !important;
+}
+
+.color-light {
+  color: var(--light) !important;
+}
+
+.aqua-color {
+  color: var(--aqua) !important;
 }

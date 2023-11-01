@@ -1,0 +1,30 @@
+.booking-widget {
+  position: fixed;
+  right: 0;
+  width: 30%;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.booking-widget-btn {
+  margin-bottom: 10px;
+}
+
+.show-booking {
+  transform: translate(0%);
+}
+
+.hide-booking {
+  transform: translate(100%);
+}
+
+.booking-widget .booking-header {
+  height: 100px;
+
+  background-color: var(--light);
+}
+
+.booking-frame {
+  border: 0.8px solid var(--grey)
+}

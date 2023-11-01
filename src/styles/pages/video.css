@@ -1,0 +1,36 @@
+.video-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, max-content);
+}
+
+.video-text {
+  grid-column: 4 / 10;
+  grid-row: 1 / 1;
+}
+
+.videoframe {
+  grid-column: 1 / 7;
+  grid-row: 2 / -1;
+
+  width: 100%;
+  height: auto;
+}
+
+.video-image {
+  grid-column: 7 / 13;
+  grid-row: 2 / -1;
+
+  width: 100%;
+  height: auto;
+
+  background-image: url("/src/assets/girl-model2.jpg");
+  background-position: center;
+  background-size: cover;
+
+  transition: background-image 0.3s;
+}
+
+.video-image:hover {
+  background-image: url("/src/assets/girl-model.jpg");
+}

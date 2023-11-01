@@ -1,0 +1,42 @@
+.main-header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.parallax-banner {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+  will-change: transform;
+}
+
+.parallax-banner + main {
+  position: relative;
+  grid-column: 8 / 12;
+  grid-row: 7;
+}
+
+.parallax-mirror {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+  will-change: transform;
+}
+
+.head-booking-btn {
+  width: 15em;
+  height: 2em;
+}
+
+.text-head {
+  font-size: var(--head-font-size);
+  font-weight: normal;
+
+  text-transform: uppercase;
+  color: var(--dark);
+}

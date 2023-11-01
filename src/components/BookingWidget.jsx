@@ -24,7 +24,7 @@ const BookingWidget = () => {
           onClick={handleWidgetClose}
           className="interactive-button booking-widget-btn me-07 p-0"
         >
-          <CloseButtonIcon />
+          <CloseButtonIcon className="w-100 h-100" />
         </button>
       </div>
       <div className="p-0 m-0">
