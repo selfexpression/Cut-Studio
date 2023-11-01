@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 
-export default () => {
-  const [scrollPosition, setPosition] = useState({ scrollX: 0, scrollY: 0 });
+const useScrollX = () => {
+  const [scrollPosition, setScrollPosition] = useState({ scrollX: 0 });
 
   useEffect(() => {
     const updatePosition = () => {
-      setPosition({ scrollX: window.scrollX, scrollY: window.scrollY });
+      requestAnimationFrame(() => {
+        setScrollPosition({ scrollX: window.scrollX });
+      });
     };
 
     window.addEventListener('scroll', updatePosition);
@@ -16,3 +18,5 @@ export default () => {
 
   return scrollPosition;
 };
+
+export default useScrollX;
