@@ -12,7 +12,7 @@ const Video = () => {
     <section id="video" className="bg-light">
       <div className="video-container">
         <div className="text-center video-text">
-          <p className="text-content aqua-color p-5">{t('description.paragraph1')}</p>
+          <p className="text-content aqua-color p-5">{t('video.paragraph')}</p>
         </div>
         <video
           autoPlay

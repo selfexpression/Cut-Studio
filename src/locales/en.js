@@ -1,8 +1,10 @@
 export default {
   translation: {
-    about: {
-      paragraph1: 'Experienced masters, individual approach, and impeccable service create a unique atmosphere where every client is a true VIP.',
-      paragraph2: 'Turn your care into a style adventure with «MOB Cut Studio»',
+    lang: {
+      currentLang: 'EN',
+    },
+    video: {
+      paragraph: 'Experienced masters, individual approach, and impeccable service create a unique atmosphere where every client is a true VIP.',
     },
     footer: {
       ourContacts: 'Contacts',
