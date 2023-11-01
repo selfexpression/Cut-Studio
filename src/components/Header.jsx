@@ -9,19 +9,19 @@ import stockBackground from '../assets/backgrounds/back-image-1920.jpg';
 const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  // const { scrollY } = hooks.useScrollY();
-  const {
-    translateBanner,
-    translateLayer,
-  } = hooks.useParallax();
+  const { scrollY } = hooks.useScrollY();
+  // const {
+  //   translateBanner,
+  //   translateLayer,
+  // } = hooks.useParallax();
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
 
-  // const translateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
-  // const translateLayer = `translate3d(0px, calc(${scrollY}px / 2), 0px)`;
-  console.log(translateBanner, translateLayer);
+  const translateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
+  const translateLayer = `translate3d(0px, calc(${scrollY}px / 2), 0px)`;
+
   return (
     <header id="/" className="main-header bg-light vh-100">
       <picture
