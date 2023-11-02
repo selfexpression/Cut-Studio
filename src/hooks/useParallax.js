@@ -11,7 +11,7 @@ const useParallax = () => {
       const newTranslateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
       const newTranslateLayer = `translate3d(0px, calc(${scrollY}px / 2), 0px)`;
 
-      requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
         setTranslateBanner(newTranslateBanner);
         setTranslateLayer(newTranslateLayer);
       });

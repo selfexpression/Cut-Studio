@@ -5,7 +5,7 @@ const useScrollY = () => {
 
   useEffect(() => {
     const updatePosition = () => {
-      requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
         setScrollPosition({ scrollY: window.scrollY });
       });
     };

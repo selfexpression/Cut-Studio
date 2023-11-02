@@ -107,7 +107,7 @@
 }
 
 .toggle-menu :nth-child(2n) {
-  right: 2em;
+  right: 2.2em;
 }
 
 .toggle-menu-open :nth-child(1), .toggle-menu-open :nth-child(6) {
@@ -123,19 +123,20 @@
 }
 
 .toggle-menu-open :nth-child(1), .toggle-menu-open :nth-child(2) {
-  top: 1.5em;
+  top: 1.6em;
 }
 
 .toggle-menu-open :nth-child(5), .toggle-menu-open :nth-child(6) {
-  top: 1.5em;
+  top: 1.39em;
 }
 
 .line {
   position: absolute;
-  width: 1.4em;
-  height: 0.25em;
+  width: 1.1em;
+  height: 0.18em;
   border-radius: 1em;
 
   background-color: var(--dark);
-  transition: 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  opacity: 1;
 }

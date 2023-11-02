@@ -84,12 +84,6 @@ button {
   color: var(--dark);
 }
 
-@media screen and (min-width: 1025px) {
-  .parallax-mirror {
-    width: 100%;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .booking-widget {
     width: 50%;
@@ -154,9 +148,5 @@ button {
 
   .carousel-text {
     grid-column: 1 / 13;
-  }
-
-  .parallax-mirror {
-    width: 100%;
   }
 }
