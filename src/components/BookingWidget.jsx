@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { X as CloseButtonIcon } from 'react-bootstrap-icons';
+import { X as CloseButton } from 'react-bootstrap-icons';
 import { actions } from '../slices/index.js';
 import links from '../utils/links.js';
 import { getBooking } from '../utils/selectors.js';
@@ -24,7 +24,7 @@ const BookingWidget = () => {
           onClick={handleWidgetClose}
           className="interactive-button booking-widget-btn me-07 p-0"
         >
-          <CloseButtonIcon className="w-100 h-100" />
+          <CloseButton className="w-100 h-100" />
         </button>
       </div>
       <div className="p-0 m-0">

@@ -2,7 +2,7 @@ import React from 'react';
 import { useMediaQuery } from '@reactuses/core';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  List as ListButton, X as CloseButton,
+  // List as ListButton, X as CloseButton,
   Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
 import cn from 'classnames';
@@ -114,7 +114,7 @@ const NavbarBody = () => {
 const ToggleButton = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const { isShow } = useSelector((state) => state.navbar);
+  const { isShow } = useSelector(getNavbar);
 
   const handleOpen = () => {
     dispatch(actions.navbarShow());
@@ -125,23 +125,19 @@ const ToggleButton = () => {
   };
 
   return (
-    !isShow
-      ? (
-        <ListButton
-          type="button"
-          aria-label={t('ariaLabels.openBtn')}
-          onClick={handleOpen}
-          className="interactive-button navbar-button"
-        />
-      )
-      : (
-        <CloseButton
-          type="button"
-          aria-label={t('ariaLabels.closeBtn')}
-          className="interactive-button navbar-button"
-          onClick={handleClose}
-        />
-      )
+    <div
+      className={`toggle-menu${isShow ? ' toggle-menu-open' : ''}`}
+      type="button"
+      aria-label={t('ariaLabels.openBtn')}
+      onClick={!isShow ? handleOpen : handleClose}
+    >
+      <div className="line" />
+      <div className="line" />
+      <div className="line" />
+      <div className="line" />
+      <div className="line" />
+      <div className="line" />
+    </div>
   );
 };
 

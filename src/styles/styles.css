@@ -81,6 +81,7 @@ button {
   height: 30px;
   border: none;
   background-color: var(--light);
+  color: var(--dark);
 }
 
 @media (min-width: 1920px) {
