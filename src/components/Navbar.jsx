@@ -2,7 +2,6 @@ import React from 'react';
 import { useMediaQuery } from '@reactuses/core';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  // List as ListButton, X as CloseButton,
   Telegram, Whatsapp, Telephone, GeoAltFill,
 } from 'react-bootstrap-icons';
 import cn from 'classnames';

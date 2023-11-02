@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { initReactI18next } from 'react-i18next';
 import i18next from 'i18next';
+import { ParallaxProvider } from 'react-scroll-parallax';
 // import LanguageDetector from 'i18next-browser-languagedetector';
 import { Provider } from 'react-redux';
 import { YMaps } from '@pbe/react-yandex-maps';
@@ -35,7 +36,9 @@ const runApp = async () => {
           load: 'package.full',
         }}
         >
-          <App />
+          <ParallaxProvider>
+            <App />
+          </ParallaxProvider>
         </YMaps>
       </Provider>
     </React.StrictMode>,

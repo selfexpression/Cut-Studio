@@ -63,10 +63,6 @@
   grid-row: 1 / 3;
 }
 
-.navbar-button {
-  grid-column: -1;
-}
-
 .navbar-contacts {
   grid-column: 1 / -1;
   grid-row: -1;

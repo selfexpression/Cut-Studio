@@ -84,13 +84,13 @@ button {
   color: var(--dark);
 }
 
-@media (min-width: 1920px) {
+@media screen and (min-width: 1025px) {
   .parallax-mirror {
     width: 100%;
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .booking-widget {
     width: 50%;
   }
@@ -104,7 +104,7 @@ button {
   }
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .parallax-banner + main {
     grid-column: 3 / 11;
     grid-row: 12;
@@ -128,7 +128,7 @@ button {
   }
 }
 
-@media (max-width: 460px) {
+@media screen and (max-width: 460px) {
   .booking-widget {
     width: 100%;
   }
