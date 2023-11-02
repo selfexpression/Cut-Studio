@@ -25,8 +25,8 @@ const Header = () => {
     dispatch(actions.bookingShow());
   };
 
-  const translateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
-  const translateLayer = `translate3d(0px, calc(${scrollY}px / 2), 0px)`;
+  const translateBanner = `translateY(-${scrollY}px)`;
+  const translateLayer = `translateY(calc(${scrollY}px / 2))`;
 
   return (
     <header id="/" className="main-header bg-light vh-100">
