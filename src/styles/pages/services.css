@@ -1,5 +1,6 @@
 .services-flow {
   overflow-x: auto;
+  opacity: 0;
 }
 
 .services-card {
@@ -13,18 +14,23 @@
   border: 0.5px solid var(--grey);
 }
 
+.services-card > img {
+  opacity: 0;
+}
+
 .services-btn {
   width: 18rem;
   height: 2rem;
 
-  color: var(--dark);
+  color: var(--aqua);
   background: none;
-  border: 1px solid var(--dark);
+  border: 1px solid var(--aqua);
+  opacity: 0;
 }
 
 .services-btn:hover {
   color: var(--light);
-  background-color: var(--dark);
+  background-color: var(--aqua);
 }
 
 .image-container {

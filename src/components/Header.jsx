@@ -27,7 +27,7 @@ const Background = () => {
 
   return (
     <picture
-      className={isWide ? 'parallax-banner' : 'banner'}
+      className="parallax-banner parallax-wrapper banner"
       style={isWide ? { transform: translateBanner } : null}
     >
       {background.map(({ width, srcSet }) => (
@@ -42,7 +42,7 @@ const Background = () => {
       <img
         src={stockBackground}
         alt={t('alts.background')}
-        className={isWide ? 'parallax-layer' : 'layer'}
+        className="parallax-layer parallax-wrapper layer"
         style={isWide ? { transform: translateLayer } : null}
         onLoad={handleLoad}
       />
@@ -54,9 +54,6 @@ const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isVibrating, setVibrating] = useState(false);
-  const isWide = useMediaQuery('(min-width: 460px)');
-  const { scrollY } = hooks.useScrollY();
-  const [isScrolled, setIsScrolled] = useState(false);
   const buttonClasses = cn(
     'btn-info-booking',
     'booking-btn',
@@ -64,28 +61,10 @@ const Header = () => {
     'mt-4 rounded-0',
     { vibrating: isVibrating },
   );
-  const mainContentClasses = cn(
-    'main-content',
-    'd-flex',
-    'flex-column',
-    'align-items-center',
-    'relative',
-    {
-      'main-content-wide': isWide,
-      'main-content-small': !isWide,
-      'main-content-animation': isScrolled,
-    },
-  );
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
-
-  useEffect(() => {
-    if (scrollY > 0) {
-      setIsScrolled(true);
-    }
-  }, [scrollY]);
 
   useEffect(() => {
     const toggleVibration = () => {
@@ -103,7 +82,7 @@ const Header = () => {
     <header id="/" className="main-header bg-light vh-100">
       <Background />
       <main
-        className={mainContentClasses}
+        className="main-content main-content-animation d-flex flex-column align-items-center"
       >
         <p className="text-content color-light text-center m-0">
           {t('header.text')}

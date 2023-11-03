@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+import cn from 'classnames';
 import { actions } from '../slices/index.js';
+import hooks from '../hooks/index.js';
 import cutImages from '../assets/gallery/services/index.js';
 
 const Services = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const { scrollY } = hooks.useScrollY();
+  const [isScrolled, setScrolled] = useState(false);
+  const cardClasses = cn(
+    'd-flex',
+    'services-flow',
+    'mt-5',
+    { 'scale-down': isScrolled },
+  );
+  const buttonClasses = cn(
+    'mt-auto',
+    'services-btn',
+    'booking-btn',
+    'rounded-2',
+    { 'scale-up-btn': isScrolled },
+  );
+
+  useEffect(() => {
+    if (scrollY > 1500) {
+      setScrolled(true);
+    }
+  }, [scrollY]);
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
@@ -14,7 +37,7 @@ const Services = () => {
 
   return (
     <section id="services" className="bg-light text-center p-4">
-      <div className="text-center m-0">
+      <div className="text-center mt-5">
         <h1 className="mb-4 text-head aqua-color">
           {t('services.heading')}
         </h1>
@@ -22,13 +45,17 @@ const Services = () => {
           {t('services.description')}
         </p>
       </div>
-      <div className="d-flex services-flow">
+      <div className={cardClasses}>
         {cutImages.map(({ image, id }) => (
           <div
             key={id}
-            className="d-flex flex-column justify-content-around m-2 services-card rounded-2"
+            className="d-flex flex-column justify-content-around services-card m-2 rounded-2"
           >
-            <img src={image} alt="card" className="h-70" />
+            <img
+              src={image}
+              alt="card"
+              className={isScrolled ? 'scale-up' : ''}
+            />
             <div className="text-start text-content p-3">
               {t(`services.names.${id}`)}
             </div>
@@ -39,7 +66,7 @@ const Services = () => {
         <button
           type="button"
           aria-label={t('ariaLabels.bookingBtn')}
-          className="mt-auto services-btn booking-btn rounded-2"
+          className={buttonClasses}
           onClick={handleWidgetShow}
         >
           {t('services.chooseService')}

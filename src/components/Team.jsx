@@ -8,7 +8,7 @@ const Team = () => {
   return (
     <section id="team" className="bg-light text-center py-5">
       <div className="team-container mt-5">
-        <div className="team-text p-2">
+        <div className="team-text p-2 fade-down">
           <h1 className="text-center text-head aqua-color mb-4">
             {t('team.heading')}
           </h1>
@@ -16,7 +16,7 @@ const Team = () => {
             {t('team.description')}
           </p>
         </div>
-        <div className="team-card-container">
+        <div className="team-card-container move-up">
           {teammatePhotos.map(({ photo, id }) => (
             <div
               key={id}

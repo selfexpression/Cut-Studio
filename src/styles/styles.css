@@ -18,6 +18,84 @@
   src: url('../assets/fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
 }
 
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform:  translateY(50px) scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes vibrating {
+  0% {
+      transform: translate(0%, 0%);
+  }
+  25% {
+      transform: translate(-2%, -2%);
+  }
+  50% {
+      transform: translate(0%, 0%);
+  }
+  75% {
+      transform: translate(2%, 2%);
+  }
+  100% {
+      transform: translate(0%, 0%);
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(1.4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -85,6 +163,30 @@ button {
   color: var(--dark);
 }
 
+.scale-down {
+  animation: scaleDown .8s ease-in-out .2s forwards;
+}
+
+.scale-up {
+  animation: scaleUp .6s ease-in-out .3s forwards;
+}
+
+.scale-up-btn {
+  animation: scaleUp .6s ease-in-out .6s forwards;
+}
+
+.fade-up {
+  animation: fadeUp .6s ease-in-out .2s forwards;
+}
+
+.fade-down {
+  animation: fadeDown .6s ease-in-out .5s forwards;
+}
+
+.move-up {
+  animation: moveUp .8s ease-in-out .2s forwards;
+}
+
 @media screen and (max-width: 1024px) {
   .booking-widget {
     width: 50%;
@@ -100,7 +202,7 @@ button {
 }
 
 @media screen and (max-width: 900px) {
-  .parallax-banner + main {
+  .main-content {
     grid-column: 3 / 11;
     grid-row: 12;
   }
@@ -123,7 +225,18 @@ button {
   }
 }
 
+@media screen and (max-width: 660px) {
+  .parallax-banner {
+    position: relative;
+  }
+}
+
 @media screen and (max-width: 460px) {
+  .main-content {
+    grid-column: 3 / 11;
+    grid-row: 11;
+  }
+
   .booking-widget {
     width: 100%;
   }

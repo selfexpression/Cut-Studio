@@ -4,61 +4,34 @@
   grid-template-rows: repeat(12, 1fr);
 }
 
-.parallax-banner {
-  position: fixed;
+.parallax-wrapper {
   height: 100%;
   width: 100%;
+  will-change: transform;
+}
+
+.parallax-banner {
+  position: fixed;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-
   overflow: hidden;
-  will-change: transform;
 }
 
 .parallax-layer {
   position: absolute;
-  height: 100%;
-  width: 100%;
-
-  object-fit: cover;
-  will-change: transform;
-}
-
-.banner {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  grid-column: 1 / -1;
-  grid-row: 1 / -1;
-
-  overflow: hidden;
-}
-
-.layer {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-
   object-fit: cover;
 }
 
 .main-content {
+  position: relative;
+  grid-column: 8 / 12;
+  grid-row: 7;
   height: max-content;
   opacity: 0;
 }
 
-.main-content-wide {
-  grid-column: 8 / 12;
-  grid-row: 7;
-}
-
-.main-content-small {
-  grid-column: 3 / 11;
-  grid-row: 11;
-}
-
 .main-content-animation {
-  animation: fadeUp 1s ease-in-out 0.1s forwards;
+  animation: scaleUp 1s ease-in-out .1s forwards;
 }
 
 .head-booking-btn {
@@ -67,7 +40,7 @@
 }
 
 .vibrating {
-  animation: vibrating 0.2s linear infinite;
+  animation: vibrating .2s linear infinite;
 }
 
 .text-head {
@@ -76,34 +49,4 @@
 
   text-transform: uppercase;
   color: var(--dark);
-}
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform:  translateY(100%) scale(0.5);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0%) scale(1);
-  }
-}
-
-@keyframes vibrating {
-  0% {
-      transform: translate(0%, 0%);
-  }
-  25% {
-      transform: translate(-2%, -2%);
-  }
-  50% {
-      transform: translate(0%, 0%);
-  }
-  75% {
-      transform: translate(2%, 2%);
-  }
-  100% {
-      transform: translate(0%, 0%);
-  }
 }

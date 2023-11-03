@@ -134,16 +134,13 @@
 
 .line {
   position: absolute;
-  width: 1.2em;
+  width: 1.3em;
   height: 0.18em;
   border-radius: 1em;
 
   background-color: var(--dark);
   transform: rotate(0);
-  transition: 
-    transform 0.25s ease-in-out, 
-    top 0.25s ease-in-out,
-    opacity 0.1s ease-in-out;
+  transition: .25s ease-in-out;
   will-change: transform;
   opacity: 1;
 }

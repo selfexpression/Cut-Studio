@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, max-content);
-
   align-content: center;
   justify-content: center;
 }
@@ -12,16 +11,18 @@
   grid-template-columns: repeat(3, 1fr);
   align-content: center;
   justify-content: center;
-
   grid-row: 2 / -1;
   grid-column: 1 / -1;
-
   gap: 2em;
+
+  opacity: 0;
 }
 
 .team-text {
   grid-column: 3 / 11;
   grid-row: 1 / 1;
+  
+  opacity: 0;
 }
 
 .team-card {
