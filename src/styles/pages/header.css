@@ -46,6 +46,7 @@
   grid-row: 7;
 
   animation: fadeUp 1s ease-in-out 1s forwards;
+  opacity: 0;
 }
 
 .banner + main {
@@ -54,6 +55,7 @@
   grid-row: 12;
 
   animation: fadeUp 1s ease-in-out 1s forwards;
+  opacity: 0;
 }
 
 .head-booking-btn {
@@ -76,7 +78,7 @@
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(5em) scale(0.5);
+    transform:  translateY(100%) scale(0.5);
   }
 
   100% {

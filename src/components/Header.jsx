@@ -15,7 +15,7 @@ const Background = () => {
   const { scrollY } = hooks.useScrollY();
   const location = useLocation();
   const parallaxController = useParallaxController();
-  const isWide = useMediaQuery('(min-width: 900px)');
+  const isWide = useMediaQuery('(min-width: 460px)');
   const handleLoad = () => parallaxController.update();
 
   useEffect(() => {
@@ -59,9 +59,7 @@ const Header = () => {
     'booking-btn',
     'head-booking-btn',
     'mb-5 mt-4 rounded-0',
-    {
-      vibrating: isVibrating,
-    },
+    { vibrating: isVibrating },
   );
 
   const handleWidgetShow = () => {
