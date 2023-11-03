@@ -1,64 +1,98 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { useParallaxController } from 'react-scroll-parallax';
 import { useLocation } from 'react-router-dom';
-
+import cn from 'classnames';
+import { useMediaQuery } from '@reactuses/core';
 import { actions } from '../slices/index.js';
 import hooks from '../hooks/index.js';
 import background from '../assets/backgrounds/index.js';
 import stockBackground from '../assets/backgrounds/back-image-1920.jpg';
 
-const Header = () => {
+const Background = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   const { scrollY } = hooks.useScrollY();
   const location = useLocation();
   const parallaxController = useParallaxController();
+  const isWide = useMediaQuery('(min-width: 900px)');
   const handleLoad = () => parallaxController.update();
 
   useEffect(() => {
     parallaxController.update();
   }, [parallaxController, location.pathname]);
 
+  const translateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
+  const translateLayer = `translate3d(0px, calc(${scrollY}px / 1.5), 0px)`;
+
+  return (
+    <picture
+      className={isWide ? 'parallax-banner' : 'banner'}
+      style={isWide ? { transform: translateBanner } : null}
+    >
+      {background.map(({ width, srcSet }) => (
+        <source
+          key={width}
+          media={`(max-width: ${width}px)`}
+          type="image/jpeg"
+          srcSet={srcSet}
+          onLoad={handleLoad}
+        />
+      ))}
+      <img
+        src={stockBackground}
+        alt={t('alts.background')}
+        className={isWide ? 'parallax-layer' : 'layer'}
+        style={isWide ? { transform: translateLayer } : null}
+        onLoad={handleLoad}
+      />
+    </picture>
+  );
+};
+
+const Header = () => {
+  const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [isVibrating, setVibrating] = useState(false);
+  const buttonClasses = cn(
+    'btn-info-booking',
+    'booking-btn',
+    'head-booking-btn',
+    'mb-5 mt-4 rounded-0',
+    {
+      vibrating: isVibrating,
+    },
+  );
+
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
 
-  const translateBanner = `translate3d(0px, -${scrollY}px, 0px)`;
-  const translateLayer = `translate3d(0px, calc(${scrollY}px / 3), 0px)`;
+  useEffect(() => {
+    const toggleVibration = () => {
+      setVibrating((prevVibrating) => !prevVibrating);
+    };
+    const nextInterval = isVibrating ? 1000 : 4000;
+    const toggleInterval = setInterval(() => {
+      toggleVibration();
+    }, nextInterval);
+
+    return () => clearInterval(toggleInterval);
+  }, [isVibrating]);
 
   return (
     <header id="/" className="main-header bg-light vh-100">
-      <picture
-        className="parallax-banner"
-        style={{ transform: translateBanner }}
+      <Background />
+      <main
+        className="d-flex flex-column align-items-center"
       >
-        {background.map(({ width, srcSet }) => (
-          <source
-            key={width}
-            media={`(max-width: ${width}px)`}
-            type="image/jpeg"
-            srcSet={srcSet}
-            onLoad={handleLoad}
-          />
-        ))}
-        <img
-          src={stockBackground}
-          alt={t('alts.background')}
-          className="parallax-mirror"
-          style={{ transform: translateLayer }}
-          onLoad={handleLoad}
-        />
-      </picture>
-      <main className="d-flex flex-column align-items-center">
         <p className="text-content color-light text-center m-0">
           {t('header.text')}
         </p>
         <button
           type="button"
           aria-label={t('ariaLabels.bookingBtn')}
-          className="btn-info-booking booking-btn head-booking-btn mb-5 mt-4 rounded-0"
+          className={buttonClasses}
           onClick={handleWidgetShow}
         >
           <span>{t('header.onlineBooking')}</span>

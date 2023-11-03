@@ -90,53 +90,56 @@
   width: 100%;
 }
 
-.toggle-menu :nth-child(1), .toggle-menu :nth-child(2) {
+.toggle-menu :nth-child(1), 
+.toggle-menu :nth-child(2) {
   top: 1.1em;
 }
 
-.toggle-menu :nth-child(3), .toggle-menu :nth-child(4) {
+.toggle-menu :nth-child(3), 
+.toggle-menu :nth-child(4) {
   top: 1.5em;
 }
 
-.toggle-menu :nth-child(5), .toggle-menu :nth-child(6) {
+.toggle-menu :nth-child(5), 
+.toggle-menu :nth-child(6) {
   top: 1.9em;
 }
 
-.toggle-menu :nth-child(odd) {
+.toggle-menu :nth-child(odd), 
+.toggle-menu :nth-child(2n) {
   right: 2em;
 }
 
-.toggle-menu :nth-child(2n) {
-  right: 2.2em;
-}
-
-.toggle-menu-open :nth-child(1), .toggle-menu-open :nth-child(6) {
+.toggle-menu-open :nth-child(1),
+.toggle-menu-open :nth-child(6) {
   transform: rotate(45deg);
 }
 
-.toggle-menu-open :nth-child(2), .toggle-menu-open :nth-child(5) {
+.toggle-menu-open :nth-child(2),
+.toggle-menu-open :nth-child(5) {
   transform: rotate(-45deg);
 }
 
-.toggle-menu-open :nth-child(3), .toggle-menu-open :nth-child(4) {
+.toggle-menu-open :nth-child(3), 
+.toggle-menu-open :nth-child(4) {
   opacity: 0;
 }
 
-.toggle-menu-open :nth-child(1), .toggle-menu-open :nth-child(2) {
-  top: 1.6em;
-}
-
-.toggle-menu-open :nth-child(5), .toggle-menu-open :nth-child(6) {
-  top: 1.39em;
+.toggle-menu-open :nth-child(1), 
+.toggle-menu-open :nth-child(2),
+.toggle-menu-open :nth-child(5),
+.toggle-menu-open :nth-child(6) {
+  top: 1.5em;
 }
 
 .line {
   position: absolute;
-  width: 1.1em;
+  width: 1.2em;
   height: 0.18em;
   border-radius: 1em;
 
   background-color: var(--dark);
   transition: all 0.25s ease-in-out;
+  will-change: transform, opacity;
   opacity: 1;
 }

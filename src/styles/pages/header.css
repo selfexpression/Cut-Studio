@@ -15,13 +15,7 @@
   will-change: transform;
 }
 
-.parallax-banner + main {
-  position: relative;
-  grid-column: 8 / 12;
-  grid-row: 7;
-}
-
-.parallax-mirror {
+.parallax-layer {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -30,9 +24,45 @@
   will-change: transform;
 }
 
+.banner {
+  height: 100%;
+  width: 100%;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+
+  overflow: hidden;
+}
+
+.layer {
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.parallax-banner + main {
+  position: relative;
+  grid-column: 8 / 12;
+  grid-row: 7;
+
+  animation: fadeUp 1s ease-in-out 1s forwards;
+}
+
+.banner + main {
+  position: relative;
+  grid-column: 3 / 11;
+  grid-row: 12;
+
+  animation: fadeUp 1s ease-in-out 1s forwards;
+}
+
 .head-booking-btn {
   width: 15em;
   height: 2em;
+}
+
+.vibrating {
+  animation: vibrating 0.2s linear infinite;
 }
 
 .text-head {
@@ -41,4 +71,34 @@
 
   text-transform: uppercase;
   color: var(--dark);
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5em) scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+  }
+}
+
+@keyframes vibrating {
+  0% {
+      transform: translate(0%, 0%);
+  }
+  25% {
+      transform: translate(-2%, -2%);
+  }
+  50% {
+      transform: translate(0%, 0%);
+  }
+  75% {
+      transform: translate(2%, 2%);
+  }
+  100% {
+      transform: translate(0%, 0%);
+  }
 }
