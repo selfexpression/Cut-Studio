@@ -41,6 +41,7 @@ const Gallery = () => {
             >
               <img
                 src={image}
+                loading="lazy"
                 alt={`${t('alts.slider')} ${id}`}
                 className="d-block w-100 h-100"
               />

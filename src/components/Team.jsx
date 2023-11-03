@@ -26,6 +26,7 @@ const Team = () => {
                 src={photo}
                 alt={t('alts.teammate')}
                 className="rounded-2 w-100"
+                loading="lazy"
               />
               <div className="team-card-body p-3">
                 <div className="text-center team-card-title">
