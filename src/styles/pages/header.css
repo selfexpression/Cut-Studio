@@ -34,28 +34,29 @@
 }
 
 .layer {
+  position: absolute;
   height: 100%;
   width: 100%;
 
   object-fit: cover;
 }
 
-.parallax-banner + main {
-  position: relative;
+.main-content-wide {
   grid-column: 8 / 12;
   grid-row: 7;
 
-  animation: fadeUp 1s ease-in-out 1s forwards;
   opacity: 0;
 }
 
-.banner + main {
-  position: relative;
+.main-content-small {
   grid-column: 3 / 11;
   grid-row: 12;
 
-  animation: fadeUp 1s ease-in-out 1s forwards;
   opacity: 0;
+}
+
+.main-content-animation {
+  animation: fadeUp 1s ease-in-out 0.1s forwards;
 }
 
 .head-booking-btn {

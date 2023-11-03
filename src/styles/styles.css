@@ -32,6 +32,7 @@ h2 {
 
 button {
   font-family: Comfortaa, "Times New Roman", serif;
+  text-transform: uppercase;
   cursor: pointer;
 }
 

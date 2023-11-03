@@ -54,6 +54,9 @@ const Header = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isVibrating, setVibrating] = useState(false);
+  const isWide = useMediaQuery('(min-width: 460px)');
+  const { scrollY } = hooks.useScrollY();
+  const [isScrolled, setIsScrolled] = useState(false);
   const buttonClasses = cn(
     'btn-info-booking',
     'booking-btn',
@@ -61,10 +64,27 @@ const Header = () => {
     'mb-5 mt-4 rounded-0',
     { vibrating: isVibrating },
   );
+  const mainContentClasses = cn(
+    'd-flex',
+    'flex-column',
+    'align-items-center',
+    'relative',
+    {
+      'main-content-wide': isWide,
+      'main-content-small': !isWide,
+      'main-content-animation': isScrolled,
+    },
+  );
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
+
+  useEffect(() => {
+    if (scrollY > 0) {
+      setIsScrolled(true);
+    }
+  }, [scrollY]);
 
   useEffect(() => {
     const toggleVibration = () => {
@@ -82,7 +102,7 @@ const Header = () => {
     <header id="/" className="main-header bg-light vh-100">
       <Background />
       <main
-        className="d-flex flex-column align-items-center"
+        className={mainContentClasses}
       >
         <p className="text-content color-light text-center m-0">
           {t('header.text')}
