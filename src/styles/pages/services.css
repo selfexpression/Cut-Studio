@@ -3,6 +3,10 @@
   opacity: 0;
 }
 
+.services-text {
+  opacity: 0;
+}
+
 .services-card {
   min-height: 20%;
   height: 22em;

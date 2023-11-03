@@ -24,6 +24,12 @@ const Services = () => {
     'rounded-2',
     { 'scale-up-btn': isScrolled },
   );
+  const textClasses = cn(
+    'services-text',
+    'text-center',
+    'mt-5',
+    { fade: isScrolled },
+  );
 
   useEffect(() => {
     if (scrollY > 1500) {
@@ -37,7 +43,7 @@ const Services = () => {
 
   return (
     <section id="services" className="bg-light text-center p-4">
-      <div className="text-center mt-5">
+      <div className={textClasses}>
         <h1 className="mb-4 text-head aqua-color">
           {t('services.heading')}
         </h1>
