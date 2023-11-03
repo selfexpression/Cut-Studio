@@ -123,6 +123,7 @@
 .toggle-menu-open :nth-child(3), 
 .toggle-menu-open :nth-child(4) {
   opacity: 0;
+  width: 0;
 }
 
 .toggle-menu-open :nth-child(1), 
@@ -139,7 +140,7 @@
   border-radius: 1em;
 
   background-color: var(--dark);
-  transition: all 0.25s ease-in-out;
+  transition: all 0.2s ease-in-out;
   will-change: transform, opacity;
   opacity: 1;
 }
