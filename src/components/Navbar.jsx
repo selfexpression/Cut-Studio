@@ -148,10 +148,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { isShow } = useSelector(getNavbar);
   const rowsCount = isShow ? '40px 70vh' : '40px 0';
-
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+  const { scrollToTop } = scroll;
 
   return (
     <nav
