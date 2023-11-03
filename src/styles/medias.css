@@ -1,0 +1,77 @@
+@media screen and (max-width: 1024px) {
+  .booking-widget {
+    width: 50%;
+  }
+
+  .map-container {
+    padding: 0 !important;
+  }
+
+  .video-container > .div > .text-content {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-content {
+    grid-column: 3 / 11;
+    grid-row: 12;
+  }
+
+  .footer-container {
+    grid-template-columns: 100vw;
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  .footer-contacts {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+
+    padding: 3rem;
+  }
+
+  .map-container {
+    grid-column: 1;
+    grid-row: 2 / -1;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .parallax-banner {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .main-content {
+    grid-column: 3 / 11;
+    grid-row: 11;
+  }
+
+  .booking-widget {
+    width: 100%;
+  }
+
+  .videoframe {
+    grid-column: 1 / 13;
+  }
+
+  .video-text {
+    grid-column: 1 / 13;
+  }
+
+  .team-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .team-text {
+    padding: 0;
+    
+    grid-column: 1 / 13;
+    grid-row: 1 / 1;
+  }
+
+  .carousel-text {
+    grid-column: 1 / 13;
+  }
+}
