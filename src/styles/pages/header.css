@@ -25,6 +25,7 @@
 }
 
 .banner {
+  position: relative;
   height: 100%;
   width: 100%;
   grid-column: 1 / -1;
@@ -41,18 +42,19 @@
   object-fit: cover;
 }
 
+.main-content {
+  height: max-content;
+  opacity: 0;
+}
+
 .main-content-wide {
   grid-column: 8 / 12;
   grid-row: 7;
-
-  opacity: 0;
 }
 
 .main-content-small {
   grid-column: 3 / 11;
-  grid-row: 12;
-
-  opacity: 0;
+  grid-row: 11;
 }
 
 .main-content-animation {
