@@ -26,7 +26,7 @@ const Main = () => (
 
 const App = () => (
   <Router>
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column h-100">
       {/* <ScrollToTop /> */}
       <Navbar />
       <Routes>
