@@ -16,6 +16,7 @@
 .navbar-brand {
   grid-column: 1;
   cursor: pointer;
+  opacity: 0;
 }
 
 .navbar-links-wide {
@@ -33,10 +34,12 @@
   text-decoration: none;
   color: var(--black);
   cursor: pointer;
+  transition: transform .3s ease-in-out;
 }
 
 .nav-link:hover {
   color: var(--grey);
+  transform: scale(1.2);
 }
 
 .navbar-contacts {

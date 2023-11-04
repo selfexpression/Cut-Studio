@@ -40,7 +40,7 @@ const NavLink = () => {
             to={pageName}
             duration={500}
             smooth="true"
-            className="nav-link m-2"
+            className="nav-link m-2 me-3"
             onClick={handleClose}
           >
             {t(`navbar.${pageName}`)}
@@ -156,7 +156,7 @@ const Navbar = () => {
       style={{ gridTemplateRows: rowsCount }}
     >
       <span
-        className="navbar-brand"
+        className="navbar-brand move-up"
         onClick={isMainPage ? scrollToTop : () => navigate(routes.mainPage)}
       >
         <img src={logo} alt={t('alts.logo')} className="nav-logo" />

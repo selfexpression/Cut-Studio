@@ -13,8 +13,9 @@ const Services = () => {
   const [isScrolled, setScrolled] = useState(false);
   const cardClasses = cn(
     'd-flex',
+    'align-items-center',
     'services-flow',
-    'mt-5',
+    'ms-2',
     { 'scale-down': isScrolled },
   );
   const buttonClasses = cn(
@@ -27,7 +28,7 @@ const Services = () => {
   const textClasses = cn(
     'services-text',
     'text-center',
-    'mt-5',
+    'p-4',
     { fade: isScrolled },
   );
 
@@ -42,7 +43,7 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="bg-light text-center p-4">
+    <section id="services" className="bg-light text-center">
       <div className={textClasses}>
         <h1 className="mb-4 text-head aqua-color">
           {t('services.heading')}
@@ -55,7 +56,7 @@ const Services = () => {
         {cutImages.map(({ image, id }) => (
           <div
             key={id}
-            className="d-flex flex-column justify-content-around services-card m-2 rounded-2"
+            className="d-flex flex-column justify-content-around services-card ms-3 rounded-2"
           >
             <img
               src={image}

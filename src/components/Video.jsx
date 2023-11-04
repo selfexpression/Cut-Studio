@@ -22,7 +22,6 @@ const Video = () => {
       setScrolled(true);
     }
   }, [scrollY]);
-  console.log(scrollY);
 
   return (
     <section id="video" className="bg-light">

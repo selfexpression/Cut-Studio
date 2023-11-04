@@ -23,6 +23,7 @@
   height: 100px;
 
   background-color: var(--light);
+  border: 0.8px solid var(--grey)
 }
 
 .booking-frame {

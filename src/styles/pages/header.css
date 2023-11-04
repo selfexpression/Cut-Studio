@@ -31,11 +31,11 @@
 }
 
 .main-content-animation {
-  animation: scaleUp 1s ease-in-out .1s forwards;
+  animation: scaleUp 1s ease-in-out .8s forwards;
 }
 
 .head-booking-btn {
-  width: 15em;
+  width: 14em !important;
   height: 2em;
 }
 

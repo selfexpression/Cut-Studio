@@ -51,3 +51,7 @@
   width: 12em !important;
   height: 2em !important;
 }
+
+.vibrating-phone {
+  animation: vibratingPhone .2s linear infinite;
+}

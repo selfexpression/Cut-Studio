@@ -70,7 +70,7 @@ const Header = () => {
     const toggleVibration = () => {
       setVibrating((prevVibrating) => !prevVibrating);
     };
-    const nextInterval = isVibrating ? 1000 : 4000;
+    const nextInterval = isVibrating ? 1000 : 3000;
     const toggleInterval = setInterval(() => {
       toggleVibration();
     }, nextInterval);

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Telegram, Whatsapp, Telephone,
 } from 'react-bootstrap-icons';
@@ -40,10 +40,23 @@ const Ymap = () => {
 const Footer = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const [isVibrating, setVibrating] = useState(false);
 
   const handleWidgetShow = () => {
     dispatch(actions.bookingShow());
   };
+
+  useEffect(() => {
+    const toggleVibration = () => {
+      setVibrating((prevVibrating) => !prevVibrating);
+    };
+    const nextInterval = isVibrating ? 1000 : 2000;
+    const toggleInterval = setInterval(() => {
+      toggleVibration();
+    }, nextInterval);
+
+    return () => clearInterval(toggleInterval);
+  }, [isVibrating]);
 
   return (
     <footer id="footer" className="bg-dark">
@@ -70,7 +83,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="d-flex align-items-center mt-3">
-              <Telephone />
+              <Telephone className={isVibrating ? 'vibrating-phone' : ''} />
               <a href={links.phoneNumber}>
                 <button
                   type="button"
