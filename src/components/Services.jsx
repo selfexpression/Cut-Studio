@@ -61,7 +61,6 @@ const Services = () => {
               src={image}
               alt="card"
               className={isScrolled ? 'scale-up' : ''}
-              loading="lazy"
             />
             <div className="text-start text-content p-3">
               {t(`services.names.${id}`)}
