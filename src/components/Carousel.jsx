@@ -8,7 +8,7 @@ import {
 import { actions } from '../slices/index.js';
 import { getSlider } from '../utils/selectors.js';
 
-const Gallery = () => {
+const Carousel = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const { currentSlide, images } = useSelector(getSlider);
@@ -41,6 +41,7 @@ const Gallery = () => {
             >
               <img
                 src={image}
+                loading="lazy"
                 alt={`${t('alts.slider')} ${id}`}
                 className="d-block w-100 h-100"
               />
@@ -64,4 +65,4 @@ const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default Carousel;

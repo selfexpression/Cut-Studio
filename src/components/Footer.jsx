@@ -50,10 +50,10 @@ const Footer = () => {
     const toggleVibration = () => {
       setVibrating((prevVibrating) => !prevVibrating);
     };
-    const nextInterval = isVibrating ? 1000 : 2000;
+
     const toggleInterval = setInterval(() => {
       toggleVibration();
-    }, nextInterval);
+    }, 1000);
 
     return () => clearInterval(toggleInterval);
   }, [isVibrating]);

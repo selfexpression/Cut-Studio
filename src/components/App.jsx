@@ -11,7 +11,6 @@ import Video from './Video.jsx';
 import Team from './Team.jsx';
 import Footer from './Footer.jsx';
 import BookingWidget from './BookingWidget.jsx';
-// import ScrollToTop from './ScrollToTop.jsx';
 
 const Main = () => (
   <>
@@ -26,8 +25,7 @@ const Main = () => (
 
 const App = () => (
   <Router>
-    <div className="d-flex flex-column h-100">
-      {/* <ScrollToTop /> */}
+    <div className="d-flex flex-column h-100 w-100">
       <Navbar />
       <Routes>
         <Route path={routes.mainPage} element={<Main />} />

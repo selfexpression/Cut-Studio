@@ -61,6 +61,7 @@ const Services = () => {
             <img
               src={image}
               alt="card"
+              loading="lazy"
               className={isScrolled ? 'scale-up' : ''}
             />
             <div className="text-start text-content p-3">
