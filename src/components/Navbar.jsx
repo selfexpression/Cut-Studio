@@ -62,11 +62,9 @@ const NavLink = () => {
 const LangSwitcher = () => {
   const { t, i18n } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
-  const classes = cn({
+  const classes = cn('me-4', {
     'lang-switch-btn': isWide,
     'lang-switch-btn-sm': !isWide,
-    'me-4': isWide,
-    'me-3': !isWide,
     'mt-2': !isWide,
   });
 
