@@ -19,8 +19,35 @@
   opacity: 0;
 }
 
-.navbar-links-wide {
+.navbar-items {
   grid-column: -1;
+}
+
+.lang-switch-btn {
+  width: 2.5em;
+  height: 1.5em;
+
+  border: 1px solid var(--dark);
+  border-radius: 5%;
+  background: none;
+}
+
+.lang-switch-btn-sm {
+  grid-row: 2;
+  grid-column: -1;
+  align-self: flex-start;
+
+  width: 2.5em;
+  height: 1.5em;
+
+  color: var(--light);
+  border: 1px solid var(--dark);
+  background-color: var(--dark);
+}
+
+.lang-switch-btn:hover {
+  color: var(--light);
+  background-color: var(--dark);
 }
 
 .nav-logo {

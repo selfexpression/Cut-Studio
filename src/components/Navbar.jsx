@@ -59,7 +59,7 @@ const NavLink = () => {
   );
 };
 
-const NavbarBody = () => {
+const NavbarBody = ({ handleLangSwitch }) => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
   const { isShow } = useSelector(getNavbar);
@@ -76,8 +76,18 @@ const NavbarBody = () => {
   return (
     isWide
       ? (
-        <div className="navbar-links-wide d-flex me-4">
-          <NavLink />
+        <div className="navbar-items d-flex align-items-center">
+          <div className="d-flex me-2">
+            <NavLink />
+          </div>
+          <button
+            type="button"
+            aria-label={t('ariaLabels.langSwitcher')}
+            onClick={handleLangSwitch}
+            className="lang-switch-btn me-4 text-center"
+          >
+            {t('lang.currentLang')}
+          </button>
         </div>
       )
       : (
@@ -142,13 +152,19 @@ const ToggleButton = () => {
 
 const Navbar = () => {
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const isMainPage = location.pathname === routes.mainPage;
   const isWide = useMediaQuery('(min-width: 860px)');
   const navigate = useNavigate();
   const { isShow } = useSelector(getNavbar);
   const rowsCount = isShow ? '40px 70vh' : '40px 0';
   const { scrollToTop } = scroll;
+
+  const handleLangSwitch = () => {
+    const { language } = i18n;
+    const lang = (language === 'en' ? 'ru' : 'en');
+    i18n.changeLanguage(lang);
+  };
 
   return (
     <nav
@@ -162,7 +178,15 @@ const Navbar = () => {
         <img src={logo} alt={t('alts.logo')} className="nav-logo" />
       </span>
       {!isWide ? <ToggleButton /> : null}
-      <NavbarBody />
+      <NavbarBody handleLangSwitch={handleLangSwitch} />
+      <button
+        type="button"
+        aria-label={t('ariaLabels.langSwitcher')}
+        onClick={handleLangSwitch}
+        className="lang-switch-btn-sm me-3 mt-2 text-center"
+      >
+        {t('lang.currentLang')}
+      </button>
     </nav>
   );
 };

@@ -1,7 +1,7 @@
 export default {
   translation: {
     lang: {
-      currentLang: 'EN',
+      currentLang: 'en',
     },
     video: {
       paragraph: 'Experienced masters, individual approach, and impeccable service create a unique atmosphere where every client is a true VIP.',
@@ -9,7 +9,7 @@ export default {
     footer: {
       ourContacts: 'Contacts',
       findUsOnMap: 'Find us on the map',
-      location: 'Новосибирск, ул. Октябрьская 81',
+      location: 'Novosibirsk, Oktyabrskaya Street 81',
 
     },
     carousel: {
@@ -17,7 +17,7 @@ export default {
     },
     header: {
       text: 'A place where style meets convenience.',
-      onlineBooking: 'Book',
+      onlineBooking: 'Book Now',
     },
     navbar: {
       main: 'Main page',
@@ -28,7 +28,7 @@ export default {
       location: 'Oktyabrskaya Street 81',
       city: 'Novosibirsk',
       phoneNumber: '+7-(969)-228-1139',
-      onlineBooking: 'Book',
+      onlineBooking: 'Book Now',
       telegram: 'Telegram',
       whatsapp: 'Whatsapp',
     },
@@ -76,11 +76,12 @@ export default {
     },
     ariaLabels: {
       closeBtn: 'close button',
-      nextBtn: 'next',
-      prevBtn: 'previous',
+      nextBtn: 'next slide',
+      prevBtn: 'previous slide',
       callBtn: 'call button',
       bookingBtn: 'booking button',
       openBtn: 'open button',
+      langSwitcher: 'change language',
     },
     alts: {
       slider: 'slide',

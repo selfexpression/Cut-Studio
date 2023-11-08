@@ -8,10 +8,9 @@ import {
 import { actions } from '../slices/index.js';
 import { getSlider } from '../utils/selectors.js';
 
-const Carousel = () => {
+const Arrows = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { currentSlide, images } = useSelector(getSlider);
 
   const nextSlide = useCallback(() => {
     dispatch(actions.nextSlide());
@@ -25,7 +24,29 @@ const Carousel = () => {
     const intervalId = setInterval(() => nextSlide(), 5000);
 
     return () => clearInterval(intervalId);
-  }, [dispatch, currentSlide, nextSlide]);
+  }, [dispatch, nextSlide]);
+
+  return (
+    <>
+      <ArrowRight
+        className="next"
+        type="button"
+        aria-label={t('ariaLabels.next')}
+        onClick={nextSlide}
+      />
+      <ArrowLeft
+        className="prev"
+        type="button"
+        aria-label={t('ariaLabels.prev')}
+        onClick={prevSlide}
+      />
+    </>
+  );
+};
+
+const Carousel = () => {
+  const { t } = useTranslation();
+  const { currentSlide, images } = useSelector(getSlider);
 
   return (
     <section id="carousel" className="bg-light">
@@ -48,18 +69,7 @@ const Carousel = () => {
             </div>
           ))}
         </div>
-        <ArrowRight
-          className="next"
-          type="button"
-          aria-label={t('ariaLabels.next')}
-          onClick={nextSlide}
-        />
-        <ArrowLeft
-          className="prev"
-          type="button"
-          aria-label={t('ariaLabels.prev')}
-          onClick={prevSlide}
-        />
+        <Arrows />
       </div>
     </section>
   );

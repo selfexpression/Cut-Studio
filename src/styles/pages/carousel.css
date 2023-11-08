@@ -47,7 +47,6 @@
   top: 50%;
   width: 5em;
   height: 5em;
-  padding: 10px 20px;
 
   border: none;
   cursor: pointer;
@@ -61,9 +60,9 @@
 }
 
 .prev {
-  left: 10px;
+  left: 0;
 }
 
 .next {
-  right: 10px;
+  right: 0;
 }

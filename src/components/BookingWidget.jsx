@@ -22,7 +22,7 @@ const BookingWidget = () => {
           type="button"
           aria-label={t('ariaLabels.closeBtn')}
           onClick={handleWidgetClose}
-          className="interactive-button booking-widget-btn me-07 p-0"
+          className="interactive-button booking-widget-btn p-0"
         >
           <CloseButton className="w-100 h-100" />
         </button>
