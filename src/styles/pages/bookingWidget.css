@@ -9,7 +9,7 @@
 
 .booking-widget-btn {
   margin-bottom: 10px;
-  margin-right: 0.7rem;
+  margin-right: 0.7rem !important;
 }
 
 .show-booking {
