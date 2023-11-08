@@ -59,7 +59,36 @@ const NavLink = () => {
   );
 };
 
-const NavbarBody = ({ handleLangSwitch }) => {
+const LangSwitcher = () => {
+  const { t, i18n } = useTranslation();
+  const isWide = useMediaQuery('(min-width: 860px)');
+  const classes = cn({
+    'lang-switch-btn': isWide,
+    'lang-switch-btn-sm': !isWide,
+    'me-4': isWide,
+    'me-3': !isWide,
+    'mt-2': !isWide,
+  });
+
+  const handleLangSwitch = () => {
+    const { language } = i18n;
+    const lang = (language === 'en' ? 'ru' : 'en');
+    i18n.changeLanguage(lang);
+  };
+
+  return (
+    <button
+      type="button"
+      aria-label={t('ariaLabels.langSwitcher')}
+      onClick={handleLangSwitch}
+      className={classes}
+    >
+      <span>{t('lang.currentLang')}</span>
+    </button>
+  );
+};
+
+const NavbarBody = () => {
   const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
   const { isShow } = useSelector(getNavbar);
@@ -80,14 +109,7 @@ const NavbarBody = ({ handleLangSwitch }) => {
           <div className="d-flex me-2">
             <NavLink />
           </div>
-          <button
-            type="button"
-            aria-label={t('ariaLabels.langSwitcher')}
-            onClick={handleLangSwitch}
-            className="lang-switch-btn me-4 text-center"
-          >
-            {t('lang.currentLang')}
-          </button>
+          <LangSwitcher />
         </div>
       )
       : (
@@ -152,19 +174,13 @@ const ToggleButton = () => {
 
 const Navbar = () => {
   const location = useLocation();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const isMainPage = location.pathname === routes.mainPage;
   const isWide = useMediaQuery('(min-width: 860px)');
   const navigate = useNavigate();
   const { isShow } = useSelector(getNavbar);
   const rowsCount = isShow ? '40px 70vh' : '40px 0';
   const { scrollToTop } = scroll;
-
-  const handleLangSwitch = () => {
-    const { language } = i18n;
-    const lang = (language === 'en' ? 'ru' : 'en');
-    i18n.changeLanguage(lang);
-  };
 
   return (
     <nav
@@ -178,15 +194,8 @@ const Navbar = () => {
         <img src={logo} alt={t('alts.logo')} className="nav-logo" />
       </span>
       {!isWide ? <ToggleButton /> : null}
-      <NavbarBody handleLangSwitch={handleLangSwitch} />
-      <button
-        type="button"
-        aria-label={t('ariaLabels.langSwitcher')}
-        onClick={handleLangSwitch}
-        className="lang-switch-btn-sm me-3 mt-2 text-center"
-      >
-        {t('lang.currentLang')}
-      </button>
+      <NavbarBody />
+      {!isWide ? <LangSwitcher /> : null}
     </nav>
   );
 };
