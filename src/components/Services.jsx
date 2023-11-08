@@ -42,15 +42,15 @@ const ServiceCards = ({ isScrolled }) => {
       {cutImages.map(({ image, id }) => (
         <div
           key={id}
-          className="d-flex flex-column justify-content-around services-card ms-3 rounded-2"
+          className="d-flex flex-column justify-content-between services-card ms-3 rounded-2"
         >
           <img
             src={image}
             alt="card"
             loading="lazy"
-            className={isScrolled ? 'scale-up h-100' : ''}
+            className={isScrolled ? 'scale-up' : ''}
           />
-          <div className="service-name text-start text-content p-3">
+          <div className="service-name text-start text-content p-2">
             {t(`services.names.${id}`)}
           </div>
         </div>
@@ -59,7 +59,7 @@ const ServiceCards = ({ isScrolled }) => {
   );
 };
 
-const BookButton = ({ isScrolled }) => {
+const BookingButton = ({ isScrolled }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const buttonClasses = cn(
@@ -102,7 +102,7 @@ const Services = () => {
     <section id="services" className="bg-light text-center">
       <ServiceText isScrolled={isScrolled} />
       <ServiceCards isScrolled={isScrolled} />
-      <BookButton isScrolled={isScrolled} />
+      <BookingButton isScrolled={isScrolled} />
     </section>
   );
 };
