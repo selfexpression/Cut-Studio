@@ -135,6 +135,7 @@ const NavbarBody = () => {
               <span className="ms-4">{t('navbar.location')}</span>
             </div>
           </div>
+          <LangSwitcher />
         </div>
       )
   );
@@ -193,7 +194,6 @@ const Navbar = () => {
       </span>
       {!isWide ? <ToggleButton /> : null}
       <NavbarBody />
-      {!isWide ? <LangSwitcher /> : null}
     </nav>
   );
 };
