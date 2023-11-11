@@ -12,6 +12,13 @@
   }
 }
 
+@media screen and (min-width: 860px) {
+  .nav-link:hover {
+    color: var(--grey);
+    transform: scale(1.2);
+  }
+}
+
 @media screen and (max-width: 900px) {
   .main-content {
     grid-column: 3 / 11;

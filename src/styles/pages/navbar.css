@@ -69,11 +69,6 @@
   transition: transform .3s ease-in-out;
 }
 
-.nav-link:hover {
-  color: var(--grey);
-  transform: scale(1.2);
-}
-
 .navbar-contacts {
   font-size: var(--font-size);
 
