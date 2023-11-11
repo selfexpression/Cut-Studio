@@ -74,4 +74,8 @@
   .carousel-text {
     grid-column: 1 / 13;
   }
+
+  .nav-link {
+    font-size: var(--font-size-nav-mobile);
+  }
 }

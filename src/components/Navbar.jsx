@@ -1,9 +1,7 @@
 import React from 'react';
 import { useMediaQuery } from '@reactuses/core';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  Telegram, Whatsapp, Telephone, GeoAltFill,
-} from 'react-bootstrap-icons';
+import { Telegram, Whatsapp } from 'react-bootstrap-icons';
 import cn from 'classnames';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { useLocation, Link as RouterLink, useNavigate } from 'react-router-dom';
@@ -40,7 +38,7 @@ const NavLink = () => {
             to={pageName}
             duration={500}
             smooth="true"
-            className="nav-link m-2 me-3"
+            className="nav-link p-3 me-3"
             onClick={handleClose}
           >
             {t(`navbar.${pageName}`)}
@@ -65,7 +63,7 @@ const LangSwitcher = () => {
   const classes = cn('me-4', {
     'lang-switch-btn': isWide,
     'lang-switch-btn-sm': !isWide,
-    'mt-2': !isWide,
+    'mb-4': !isWide,
   });
 
   const handleLangSwitch = () => {
@@ -87,17 +85,15 @@ const LangSwitcher = () => {
 };
 
 const NavbarBody = () => {
-  const { t } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
   const { isShow } = useSelector(getNavbar);
   const classes = cn('navbar-body', {
     'navbar-body-show': isShow,
     'navbar-body-hide': !isShow,
   });
-  const contacts = {
+  const socials = {
     telegram: Telegram,
     whatsapp: Whatsapp,
-    phoneNumber: Telephone,
   };
 
   return (
@@ -115,25 +111,16 @@ const NavbarBody = () => {
           <div className="navbar-links d-flex flex-column p-2">
             <NavLink />
           </div>
-          <div className="navbar-contacts p-2">
-            {Object.entries(contacts).map(([contact, Image]) => (
+          <div className="navbar-contacts p-3 d-flex">
+            {Object.entries(socials).map(([contact, Image]) => (
               <a
                 key={contact}
                 href={links[contact]}
                 className="m-2 d-flex align-items-center contact-links"
               >
                 <Image className="me-1" />
-                {' '}
-                <span>{t(`navbar.${contact}`)}</span>
               </a>
             ))}
-            <div className="m-2">
-              <GeoAltFill />
-              {' '}
-              {t('navbar.city')}
-              <br />
-              <span className="ms-4">{t('navbar.location')}</span>
-            </div>
           </div>
           <LangSwitcher />
         </div>
@@ -178,7 +165,7 @@ const Navbar = () => {
   const isWide = useMediaQuery('(min-width: 860px)');
   const navigate = useNavigate();
   const { isShow } = useSelector(getNavbar);
-  const rowsCount = isShow ? '40px 70vh' : '40px 0';
+  const rowsCount = isShow ? '40px 35vh' : '40px 0';
   const { scrollToTop } = scroll;
 
   return (
@@ -187,7 +174,7 @@ const Navbar = () => {
       style={{ gridTemplateRows: rowsCount }}
     >
       <span
-        className="navbar-brand move-up"
+        className="navbar-brand ms-3 move-up"
         onClick={isMainPage ? scrollToTop : () => navigate(routes.mainPage)}
       >
         <img src={logo} alt={t('alts.logo')} className="nav-logo" />
