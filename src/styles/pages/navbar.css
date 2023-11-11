@@ -1,6 +1,6 @@
 .navbar {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   position: fixed;
   top: 0;
@@ -39,13 +39,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-row: -1;
-  grid-column: -1;
-  align-self: end;
+  grid-row: 4;
+  grid-column: 6 / 7;
+  align-self: center;
+  justify-self: center;
 
   width: 2.5em;
   height: 1.5em;
-  margin-bottom: 1em;
 
   color: var(--light);
   border: 1px solid var(--dark);
@@ -62,9 +62,7 @@
 }
 
 .nav-link {
-  margin-right: 30px;
-
-  font-size: 22px;
+  font-size: var(--font-size);
   text-decoration: none;
   color: var(--black);
   cursor: pointer;
@@ -73,7 +71,7 @@
 
 .nav-link:hover {
   color: var(--grey);
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 .navbar-contacts {
@@ -84,8 +82,8 @@
 
 .navbar-body {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, max-content);
   grid-column: 1 / -1;
   grid-row: 2 / -1;
 
@@ -98,15 +96,16 @@
 .navbar-links {
   grid-column: 1 / -1;
   grid-row: 1 / 3;
+  height: max-content;
 }
 
 .navbar-contacts {
-  grid-column: 1 / -1;
-  grid-row: -1;
+  grid-column: 1 / 3;
+  grid-row: 4;
 }
 
 .navbar-body-show {
-  max-height: 70vh;
+  max-height: max-content;
   height: 100%;
   opacity: 1;
 }

@@ -38,7 +38,7 @@ const NavLink = () => {
             to={pageName}
             duration={500}
             smooth="true"
-            className="nav-link p-3 me-3"
+            className="nav-link p-3"
             onClick={handleClose}
           >
             {t(`navbar.${pageName}`)}
@@ -60,10 +60,10 @@ const NavLink = () => {
 const LangSwitcher = () => {
   const { t, i18n } = useTranslation();
   const isWide = useMediaQuery('(min-width: 860px)');
-  const classes = cn('me-4', {
+  const classes = cn({
     'lang-switch-btn': isWide,
     'lang-switch-btn-sm': !isWide,
-    'mb-4': !isWide,
+    'me-4': isWide,
   });
 
   const handleLangSwitch = () => {
@@ -116,7 +116,7 @@ const NavbarBody = () => {
               <a
                 key={contact}
                 href={links[contact]}
-                className="m-2 d-flex align-items-center contact-links"
+                className="m-2 contact-links"
               >
                 <Image className="me-1" />
               </a>
@@ -165,7 +165,7 @@ const Navbar = () => {
   const isWide = useMediaQuery('(min-width: 860px)');
   const navigate = useNavigate();
   const { isShow } = useSelector(getNavbar);
-  const rowsCount = isShow ? '40px 35vh' : '40px 0';
+  const rowsCount = isShow ? '40px max-content' : '40px 0';
   const { scrollToTop } = scroll;
 
   return (
@@ -174,7 +174,7 @@ const Navbar = () => {
       style={{ gridTemplateRows: rowsCount }}
     >
       <span
-        className="navbar-brand ms-3 move-up"
+        className="navbar-brand ms-2 move-up"
         onClick={isMainPage ? scrollToTop : () => navigate(routes.mainPage)}
       >
         <img src={logo} alt={t('alts.logo')} className="nav-logo" />
