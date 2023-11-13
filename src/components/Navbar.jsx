@@ -165,7 +165,7 @@ const Navbar = () => {
   const isWide = useMediaQuery('(min-width: 860px)');
   const navigate = useNavigate();
   const { isShow } = useSelector(getNavbar);
-  const rowsCount = isShow ? '40px max-content' : '40px 0';
+  const rowsCount = isShow ? '2.5em max-content' : '2.5em 0';
   const { scrollToTop } = scroll;
 
   return (
