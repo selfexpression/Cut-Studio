@@ -117,8 +117,8 @@
 
 .toggle-menu {
   grid-column: -1;
-  width: 4em;
-  height: 3.5em;
+  width: 3.5em;
+  height: 2em;
 }
 
 .toggle-menu :nth-child(1), 
@@ -171,7 +171,7 @@
 
   background-color: var(--dark);
   transform: rotate(0);
-  transition: .3s ease-in-out;
+  transition: .2s ease-in-out;
   will-change: transform;
   opacity: 1;
 }
