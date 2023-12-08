@@ -100,7 +100,7 @@ const NavbarBody = () => {
     isWide
       ? (
         <div className="navbar-items d-flex align-items-center">
-          <div className="d-flex me-2">
+          <div className="d-flex me-4">
             <NavLink />
           </div>
           <LangSwitcher />
